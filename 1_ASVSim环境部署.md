@@ -2,7 +2,7 @@
 
 **项目名称**：基于 3DGS 的无人船冰水环境重建与路径规划
 **环境**：Windows 10/11, Unreal Engine 5.4, Visual Studio 2022, ASVSim
-**显卡**：RTX 5070 Ti
+**显卡**：RTX 5070 Ti（12g显存）
 
 ## 1. 简介
 
