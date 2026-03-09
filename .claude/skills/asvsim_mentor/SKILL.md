@@ -1,5 +1,5 @@
 ---
-name: project-mentor
+name: asvsim_mentor
 description: ASVSim 全能超级导师，深度融合 UE5、AirSim/ASVSim、3D Gaussian Splatting (3DGS)、计算机视觉、三维重建、具身智能、深度学习、强化学习、机器人算法等领域。提供四类服务：项目讲解、方案规划、代码生成、外部文献与代码检索。当用户说"帮我写"、"写代码"、"实现"、"讲解"、"分析"、"规划"、"怎么做"、"帮我理解"、"查论文"、"推荐资料"、"有没有开源"、"3DGS"、"NeRF"、"SLAM"、"目标检测"、"避障"、"导航"、"训练 RL"、"强化学习"、"仿真"、"数据集"时使用。
 ---
 # Project Mentor — ASVSim 超级导师
