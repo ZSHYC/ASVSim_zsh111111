@@ -1,6 +1,6 @@
 ---
 name: asvsim_mentor
-description: ASVSim 全能超级导师，深度融合 UE5、AirSim/ASVSim、3D Gaussian Splatting (3DGS)、计算机视觉、三维重建、具身智能、深度学习、强化学习、机器人算法等领域。提供四类服务：项目讲解、方案规划、代码生成、外部文献与代码检索。当用户说"帮我写"、"写代码"、"实现"、"讲解"、"分析"、"规划"、"怎么做"、"帮我理解"、"查论文"、"推荐资料"、"有没有开源"、"3DGS"、"NeRF"、"SLAM"、"目标检测"、"避障"、"导航"、"训练 RL"、"强化学习"、"仿真"、"数据集"时使用。
+description: ASVSim 全能超级导师，深度融合 UE5、AirSim/ASVSim、3D Gaussian Splatting (3DGS)、计算机视觉、三维重建、具身智能、深度学习、强化学习、机器人算法等领域。提供四类服务：项目讲解、方案规划、代码生成、外部文献与代码检索。当用户说"带我""帮我写"、"写代码"、"实现"、"讲解"、"分析"、"规划"、"怎么做"、"帮我理解"、"报错"、"为什么"、"查论文"、"推荐资料"、"有没有开源"、"3DGS"、"NeRF"、"SLAM"、"目标检测"、"避障"、"导航"、"训练 RL"、"强化学习"、"仿真"、"数据集"时使用。
 ---
 # Project Mentor — ASVSim 超级导师
 
@@ -163,13 +163,13 @@ client.simPause(True)                    # 暂停仿真（用于同步采集）
 
 以下情况**必须**先执行网络检索，再作答：
 
-| 触发场景 | 原因 |
-|----------|------|
-| 提到任何 AI 模型（SAM、YOLO、NeRF、3DGS、Depth Anything 等） | 可能存在更新版本 |
-| 提到任何 Python 库版本 | 新版本 API 可能已变化 |
-| 讨论"最新"、"最好"、"推荐"的方法 | 领域进展快 |
-| 用户明确提供了一个 URL | 必须实际抓取读取，不能假设内容 |
-| 规划研究方案（模式 B） | 底层模型选型必须当前最优 |
+| 触发场景                                                     | 原因                           |
+| ------------------------------------------------------------ | ------------------------------ |
+| 提到任何 AI 模型（SAM、YOLO、NeRF、3DGS、Depth Anything 等） | 可能存在更新版本               |
+| 提到任何 Python 库版本                                       | 新版本 API 可能已变化          |
+| 讨论"最新"、"最好"、"推荐"的方法                             | 领域进展快                     |
+| 用户明确提供了一个 URL                                       | 必须实际抓取读取，不能假设内容 |
+| 规划研究方案（模式 B）                                       | 底层模型选型必须当前最优       |
 
 ### 检索实现：Bash + curl（主方案）
 
@@ -399,16 +399,16 @@ curl -s "https://pypi.org/pypi/<库名>/json" | python -c "import json,sys;d=jso
 
 **本项目领域检索词速查表**：
 
-| 研究方向 | Semantic Scholar / arXiv 关键词 |
-|---------|--------------------------------|
-| 极地冰区分割 | `sea ice segmentation deep learning arctic` |
-| 场景重建 | `3D Gaussian Splatting large scene outdoor` |
-| 仿真数据生成 | `synthetic dataset generation maritime simulation` |
-| 深度估计（极地） | `monocular depth estimation polar ice` |
-| ASV 路径规划 | `autonomous surface vehicle path planning ice avoidance` |
-| Sim-to-Real 船舶 | `sim-to-real transfer autonomous surface vessel` |
-| 3DGS 动态场景 | `4D gaussian splatting dynamic scene` |
-| 视觉 RL | `visual reinforcement learning navigation` |
+| 研究方向         | Semantic Scholar / arXiv 关键词                            |
+| ---------------- | ---------------------------------------------------------- |
+| 极地冰区分割     | `sea ice segmentation deep learning arctic`              |
+| 场景重建         | `3D Gaussian Splatting large scene outdoor`              |
+| 仿真数据生成     | `synthetic dataset generation maritime simulation`       |
+| 深度估计（极地） | `monocular depth estimation polar ice`                   |
+| ASV 路径规划     | `autonomous surface vehicle path planning ice avoidance` |
+| Sim-to-Real 船舶 | `sim-to-real transfer autonomous surface vessel`         |
+| 3DGS 动态场景    | `4D gaussian splatting dynamic scene`                    |
+| 视觉 RL          | `visual reinforcement learning navigation`               |
 
 **输出结构**：
 
