@@ -79,7 +79,8 @@ responses = client.simGetImages([
 # 转 NumPy
 r = responses[1]
 img = np.frombuffer(r.image_data_uint8, dtype=np.uint8).reshape(r.height, r.width, 3)
-img = np.flipud(img)  # 垂直翻转修正
+# ⚠️ CosysAirSim 3.0.1 实测：原始图像已正向，不需要 flipud（加了反而倒置）
+# img = np.flipud(img)  # 标准 AirSim 才需要，CosysAirSim 3.0.1 不要加
 
 # ── LiDAR ──────────────────────────────────────
 lidar = client.getLidarData()            # 45 个测距值
@@ -173,6 +174,10 @@ client.simPause(True)                    # 暂停仿真（用于同步采集）
 
 ### 检索实现：Bash + curl（主方案）
 
+> **Windows 已知问题（2026-03-10 实测）**：本机 curl 使用 schannel TLS 实现，对 GitHub Pages（`*.github.io`）的 HTTPS 连接会 SSL 握手失败（`Recv failure: Connection was reset`）。**GitHub API（`api.github.com`）、arXiv、PyPI 等 JSON 接口不受影响，curl 仍可正常访问。**
+>
+> 受影响的只有 HTML 页面抓取（如 ASVSim 文档站）。对这类目标，**改用 PowerShell 方案**（见下方）。
+
 **优先使用 Bash 工具执行以下 curl 命令模板**（比 WebFetch 更可靠）：
 
 ```bash
@@ -233,8 +238,8 @@ curl -s "https://api.github.com/repos/ultralytics/ultralytics/releases/latest" |
 # Gaussian Splatting
 curl -s "https://api.github.com/repos/graphdeco-inria/gaussian-splatting" | python -c "import json,sys;d=json.load(sys.stdin);print('3DGS Stars:',d['stargazers_count'],'| Updated:',d['pushed_at'][:10])"
 
-# ASVSim 文档（HTML，用 curl 抓取）
-curl -s "https://bavolesy.github.io/idlab-asvsim-docs/vessel/vessel_api/" | python -c "
+# ASVSim 文档（HTML）— curl 对 *.github.io 的 HTTPS 有 schannel TLS 问题，改用 PowerShell
+powershell.exe -Command "(Invoke-WebRequest -Uri 'https://bavolesy.github.io/idlab-asvsim-docs/vessel/vessel_api/' -UseBasicParsing).Content" | python -c "
 import sys,re; html=sys.stdin.read()
 text=re.sub(r'<[^>]+>','',html)
 lines=[l.strip() for l in text.split('\n') if l.strip()]
@@ -249,14 +254,18 @@ Step 1: 识别当前响应中涉及的所有具体模型/库/方法名
     ↓
 Step 2: 用 Bash 工具并行执行对应的 curl 命令（不用 WebFetch）
     ↓
+Step 2B（curl 对 *.github.io HTML 返回空/SSL 错误）:
+    → 改用 PowerShell 重试：
+      powershell.exe -Command "(Invoke-WebRequest -Uri '<URL>' -UseBasicParsing).Content"
+    ↓
 Step 3A（成功）: 读取结果，更新知识，用最新信息作答
     ↓
-Step 3B（curl 也失败）: 触发"降级处理"（见下方）
+Step 3B（curl + PowerShell 均失败）: 触发"降级处理"（见下方）
 ```
 
-### 网络受限降级处理（curl 也失败时）
+### 网络受限降级处理（curl + PowerShell 均失败时）
 
-当 curl 命令也返回错误（网络彻底不通）时，**必须**执行以下操作：
+当 curl 命令 **和** PowerShell `Invoke-WebRequest` 均返回错误（网络彻底不通）时，**必须**执行以下操作：
 
 1. **明确告知用户**："当前网络无法获取实时数据，以下信息基于截止 2025年1月 的训练数据，可能已过时"
 2. **提供手动验证清单**：
@@ -390,8 +399,10 @@ curl -s "https://api.github.com/repos/<owner>/<repo>/releases/latest"
 # [用户问某模型是否有更新版] → GitHub + arXiv 双查
 curl -s "https://api.github.com/repos/<owner>/<repo>" | python -c "import json,sys;d=json.load(sys.stdin);print(d['pushed_at'],d['description'])"
 
-# [用户提供了具体 URL] → curl 直接抓取全文
+# [用户提供了具体 URL] → 先 curl 尝试，*.github.io 等 HTML 页面改用 PowerShell
 curl -s "<URL>" | python -c "import sys,re;html=sys.stdin.read();print(re.sub(r'<[^>]+>','',html)[:3000])"
+# 若 curl 返回空或 SSL 错误（如 *.github.io），改用：
+powershell.exe -Command "(Invoke-WebRequest -Uri '<URL>' -UseBasicParsing).Content" | python -c "import sys,re;html=sys.stdin.read();print(re.sub(r'<[^>]+>','',html)[:3000])"
 
 # [用户问某库的最新版本] → PyPI
 curl -s "https://pypi.org/pypi/<库名>/json" | python -c "import json,sys;d=json.load(sys.stdin);print(d['info']['version'])"

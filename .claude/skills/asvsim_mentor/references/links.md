@@ -65,29 +65,52 @@ build.cmd
 ```
 
 **支持的船型：**
-| 船型 | 流体动力学引擎 | 物理引擎 |
-|------|-------------|---------|
-| milliampere | FossenCurrent | VesselEngine |
-| cybership2 | FossenCurrent | VesselEngine |
-| qiuxin5 | FossenCurrent | VesselEngine |
-| mariner | MarinerHydrodynamics | LargeVesselEngine |
+| 船型 | 流体动力学引擎 | 物理引擎 | 推进器数量 |
+|------|-------------|---------|-----------|
+| milliampere | FossenCurrent | VesselEngine | 2 |
+| cybership2 | FossenCurrent | VesselEngine | 2 |
+| qiuxin5 | FossenCurrent | VesselEngine | 1 |
+| mariner | MarinerHydrodynamics | LargeVesselEngine | 1 |
 
-**关键 API：**
+**关键 API — setVesselControls（官方文档确认，2026-03-10）：**
 ```python
 from cosysairsim.types import VesselControls
 
-# 设置推力和舵角（单推进器）
+# 单推进器（单值会广播到所有推进器槽位）
 controls = VesselControls(thrust=0.7, angle=0.6)
 client.setVesselControls('VesselName', controls)
 
-# 多推进器
+# 多推进器（MilliAmpere 有 2 个）
 controls = VesselControls(thrust=[0.7, 0.8], angle=[0.6, 0.7])
 client.setVesselControls('VesselName', controls)
 ```
-- `thrust`: 0.0–1.0（推力大小）
-- `angle`: 0.0–1.0（0.5 为正前方，< 0.5 向左，> 0.5 向右）
 
-其他 API：`getVesselState()`、`simAddObstacle()`、`simGetImages()`、`getLidarData()`
+**⚠️ angle 参数约定（与直觉不同，务必注意）：**
+- `thrust`: 0.0–1.0（推力大小，0=停止，1=全速）
+- `angle`: **0.0–1.0（0.5 = 直行，< 0.5 = 左转，> 0.5 = 右转）**
+- 常用值：0.5=直行，0.6=轻微右转，0.4=轻微左转
+
+> `hello_ship.py` 中使用了错误的约定（angle=0.0 标注为直行），以官方文档为准。
+
+**setDisturbanceControls（风/流干扰）：**
+```python
+from cosysairsim.types import DisturbanceControls
+import math
+disturbances = DisturbanceControls(
+    wind_force=15.0, wind_angle=math.pi/4,     # 风力(N)和方向(rad)
+    current_velocity=5.0, current_angle=0.0    # 流速(m/s)和方向(rad)
+)
+client.setDisturbanceControls('VesselName', disturbances)
+```
+
+**getVesselState：**
+```python
+state = client.getVesselState('VesselName')
+pos = state.kinematics_estimated.position     # 位置，单位米
+vel = state.kinematics_estimated.linear_velocity  # 速度，单位 m/s
+```
+
+其他 API：`simAddObstacle()`、`simGetImages()`、`getLidarData()`
 
 ---
 
@@ -238,6 +261,39 @@ client.enableApiControl(True)
 - `getVesselState()` — 获取船舶状态（位置/速度/姿态）
 - `simGetImages([ImageRequest, ...])` — 批量获取相机图像
 
+**⚠️ 重大性能注意（image_apis 文档 Lumen 节，2026-03-10 实测验证）：**
+
+UE5 Lumen GI/Reflections 对每个 SceneCapture 组件默认生效，是 `simGetImages` 极慢的主因。**务必在 `CaptureSettings` 中显式禁用：**
+
+```json
+"CameraDefaults": {
+  "CaptureSettings": [
+    {
+      "ImageType": 0, "Width": 1280, "Height": 720, "FOV_Degrees": 90,
+      "LumenGIEnable": false, "LumenReflectionEnable": false,
+      "MotionBlurAmount": 0
+    },
+    {
+      "ImageType": 1, "Width": 1280, "Height": 720, "FOV_Degrees": 90,
+      "LumenGIEnable": false, "LumenReflectionEnable": false
+    },
+    {
+      "ImageType": 5, "Width": 1280, "Height": 720, "FOV_Degrees": 90,
+      "LumenGIEnable": false, "LumenReflectionEnable": false
+    }
+  ]
+}
+```
+
+Lumen 参数说明（来自官方文档）：
+
+| 参数 | 类型 | 说明 |
+|---|---|---|
+| `LumenGIEnable` | bool | 全局光照，默认 true，关闭可大幅提速 |
+| `LumenReflectionEnable` | bool | Lumen 反射，默认 true，关闭可提速 |
+| `LumenFinalQuality` | 0.25–2 | 质量倍率，不如直接关闭 |
+| `MotionBlurAmount` | float | 运动模糊，数据集采集应设为 0 |
+
 ---
 
 ## 7. Image APIs（图像 API）
@@ -260,7 +316,10 @@ responses = client.simGetImages([
 response = responses[0]
 img1d = np.fromstring(response.image_data_uint8, dtype=np.uint8)
 img_rgb = img1d.reshape(response.height, response.width, 3)
-img_rgb = np.flipud(img_rgb)  # 垂直翻转修正
+# ⚠️ flipud 版本差异（2026-03-10 实测）：
+# - 标准 AirSim：需要 np.flipud(img_rgb)
+# - CosysAirSim 3.0.1：原始图像已正向，flipud 反而导致倒置，不要加
+# img_rgb = np.flipud(img_rgb)  # 标准 AirSim 才需要
 ```
 
 **ImageType 枚举：**
