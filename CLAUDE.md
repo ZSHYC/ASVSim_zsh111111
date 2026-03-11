@@ -87,7 +87,7 @@ UE5 极地场景渲染
 **每次响应前必须检查**：
 
 1. **`.claude/skills/asvsim_mentor/SKILL.md`** — 工作模式定义（A/B/C/D）和技能能力范围
-2. **`analysis_records/` 记录** — 了解项目历史进度（要看所有的）
+2. **`analysis_records/` 所有记录** — 按时间顺序完整阅读所有历史记录，了解项目全貌、决策脉络和当前状态
 3. **`.claude/skills/asvsim_mentor/references/links.md`** — ASVSim API 细节
 4. **`.claude/skills/asvsim_mentor/references/project_introduction.md`** — 项目背景
 
@@ -98,6 +98,16 @@ UE5 极地场景渲染
 ls -la analysis_records/
 
 ```
+
+**重要**：查看项目进度时，**必须阅读所有记录**（而非仅最新一条），按时间顺序理解：
+1. 项目是如何逐步推进的
+2. 每个阶段的关键决策和问题解决过程
+3. 当前状态的完整上下文
+
+**阅读顺序建议**：
+1. 先按时间排序列出所有记录文件
+2. 从头到尾依次阅读，建立完整时间线
+3. 特别关注最近 3-5 条记录了解当前状态
 
 ---
 
