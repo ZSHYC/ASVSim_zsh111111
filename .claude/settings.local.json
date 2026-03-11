@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find /c/Users/zsh/Desktop/ASVSim_zsh -type f \\\\\\(-name *.py -o -name *.cpp -o -name *.h -o -name *.hpp -o -name *.cs -o -name *.js -o -name *.ts \\\\\\))",
+      "Bash(find . -maxdepth 3 -type f -name *.json -o -name *.toml -o -name *.yaml -o -name *.yml -o -name *.txt -o -name *.cmake -o -name CMakeLists.txt -o -name *.cfg -o -name *.ini -o -name setup.py -o -name pyproject.toml -o -name package.json -o -name Cargo.toml -o -name go.mod -o -name pom.xml -o -name build.gradle -o -name *.pro -o -name *.pri -o -name Makefile -o -name *.mk)",
+      "Bash(find c:/Users/zsh/Desktop/ASVSim_zsh -maxdepth 3 -type f \\\\\\(-name *.txt -o -name *.cfg -o -name *.ini -o -name *.yaml -o -name *.yml -o -name requirements*.txt -o -name setup.py -o -name pyproject.toml -o -name Pipfile -o -name environment.yml -o -name *.json -o -name Makefile -o -name *.mk \\\\\\) ! -path */.git/* ! -path */__pycache__/*)",
+      "WebFetch(domain:bavolesy.github.io)",
+      "WebFetch(domain:arxiv.org)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:docs.ultralytics.com)",
+      "WebFetch(domain:colmap.github.io)",
+      "WebFetch(domain:stable-baselines3.readthedocs.io)",
+      "WebFetch(domain:en.wikipedia.org)",
+      "WebFetch(domain:www.open3d.org)"
+    ]
+  }
+}
