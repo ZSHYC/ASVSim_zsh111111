@@ -1,0 +1,86 @@
+{
+  "SettingsVersion": 2.0,
+  "SimMode": "Vessel",
+  "PhysicsEngineName": "VesselEngine",
+  "ViewMode": "SpringArmChase",
+  "InitialInstanceSegmentation": true,
+  "ClockSpeed": 1,
+  "Wind": { "X": 0, "Y": 0, "Z": 0 },
+
+  "PawnPaths": {
+    "BlueResearchBoat": {
+      "PawnBP": "Class'/AirSim/Blueprints/BP_VesselPawn.BP_VesselPawn_C'"
+    }
+  },
+
+  "Vehicles": {
+    "Vessel1": {
+      "VehicleType": "MilliAmpere",
+      "AutoCreate": true,
+      "PawnPath": "BlueResearchBoat",
+      "HydroDynamics": { "hydrodynamics_engine": "FossenCurrent" },
+      "X": 0, "Y": 0, "Z": 0,
+      "Sensors": {
+        "top_lidar": {
+          "SensorType": 6, "Enabled": true,
+          "NumberOfLasers": 16, "PointsPerSecond": 300000,
+          "RotationsPerSecond": 10, "Range": 100.0,
+          "DrawDebugPoints": false, "DataFrame": "SensorLocalFrame",
+          "X": 0.0, "Y": 0.0, "Z": -1.0
+        },
+        "front_camera": {
+          "SensorType": 1, "Enabled": true, "Width": 640, "Height": 480,
+          "X": 1.0, "Y": 0.0, "Z": -0.5, "Pitch": 0.0, "Roll": 0.0, "Yaw": 0.0
+        },
+        "down_camera": {
+          "SensorType": 1, "Enabled": true, "Width": 640, "Height": 480,
+          "X": 0.5, "Y": 0.0, "Z": -1.0, "Pitch": -45.0, "Roll": 0.0, "Yaw": 0.0
+        }
+      }
+    }
+  },
+
+  "CameraDefaults": {
+    "CaptureSettings": [
+      {
+        "ImageType": 0,
+        "Width": 640,
+        "Height": 480,
+        "FOV_Degrees": 90,
+        "LumenGIEnable": false,
+        "LumenReflectionEnable": false,
+        "MotionBlurAmount": 0
+      },
+      {
+        "ImageType": 1,
+        "Width": 640,
+        "Height": 480,
+        "FOV_Degrees": 90,
+        "LumenGIEnable": false,
+        "LumenReflectionEnable": false
+      },
+      {
+        "ImageType": 5,
+        "Width": 640,
+        "Height": 480,
+        "FOV_Degrees": 90,
+        "LumenGIEnable": false,
+        "LumenReflectionEnable": false
+      }
+    ],
+    "PostProcessSettings": {
+      "bOverride_VignetteIntensity": true,
+      "VignetteIntensity": 0.0,
+      "bOverride_ChromaticAberrationIntensity": true,
+      "ChromaticAberrationIntensity": 0.0,
+      "bOverride_BloomIntensity": true,
+      "BloomIntensity": 0.0,
+      "bOverride_LensFlareIntensity": true,
+      "LensFlareIntensity": 0.0,
+      "bOverride_AutoExposureMethod": true,
+      "AutoExposureMethod": "AEM_Manual",
+      "bOverride_AutoExposureBias": true,
+      "AutoExposureBias": 0.0
+    }
+  }
+}

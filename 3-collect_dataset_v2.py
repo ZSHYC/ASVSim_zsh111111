@@ -133,12 +133,14 @@ def create_output_dirs(root: Path, config: CollectionConfig) -> Dict[str, Path]:
 
 def decode_image_safe(response, name: str = "") -> np.ndarray:
     """
-    安全解码图像，自动处理 RGB/RGBA/BGR格式。
+    安全解码图像，自动处理 RGB/RGBA格式并转换为BGR。
 
     关键修复：
-    - CosysAirSim 3.0.1返回的是BGR格式，直接使用无需转换
+    - CosysAirSim 3.0.1返回的是RGB格式
+    - 必须转换为BGR格式供OpenCV保存（否则颜色偏黄）
     - 自动检测3通道或4通道（RGBA）
     """
+    import cv2
     raw = np.frombuffer(response.image_data_uint8, dtype=np.uint8)
     h, w = response.height, response.width
     total = len(raw)
@@ -147,18 +149,23 @@ def decode_image_safe(response, name: str = "") -> np.ndarray:
     expected_4ch = h * w * 4
 
     if total == expected_4ch:
-        # RGBA - 只取前3个通道
+        # RGBA - 取前3个通道并转换为BGR
         img = raw.reshape(h, w, 4)
         img = img[:, :, :3]
+        img = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
     elif total == expected_3ch:
-        # BGR格式（OpenCV默认）
+        # RGB格式，需要转换为BGR
         img = raw.reshape(h, w, 3)
+        img = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
     else:
         # 未知格式，尝试自动推断
         channels = max(1, total // (h * w))
         img = raw.reshape(h, w, channels)
         if channels > 3:
             img = img[:, :, :3]
+        # 统一转换为BGR
+        if len(img.shape) == 3 and img.shape[2] == 3:
+            img = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
         print(f"[警告] {name} 格式异常: {total}字节，已强制reshape为({h},{w},{channels})")
 
     return img

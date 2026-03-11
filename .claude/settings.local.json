@@ -14,7 +14,11 @@
       "WebFetch(domain:www.open3d.org)",
       "WebSearch",
       "Bash(curl -s https://api.github.com/repos/graphdeco-inria/gaussian-splatting)",
-      "Bash(python -c \":*)"
+      "Bash(python -c \":*)",
+      "Read(//c/Users/zsh/Documents/AirSim/**)"
+    ],
+    "additionalDirectories": [
+      "c:\\Users\\zsh\\Documents\\AirSim"
     ]
   }
 }
