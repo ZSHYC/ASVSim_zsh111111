@@ -1,0 +1,26 @@
+{
+  "_comment": "ASVSim多模态数据采集配置文件v2.0",
+  "_description": "此配置针对640×480分辨率优化，平衡采集速度与数据质量",
+
+  "vessel_name": "Vessel1",
+  "front_cam_idx": 0,
+  "lidar_name": "top_lidar",
+
+  "num_frames": 200,
+  "move_seconds": 0.3,
+
+  "thrust": 0.3,
+  "angle": 0.6,
+  "trajectory_mode": "circle",
+
+  "cam_w": 640,
+  "cam_h": 480,
+  "cam_fov": 90.0,
+
+  "dataset_root": "dataset",
+
+  "max_retries": 3,
+  "retry_delay": 1.0,
+
+  "max_fail_ratio": 0.2
+}

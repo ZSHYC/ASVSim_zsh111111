@@ -49,7 +49,7 @@ ASVSim_zsh/
 │
 ├── dataset/                  # 采集的多模态数据集（.gitignore 忽略）
 │   └── YYYY_MM_DD_HH_MM_SS/
-│       ├── rgb/             # PNG 图像 (1280×720)
+│       ├── rgb/             # PNG 图像
 │       ├── depth/           # NPY float32 深度图（单位：米）
 │       ├── segmentation/    # PNG 实例分割图像
 │       └── lidar/           # JSON 点云数据
@@ -62,9 +62,7 @@ ASVSim_zsh/
 │   └── references/
 │       ├── links.md               # ASVSim 技术文档和论文链接（必读）
 │       └── project_introduction.md # 项目背景和研究内容（必读）
-│
-├── 2-verify_sensors.py      # Phase 1 传感器验证脚本
-├── 3-collect_dataset.py     # Phase 3 多模态数据采集脚本
+
 ```
 
 ## Mandatory Documentation Checklist
@@ -74,6 +72,28 @@ ASVSim_zsh/
 1. **`.claude/skills/asvsim_mentor/SKILL.md`** — 技能定义和工作模式（A/B/C/D 模式）
 2. **`.claude/skills/asvsim_mentor/references/links.md`** — ASVSim 完整 API 文档（涉及 API 细节时必读，所有网址均需深入理解）
 3. **`.claude/skills/asvsim_mentor/references/project_introduction.md`** — 项目背景和研究要求（必读，是完成项目的基础）
+4. **`analysis_records/` 目录下的相关记录文件** — 了解项目历史进度和之前的分析结论（必须查看最新文件，避免重复工作或冲突决策）
+
+### 如何查看 analysis_records/
+
+```bash
+# 列出所有分析记录文件（按时间倒序）
+ls -la analysis_records/ | sort -k9 -r
+
+# 快速查看最新记录
+cat analysis_records/$(ls -t analysis_records/ | head -1)
+```
+
+**查看最新记录的目的是**：
+- 了解当前项目阶段和已完成的工作
+- 避免重复分析已解决的问题
+- 确保建议与历史决策保持一致
+- 识别需要迭代的未完成事项
+
+**典型场景**：
+- 如果用户询问数据采集问题 → 先查看 `2026-03-11_3-collect_dataset性能与颜色异常修复.md`
+- 如果用户询问传感器配置 → 先查看 `2026-03-10_Phase1_settings配置完成.md`
+- 如果用户询问整体规划 → 先查看 `2026-03-10_项目全局分析与规划.md`
 
 **涉及具体技术时必须参考**:
 
@@ -82,6 +102,7 @@ ASVSim_zsh/
 - 3D Gaussian Splatting: https://github.com/graphdeco-inria/gaussian-splatting (SIGGRAPH 2023, 实时渲染)
 - ASVSim 论文: https://arxiv.org/abs/2506.22174
 - ASVSim 文档: https://bavolesy.github.io/idlab-asvsim-docs/
+- AirSim 文档：https://microsoft.github.io/AirSim/
 
 ## ASVSim Core Knowledge
 

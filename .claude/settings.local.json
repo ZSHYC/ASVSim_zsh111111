@@ -11,7 +11,10 @@
       "WebFetch(domain:colmap.github.io)",
       "WebFetch(domain:stable-baselines3.readthedocs.io)",
       "WebFetch(domain:en.wikipedia.org)",
-      "WebFetch(domain:www.open3d.org)"
+      "WebFetch(domain:www.open3d.org)",
+      "WebSearch",
+      "Bash(curl -s https://api.github.com/repos/graphdeco-inria/gaussian-splatting)",
+      "Bash(python -c \":*)"
     ]
   }
 }

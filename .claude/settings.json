@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:microsoft.github.io)",
+      "Bash(curl -s \"https://microsoft.github.io/AirSim/apis/\")"
+    ]
+  }
+}
