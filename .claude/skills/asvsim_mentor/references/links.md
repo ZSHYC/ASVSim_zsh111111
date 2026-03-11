@@ -399,3 +399,19 @@ img_rgb = img1d.reshape(response.height, response.width, 3)
 **链接:** https://arxiv.org/abs/2506.22174
 
 ASVSim 的核心论文，详细介绍了平台架构、功能模块及其在仿真与强化学习中的应用。
+
+---
+
+## 11. AirSim 官方文档（补充资料）
+
+**链接:** https://microsoft.github.io/AirSim/
+
+Microsoft AirSim 的官方文档，ASVSim/Cosys-AirSim 基于此开发。当 ASVSim 文档未覆盖某些基础 API 行为时，可参考此文档。
+
+**主要章节：**
+- [快速入门](https://microsoft.github.io/AirSim/) — 基础概念和安装
+- [Python API](https://microsoft.github.io/AirSim/apis/) — 通用 API 调用模式
+- [图像采集](https://microsoft.github.io/AirSim/image_apis/) — 相机和图像类型说明
+- [常见设置](https://microsoft.github.io/AirSim/settings/) — settings.json 通用配置
+
+**注意：** ASVSim 使用了修改后的 ImageType 枚举值（如 `DepthPlanar=1` 而非标准 AirSim 的 `2`），请以 ASVSim 官方文档为准。

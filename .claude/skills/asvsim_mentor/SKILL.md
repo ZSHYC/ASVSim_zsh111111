@@ -149,6 +149,21 @@ client.simPause(True)                    # 暂停仿真（用于同步采集）
 
 - **`references/links.md`** — ASVSim 完整技术文档和论文链接（优先，涉及API细节时必读，所有的网址均仔细阅读理解）
 - `references/project_introduction.md` -- 项目相关内容介绍和要求（一定要仔细阅读并深入理解，是完成项目的基础和根本要求）
+- **`analysis_records/` 目录** — 项目历史分析记录（**每次回答前必须查看**，了解之前的项目进度、已完成的分析、技术决策和未完成任务，避免重复工作或冲突决策）
+
+**查看 analysis_records 的方法：**
+```bash
+# 列出所有记录文件（按时间倒序）
+ls -la analysis_records/ | sort -k9 -r
+
+# 快速查看最新记录
+cat analysis_records/$(ls -t analysis_records/ | head -1)
+```
+
+**典型场景速查：**
+- 数据采集问题 → 查看 `2026-03-11_3-collect_dataset性能与颜色异常修复.md`
+- 传感器配置问题 → 查看 `2026-03-10_Phase1_settings配置完成.md`
+- 整体规划/进度 → 查看 `2026-03-10_项目全局分析与规划.md`
 
 原则：相关则读，不相关跳过。
 
