@@ -2,7 +2,17 @@
   "permissions": {
     "allow": [
       "WebFetch(domain:microsoft.github.io)",
-      "Bash(curl -s \"https://microsoft.github.io/AirSim/apis/\")"
+      "Bash(curl -s \"https://microsoft.github.io/AirSim/apis/\")",
+      "Bash(curl -s \"https://bavolesy.github.io/idlab-asvsim-docs/settings/\")",
+      "Bash(python tools/verify_camera_settings.py)",
+      "Bash(curl -s \"https://api.github.com/repos/ultralytics/ultralytics/releases/latest\")",
+      "Bash(curl -s \"https://pypi.org/pypi/torch/json\")",
+      "Bash(curl -s \"https://export.arxiv.org/api/query?search_query=all:gaussian+splatting&sortBy=submittedDate&sortOrder=descending&max_results=3\")",
+      "Bash(curl -s \"https://bavolesy.github.io/idlab-asvsim-docs/vessel/vessel_api/\")",
+      "Bash(curl -s \"https://arxiv.org/abs/2506.22174\")",
+      "Bash(python -c \"import requests; r = requests.get\\(''https://api.github.com/repos/facebookresearch/sam3'', timeout=10\\); print\\(r.status_code\\); print\\(r.json\\(\\).get\\(''message'', ''OK''\\)[:100] if r.status_code != 200 else ''Success''\\)\")",
+      "Bash(python -c \"import requests; r = requests.get\\(''https://export.arxiv.org/api/query?search_query=all:gaussian+splatting&max_results=2'', timeout=15\\); print\\(''Status:'', r.status_code\\); print\\(r.text[:500]\\)\")",
+      "Bash(python -c \"import requests; r = requests.get\\(''https://huggingface.co/api/models?search=sam&limit=2'', timeout=10\\); print\\(''Status:'', r.status_code\\); print\\(r.text[:500]\\)\")"
     ]
   }
 }

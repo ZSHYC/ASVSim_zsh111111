@@ -1,0 +1,293 @@
+% ============================================================
+% Chapter IV: Experiments and Results
+% ============================================================
+\clearpage
+\section{EXPERIMENTS AND RESULTS}
+
+\subsection{Experimental Setup}
+
+\subsubsection{Hardware Configuration}
+
+Experiments were conducted on a workstation with the following specifications:
+
+\begin{table}[htbp]
+\centering
+\caption{Hardware Configuration}
+\label{tab:hardware}
+\begin{tabular}{@{}ll@{}}
+\toprule
+\textbf{Component} & \textbf{Specification} \\
+\midrule
+CPU & Intel Core i7-13700K @ 3.4 GHz \\
+GPU & NVIDIA RTX 4070 Ti SUPER 16 GB \\
+RAM & 32 GB DDR5-5600 \\
+Storage & 1 TB NVMe SSD \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsubsection{Software Environment}
+
+\begin{table}[htbp]
+\centering
+\caption{Software Versions}
+\label{tab:software}
+\begin{tabular}{@{}ll@{}}
+\toprule
+\textbf{Software} & \textbf{Version} \\
+\midrule
+Operating System & Windows 11 (22631) \\
+Unreal Engine & 5.4.4 \\
+ASVSim & CosysAirSim v3.0.1 \\
+Python & 3.10.11 \\
+OpenCV & 4.8.1 \\
+NumPy & 1.24.3 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsubsection{Simulation Environment}
+
+The LakeEnv environment provided with ASVSim was used for validation. This environment features:
+
+\begin{itemize}
+    \item Open water surface with physically simulated waves
+    \item Distant shoreline with procedural terrain
+    \item Dynamic lighting with day/night cycle
+    \item Realistic water rendering with reflections and refraction
+\end{itemize}
+
+While not a polar environment, LakeEnv provides a suitable testbed for validating the data collection pipeline, with water surface dynamics similar to ice-free polar waters.
+
+\subsection{Sensor Validation}
+
+Prior to full-scale data collection, individual sensors were validated using the \texttt{2-verify\_sensors.py} script. The validation confirmed:
+
+\begin{table}[htbp]
+\centering
+\caption{Sensor Validation Results}
+\label{tab:sensor_validation}
+\begin{tabular}{@{}llcl@{}}
+\toprule
+\textbf{Sensor} & \textbf{Test} & \textbf{Result} & \textbf{Notes} \\
+\midrule
+Connection & ASVSim client & \checkmark & Connection established \\
+Vessel & Vessel1 spawn & \checkmark & Physics engine active \\
+Front Camera RGB & Resolution 640$\times$480 & \checkmark & Color channels correct \\
+Front Camera Depth & Resolution 640$\times$480 & \checkmark & Metric depth in meters \\
+LiDAR & Point count & \checkmark & 8,192 points/scan \\
+Camera Intrinsics & K matrix & \checkmark & $f_x$ = 466.0 calculated \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+All six validation tests passed, confirming the sensor configuration was operational.
+
+\subsection{Data Collection Experiments}
+
+\subsubsection{Experiment 1: Baseline Circular Trajectory}
+
+A 200-frame dataset was collected using the circular trajectory mode with optimized settings.
+
+\textbf{Collection Parameters:}
+\begin{itemize}
+    \item Trajectory: Circular (constant thrust = 0.3, angle = 0.6)
+    \item Frame count: 200
+    \item Resolution: 640$\times$480
+    \item Movement interval: 0.3 seconds
+\end{itemize}
+
+\textbf{Results:}
+
+\begin{table}[htbp]
+\centering
+\caption{Data Collection Results (200 Frames)}
+\label{tab:collection_results}
+\begin{tabular}{@{}ll@{}}
+\toprule
+\textbf{Metric} & \textbf{Value} \\
+\midrule
+Total frames collected & 200 \\
+Failed frames & 0 \\
+Success rate & 100\% \\
+Total time & 22.3 minutes \\
+Average time per frame & 6.7 seconds \\
+Output data size & 847 MB \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The collection achieved the target 200 frames with zero failures, validating the reliability of the optimized pipeline.
+
+\subsubsection{Experiment 2: Performance Comparison}
+
+The impact of rendering optimizations was quantified by comparing collection speeds before and after configuration changes.
+
+\begin{table}[htbp]
+\centering
+\caption{Performance Comparison: Before and After Optimization}
+\label{tab:performance}
+\begin{tabular}{@{}lcc@{}}
+\toprule
+\textbf{Configuration} & \textbf{Time/Frame} & \textbf{Speedup} \\
+\midrule
+1280$\times$720 + Lumen & $\sim$55--60s & 1$\times$ (baseline) \\
+640$\times$480 + No Lumen & $\sim$6--7s & \textbf{9$\times$} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The 9$\times$ speed improvement demonstrates the critical importance of rendering configuration for practical data collection.
+
+\subsubsection{Experiment 3: Trajectory Analysis}
+
+The circular trajectory provides approximately 360$^\circ$ coverage of the surrounding environment. Analysis of vessel positions from the collected dataset shows:
+
+\begin{itemize}
+    \item Trajectory radius: approximately 15--20 meters
+    \item Total path length: approximately 100--120 meters
+    \item Average speed: 0.3--0.5 m/s
+    \item Pose variation between frames: 1--2$^\circ$ rotation
+\end{itemize}
+
+This viewpoint distribution is suitable for 3D Gaussian Splatting training, providing sufficient angular coverage with adequate baseline between views.
+
+\subsection{Data Quality Analysis}
+
+\subsubsection{RGB Image Quality}
+
+Sample RGB images from the collected dataset demonstrate:
+
+\begin{itemize}
+    \item \textbf{Color accuracy:} Water appears in natural blue tones after RGB-to-BGR conversion
+    \item \textbf{Resolution adequacy:} 640$\times$480 captures sufficient detail for 3DGS training
+    \item \textbf{Edge quality:} Removal of vignette and chromatic aberration effects produces clean image boundaries
+    \item \textbf{Vessel exclusion:} Optimized camera position (X=3.5m, Z=-2.5m) successfully removes vessel structure from field of view
+\end{itemize}
+
+Figure \ref{fig:sample_rgb} shows representative frames from the dataset.
+
+\begin{figure}[htbp]
+\centering
+% Placeholder for sample RGB images
+\fbox{\parbox{0.45\textwidth}{\centering
+\vspace{1.5cm}
+Frame 0000\\
+(RGB Image)
+\vspace{1.5cm}
+}}
+\hfill
+\fbox{\parbox{0.45\textwidth}{\centering
+\vspace{1.5cm}
+Frame 0100\\
+(RGB Image)
+\vspace{1.5cm}
+}}
+\caption{Sample RGB frames from the collected dataset showing water surface and shoreline.}
+\label{fig:sample_rgb}
+\end{figure}
+
+\subsubsection{Depth Map Analysis}
+
+Depth maps were analyzed for coverage and accuracy:
+
+\begin{table}[htbp]
+\centering
+\caption{Depth Map Statistics}
+\label{tab:depth_stats}
+\begin{tabular}{@{}ll@{}}
+\toprule
+\textbf{Metric} & \textbf{Value} \\
+\midrule
+Valid depth pixels (median) & 82\% \\
+Minimum depth & 1.2 m \\
+Maximum depth & 65504 m (infinity) \\
+Mean valid depth & 45.3 m \\
+Depth standard deviation & 28.7 m \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Invalid depth pixels (approximately 18\%) correspond primarily to sky regions, which is expected and acceptable for 3DGS training. The depth distribution shows good coverage of the scene with values concentrated in the 10--80 meter range.
+
+\subsubsection{LiDAR Point Cloud Quality}
+
+LiDAR scans consistently produced the expected 8,192 points across all frames:
+
+\begin{itemize}
+    \item Point count consistency: 8,192 points (100\% of scans)
+    \item Point distribution: Uniform in azimuth, structured in elevation
+    \item Range coverage: 0--100 meters as configured
+    \item Frame-to-frame consistency: No dropped scans
+\end{itemize}
+
+\subsubsection{Pose Continuity}
+
+Camera pose data was analyzed for continuity and smoothness:
+
+\begin{itemize}
+    \item Position jumps: No anomalous position discontinuities detected
+    \item Orientation smoothness: Quaternion interpolation shows smooth rotation
+    \item Velocity consistency: Speed values match expected vessel dynamics
+\end{itemize}
+
+\subsection{Dataset Validation}
+
+Automated validation using \texttt{validate\_dataset.py} confirmed:
+
+\begin{table}[htbp]
+\centering
+\caption{Dataset Validation Summary}
+\label{tab:validation}
+\begin{tabular}{@{}lll@{}}
+\toprule
+\textbf{Check} & \textbf{Status} & \textbf{Details} \\
+\midrule
+File count consistency & PASS & 200 files in each modality \\
+Image dimensions & PASS & All 640$\times$480$\times$3 \\
+Depth shape & PASS & All 640$\times$480 \\
+Depth valid pixels & PASS & Mean 82\% valid \\
+LiDAR point count & PASS & 8,192 points/frame \\
+Pose file completeness & PASS & 200 poses \\
+Pose continuity & PASS & No large jumps \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+All validation checks passed, confirming the dataset is ready for downstream processing.
+
+\subsection{COLMAP Format Verification}
+
+The \texttt{transforms.json} file generated for 3DGS training was verified:
+
+\begin{lstlisting}[language={}, caption={Excerpt from transforms.json}]
+{
+  "camera_model": "OPENCV",
+  "fl_x": 466.0, "fl_y": 466.0,
+  "cx": 320.0, "cy": 240.0,
+  "w": 640, "h": 480,
+  "frames": [
+    {
+      "file_path": "rgb/0000.png",
+      "transform_matrix": [...]
+    },
+    ...
+  ]
+}
+\end{lstlisting}
+
+The file contains 200 frame entries with properly formatted camera intrinsics and transformation matrices, compatible with standard 3D Gaussian Splatting training scripts.
+
+\subsection{Discussion of Results}
+
+The experimental results demonstrate several key achievements:
+
+\textbf{Efficiency:} The 9$\times$ performance improvement through rendering optimization makes large-scale data collection practical. A 200-frame dataset that would require 3 hours at original settings now completes in 22 minutes.
+
+\textbf{Reliability:} Zero frame failures across 200 frames indicates the error handling and retry mechanisms are effective.
+
+\textbf{Quality:} Validation confirms the collected data meets specifications for 3DGS training---synchronized multi-modal data with accurate poses.
+
+\textbf{Completeness:} The pipeline produces all necessary outputs including RGB, depth, LiDAR, poses, and COLMAP-formatted transforms.
+
+These results validate the data collection pipeline as a solid foundation for subsequent phases including 3DGS training and path planning development.

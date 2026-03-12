@@ -1,0 +1,89 @@
+% ============================================================
+% Chapter I: Introduction
+% ============================================================
+\clearpage
+\section{INTRODUCTION}
+
+\subsection{Research Background}
+
+The Arctic region has experienced significant environmental changes over the past decades, with sea ice extent declining at an unprecedented rate \parencite{stocker2013climate}. This transformation has opened new possibilities for maritime transportation through polar routes, including the Northeast Passage along the Russian coast and the Northwest Passage through the Canadian Archipelago \parencite{ebner2016polar}. These routes offer substantial reductions in sailing distance compared to traditional Suez Canal routes---potentially cutting the journey from Europe to Asia by approximately 40\% \parencite{verma2018arctic}.
+
+However, navigation in ice-covered waters presents formidable challenges that differ fundamentally from conventional open-water navigation. The dynamic and unpredictable nature of ice formations, including icebergs, growlers, and pack ice, creates hazardous conditions that demand advanced perception and planning capabilities \parencite{fu2018review}. Traditional navigation systems rely heavily on human expertise and radar-based detection, which may be insufficient for the complex ice conditions encountered in polar regions.
+
+The emergence of autonomous surface vehicles (ASVs) presents a promising solution for enhancing navigation safety and efficiency in polar environments \parencite{liu2016unmanned}. ASVs can operate continuously without crew fatigue, collect detailed environmental data, and execute precise maneuvers based on real-time perception. Nevertheless, the development of robust autonomous navigation systems for polar regions requires comprehensive testing and validation in realistic conditions that are difficult and expensive to achieve through physical trials alone.
+
+Simulation-based development has become an essential paradigm for autonomous marine systems \parencite{schroeder2020asvsim}. High-fidelity simulation environments enable rapid prototyping, extensive scenario testing, and safe evaluation of algorithms before deployment. Unreal Engine 5, with its advanced rendering capabilities and physics simulation, provides an ideal platform for creating realistic polar environments \parencite{epic2023unreal}. The ASVSim framework extends these capabilities with specialized vessel dynamics models and sensor simulation tailored for marine applications.
+
+Parallel to advances in simulation, three-dimensional reconstruction techniques have undergone revolutionary development. 3D Gaussian Splatting (3DGS), introduced by \citeauthor{kerbl20233d} in 2023, represents a paradigm shift in neural rendering, enabling real-time photorealistic reconstruction from multi-view images. Unlike traditional mesh-based or volumetric representations, 3DGS uses anisotropic 3D Gaussians to model scene geometry and appearance, achieving both high fidelity and computational efficiency. This technology holds significant potential for creating accurate digital twins of polar environments that can support navigation planning and decision-making.
+
+\subsection{Problem Statement}
+
+Despite significant progress in autonomous navigation and 3D reconstruction, several critical challenges remain in applying these technologies to polar route planning:
+
+\textbf{Lack of integrated frameworks:} Existing approaches typically address individual aspects of the navigation problem---perception, mapping, or planning---in isolation. There is a pressing need for unified frameworks that seamlessly integrate these components within a consistent simulation environment.
+
+\textbf{Limited multi-modal datasets:} Training and validating perception algorithms for polar navigation requires diverse datasets containing RGB images, depth information, LiDAR point clouds, and semantic segmentation. Such comprehensive datasets are scarce, particularly with accurate ground truth annotations.
+
+\textbf{Computational complexity:} Real-time 3D reconstruction and path planning in large-scale polar environments impose substantial computational demands. Balancing reconstruction quality with computational efficiency remains a significant challenge.
+
+\textbf{Domain adaptation:} Algorithms trained in simulation environments must transfer effectively to real-world polar conditions, which exhibit significant visual and physical differences from simulated scenarios.
+
+\subsection{Research Objectives}
+
+This thesis aims to address these challenges through the development of an integrated framework for polar route planning and 3D reconstruction. The specific research objectives are:
+
+\begin{enumerate}
+    \item \textbf{Establish a simulation platform:} Deploy and configure ASVSim on Unreal Engine 5 with realistic vessel dynamics and sensor configurations suitable for polar environment simulation.
+
+    \item \textbf{Develop a multi-modal data collection pipeline:} Create an automated system for acquiring synchronized RGB images, depth maps, LiDAR point clouds, and pose information, with optimization for efficiency and data quality.
+
+    \item \textbf{Enable 3D Gaussian Splatting reconstruction:} Format collected data for COLMAP structure-from-motion processing and subsequent 3DGS training, establishing a complete reconstruction pipeline.
+
+    \item \textbf{Validate system performance:} Evaluate the data collection system through comprehensive experiments, demonstrating reliable acquisition of high-quality multi-modal datasets.
+\end{enumerate}
+
+\subsection{Research Significance}
+
+This research contributes to the field of intelligent marine navigation in several important ways:
+
+\textbf{Theoretical significance:} The integration of real-time 3D reconstruction with autonomous navigation planning represents a novel research direction. The multi-scale progressive 3DGS approach proposed in this work advances the state of the art in neural scene representation for maritime applications.
+
+\textbf{Practical significance:} The developed simulation framework and data collection pipeline provide researchers with accessible tools for developing and testing polar navigation algorithms. The methodology reduces the cost and risk associated with field trials while enabling comprehensive scenario coverage.
+
+\textbf{Methodological contribution:} The systematic approach to sensor configuration, data synchronization, and format conversion establishes best practices for multi-modal marine data collection in simulation environments.
+
+\subsection{Thesis Organization}
+
+The remainder of this thesis is organized as follows:
+
+Chapter II reviews relevant literature in autonomous marine navigation, 3D reconstruction techniques, and polar environment simulation. The chapter identifies research gaps that this work addresses.
+
+Chapter III presents the methodology, including the ASVSim simulation environment configuration, sensor setup, data collection pipeline design, and the 3D Gaussian Splatting reconstruction workflow.
+
+Chapter IV describes the experimental setup and results, demonstrating the performance of the data collection system and analyzing the characteristics of acquired datasets.
+
+Chapter V discusses the implications of the findings, limitations of the current approach, and potential avenues for future research.
+
+Chapter VI concludes the thesis by summarizing the main contributions and outlining directions for future work.
+
+\subsection{Scope and Limitations}
+
+This research focuses specifically on the simulation environment setup and multi-modal data collection pipeline as foundational components of a complete polar navigation system. The scope includes:
+
+\begin{itemize}
+    \item Configuration of ASVSim with multi-sensor setup (cameras and LiDAR)
+    \item Development of automated data collection with pose synchronization
+    \item Optimization of rendering settings for efficient acquisition
+    \item Validation through experimental data collection
+\end{itemize}
+
+The following aspects are identified as limitations and deferred to future work:
+
+\begin{itemize}
+    \item Implementation of perception algorithms (SAM3 and Depth Anything 3 integration)
+    \item Full 3DGS training and novel view synthesis evaluation
+    \item Path planning algorithm development and testing
+    \item Real-world validation and sim-to-real transfer
+\end{itemize}
+
+Despite these limitations, the work establishes a solid foundation for subsequent phases of the research program, with the data collection pipeline ready to support training and evaluation of perception and planning modules.

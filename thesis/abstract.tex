@@ -1,0 +1,47 @@
+% ============================================================
+% 摘要 (Abstract)
+% ============================================================
+\clearpage
+\section*{ABSTRACT}
+\addcontentsline{toc}{section}{ABSTRACT}
+
+\textbf{Title:} Polar Route Planning and 3D Reconstruction Using Unreal Engine and 3D Gaussian Splatting
+
+\textbf{Author:} Zhang Shihao
+
+\textbf{Supervisor:} Associate Professor Xing Xianglei
+
+\vspace{0.5cm}
+
+With the continuous opening of Arctic shipping routes, safe navigation in polar ice-covered waters has become a critical challenge in naval architecture. This thesis presents a comprehensive framework that integrates Unreal Engine 5-based simulation, multi-modal data collection, 3D Gaussian Splatting (3DGS) reconstruction, and intelligent route planning for autonomous surface vessels operating in polar environments.
+
+The research establishes a simulation platform using ASVSim (Autonomous Surface Vehicle Simulator) running on Unreal Engine 5, enabling realistic physics-based vessel dynamics and high-fidelity environmental rendering. A multi-modal data collection pipeline was developed to capture synchronized RGB images, depth maps, LiDAR point clouds, and instance segmentation masks at 640$\times$480 resolution. The system achieves an acquisition rate of approximately 6.5 seconds per frame through systematic optimization of rendering settings, including disabling Lumen global illumination and post-processing effects.
+
+The methodology addresses key technical challenges including sensor configuration, data synchronization, and coordinate system alignment for 3DGS training. The collected dataset is formatted for COLMAP structure-from-motion and subsequent 3D Gaussian Splatting reconstruction. The proposed approach enables real-time ice condition perception and dynamic route re-planning, combining deep learning-based instance segmentation (SAM3) with metric depth estimation (Depth Anything 3).
+
+Experimental validation demonstrates the effectiveness of the data collection system, with successful acquisition of 200-frame sequences containing synchronized multi-sensor data. The results show consistent pose estimation, complete depth coverage of the scene, and high-quality LiDAR point clouds with 8,192 points per frame. This work establishes a foundation for future integration of perception, reconstruction, and planning modules in polar navigation scenarios.
+
+\textbf{Keywords:} Polar route planning, 3D Gaussian Splatting, Unreal Engine, Autonomous surface vehicles, Multi-modal data collection, Computer vision, Naval architecture
+
+% ============================================================
+\clearpage
+\section*{摘\quad 要}
+\addcontentsline{toc}{section}{摘\quad 要}
+
+\textbf{题目：}基于 Unreal Engine 和 3D Gaussian Splatting 的极地路径规划与三维重建
+
+\textbf{作者：}张时昊
+
+\textbf{指导教师：}邢向磊 副教授
+
+\vspace{0.5cm}
+
+随着北极航道的持续开放，极地冰区水域的安全航行已成为船舶与海洋工程领域的关键挑战。本论文提出了一个综合框架，集成基于 Unreal Engine 5 的仿真、多模态数据采集、3D Gaussian Splatting（3DGS）重建和智能路径规划，用于极地环境中作业的自主水面航行器。
+
+本研究建立了基于 ASVSim（自主水面航行器仿真器）的仿真平台，该平台运行在 Unreal Engine 5 上，实现了基于物理的船舶动力学和高保真环境渲染。开发了多模态数据采集管道，以 640$\times$480 分辨率采集同步的 RGB 图像、深度图、LiDAR 点云和实例分割掩码。通过对渲染设置的系统性优化（包括禁用 Lumen 全局光照和后期处理效果），系统实现了约每帧 6.5 秒的采集速度。
+
+研究方法解决了传感器配置、数据同步和 3DGS 训练的坐标系对齐等关键技术挑战。采集的数据集按照 COLMAP 运动恢复结构格式进行处理，用于后续的 3D Gaussian Splatting 重建。所提出的方法实现了实时冰情感知和动态路径重规划，结合了基于深度学习的实例分割（SAM3）和度量深度估计（Depth Anything 3）。
+
+实验验证证明了数据采集系统的有效性，成功采集了包含同步多传感器数据的 200 帧序列。结果显示了连续一致的位姿估计、完整的场景深度覆盖和每帧 8,192 点的高质量 LiDAR 点云。本工作为极地航行场景中感知、重建和规划模块的未来集成奠定了基础。
+
+\textbf{关键词：}极地路径规划，3D Gaussian Splatting，虚幻引擎，自主水面航行器，多模态数据采集，计算机视觉，船舶与海洋工程

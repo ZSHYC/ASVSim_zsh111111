@@ -1,0 +1,96 @@
+% ============================================================
+% Chapter VI: Conclusion
+% ============================================================
+\clearpage
+\section{CONCLUSION}
+
+\subsection{Summary of Work}
+
+This thesis presented a comprehensive framework for polar route planning and 3D reconstruction using Unreal Engine and 3D Gaussian Splatting. The research successfully addressed the foundational challenge of multi-modal data collection from high-fidelity marine simulation, establishing a pipeline that bridges simulation environments and 3D reconstruction workflows.
+
+The main achievements of this research are:
+
+\textbf{1. Simulation Platform Establishment:} Successfully deployed and configured ASVSim on Unreal Engine 5 with multi-sensor setup including front-facing camera and top-mounted LiDAR. The configuration was optimized through systematic experimentation to balance visual quality with computational efficiency.
+
+\textbf{2. Rendering Optimization:} Identified and resolved critical performance bottlenecks, achieving a 9$\times$ speed improvement (from 55--60 seconds to 6--7 seconds per frame) through disabling Lumen global illumination and reducing resolution to 640$\times$480. This optimization transforms impractical data collection into an efficient workflow.
+
+\textbf{3. Multi-Modal Data Pipeline:} Developed an automated collection system that captures synchronized RGB images, depth maps, LiDAR point clouds, and accurate ground truth poses. The pipeline includes robust error handling, retry mechanisms, and automatic validation.
+
+\textbf{4. Data Format Integration:} Implemented conversion to COLMAP format, enabling direct use of collected data with standard 3D Gaussian Splatting training pipelines. The format preserves accurate camera intrinsics and extrinsics from simulation.
+
+\textbf{5. Experimental Validation:} Demonstrated the system through successful collection of 200-frame datasets with 100\% success rate, validating both the technical implementation and practical usability.
+
+\subsection{Key Findings}
+
+Several key findings emerged from this research:
+
+\begin{itemize}
+    \item \textbf{Rendering configuration is critical:} The choice of rendering settings has dramatic impact on collection performance. Lumen GI, while producing beautiful visuals, is incompatible with high-frequency data acquisition.
+
+    \item \textbf{Resolution can be traded for speed:} The 640$\times$480 resolution, while modest by modern standards, provides sufficient quality for 3DGS reconstruction while enabling practical collection speeds.
+
+    \item \textbf{API compatibility requires attention:} CosysAirSim exhibits several behavioral differences from standard AirSim that must be understood and accommodated for successful integration.
+
+    \item \textbf{Ground truth poses are valuable:} Simulation provides perfect pose information, eliminating the need for Structure-from-Motion and enabling more efficient 3DGS training.
+\end{itemize}
+
+\subsection{Contributions}
+
+This work makes the following contributions to the field of autonomous marine navigation:
+
+\begin{enumerate}
+    \item \textbf{Methodological contribution:} A systematic approach to optimizing simulation-based data collection for 3D reconstruction, including identification of performance bottlenecks and practical solutions.
+
+    \item \textbf{Technical contribution:} An open, documented pipeline for multi-modal marine data collection that can be adapted and extended by other researchers.
+
+    \item \textbf{Empirical contribution:} Experimental validation demonstrating the feasibility of efficient large-scale dataset generation from high-fidelity marine simulation.
+\end{enumerate}
+
+\subsection{Limitations}
+
+The current implementation has several limitations that should be acknowledged:
+
+\begin{itemize}
+    \item The environment (LakeEnv) lacks ice features essential for polar navigation
+    \item Segmentation ground truth is generated offline rather than in real-time
+    \item The coordinate transformation for COLMAP format requires completion
+    \item Dynamic environmental effects are not yet incorporated
+\end{itemize}
+
+These limitations are recognized and planned as future work rather than deficiencies in the current contribution.
+
+\subsection{Future Work}
+
+Building upon the foundation established in this thesis, several directions for future research are identified:
+
+\textbf{Immediate extensions:}
+\begin{itemize}
+    \item Complete the COLMAP pose transformation implementation
+    \item Integrate polar environment assets (icebergs, ice sheets)
+    \item Implement real-time segmentation using SAM3
+    \item Train and evaluate 3DGS models on collected datasets
+\end{itemize}
+
+\textbf{Medium-term goals:}
+\begin{itemize}
+    \item Develop path planning algorithms using 3DGS reconstructions
+    \item Integrate depth estimation (Depth Anything 3) for perception
+    \item Implement dynamic obstacle handling
+    \item Validate sim-to-real transfer capabilities
+\end{itemize}
+
+\textbf{Long-term vision:}
+\begin{itemize}
+    \item Deploy the system on physical ASVs for real-world validation
+    \item Extend to collaborative multi-vessel scenarios
+    \item Incorporate weather and ice dynamics models
+    \item Contribute to safe autonomous navigation in Arctic shipping lanes
+\end{itemize}
+
+\subsection{Closing Remarks}
+
+As Arctic shipping routes become increasingly viable due to climate change, the need for intelligent autonomous navigation systems grows more urgent. This thesis establishes foundational infrastructure---simulation environment, data collection pipeline, and reconstruction workflow---that enables continued progress toward this goal.
+
+The work demonstrates that high-fidelity simulation, when properly configured, can efficiently generate the diverse datasets needed for training modern perception and planning algorithms. The optimization strategies and technical solutions documented here will benefit other researchers working at the intersection of marine robotics and computer vision.
+
+While significant challenges remain, particularly in transferring capabilities from simulation to real polar environments, the progress achieved provides a solid foundation for continued research. The dream of safe, autonomous navigation through Arctic waters---supporting sustainable shipping while protecting fragile polar ecosystems---is one step closer to realization.

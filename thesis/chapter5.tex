@@ -1,0 +1,157 @@
+% ============================================================
+% Chapter V: Discussion
+% ============================================================
+\clearpage
+\section{DISCUSSION}
+
+\subsection{Interpretation of Results}
+
+The experimental results demonstrate that the developed data collection pipeline successfully addresses the primary challenge of acquiring synchronized multi-modal datasets from ASVSim simulation. The 9$\times$ performance improvement achieved through rendering optimization is particularly significant, transforming an impractical process (55--60 seconds per frame) into an efficient workflow (6--7 seconds per frame).
+
+This optimization was achieved through systematic analysis of the rendering pipeline, identifying that Lumen global illumination was the primary bottleneck. While Lumen produces photorealistic lighting effects, its computational cost for SceneCapture components is prohibitive for high-frequency data collection. The decision to disable Lumen and other post-processing effects represents a practical trade-off between visual fidelity and collection efficiency.
+
+The 640$\times$480 resolution, while lower than the initially planned 1280$\times$720, proves sufficient for 3D Gaussian Splatting training. Literature suggests that 3DGS can achieve high-quality reconstruction at this resolution, particularly when combined with the accurate ground truth poses available from simulation \parencite{kerbl20233d}. The reduced resolution may even be beneficial for training efficiency, allowing faster convergence during 3DGS optimization.
+
+\subsection{Technical Challenges and Solutions}
+
+Several technical challenges were encountered during development and addressed through iterative refinement:
+
+\subsubsection{Image Color Space Conversion}
+
+An initial issue with color accuracy (yellow/brown tint in water regions) was traced to RGB-BGR channel mismatch. CosysAirSim returns data in RGB order, while OpenCV's \texttt{imwrite} expects BGR. The fix involved explicit conversion using \texttt{cv2.cvtColor} with \texttt{COLOR\_RGB2BGR}:
+
+\begin{lstlisting}[language=Python]
+img = cv2.cvtColor(img_rgb, cv2.COLOR_RGB2BGR)
+\end{lstlisting}
+
+This issue highlights the importance of understanding data format conventions when integrating multiple libraries.
+
+\subsubsection{Camera Position Optimization}
+
+Early configurations showed vessel structure (deck, mast) in camera views, which would contaminate 3DGS training with dynamic objects. Through systematic adjustment of camera position (X: 2.5$\rightarrow$3.5m, Z: -1.8$\rightarrow$-2.5m) and field of view (90$^\rightarrow$70$^\circ$), the vessel was successfully excluded from the field of view.
+
+\subsubsection{CosysAirSim API Compatibility}
+
+Several API behavioral differences from standard AirSim required accommodation:
+
+\begin{itemize}
+    \item \texttt{ImageType.DepthPlanar} uses value 1 (not 2)
+    \item \texttt{simPause} causes scene freezing in v3.0.1
+    \item \texttt{simGetImages} uses integer indices (not sensor names)
+    \item Images are already upright (no \texttt{flipud} needed)
+\end{itemize}
+
+These differences were identified through experimentation and documented for future reference.
+
+\subsubsection{RPC Call Optimization}
+
+Initial implementations made separate \texttt{simGetImages} calls for each camera, creating RPC overhead. Consolidating all image requests into a single call significantly improved performance.
+
+\subsection{Limitations}
+
+Several limitations of the current work should be acknowledged:
+
+\subsubsection{Environment Fidelity}
+
+The LakeEnv environment, while useful for pipeline validation, lacks ice features essential for polar navigation research. Future work requires migration to polar-specific environments with icebergs, pack ice, and ice-covered water surfaces.
+
+\subsubsection{Trajectory Diversity}
+
+Current trajectories (circular, linear, random walk) provide basic coverage but may not capture all viewpoints optimal for 3DGS. More sophisticated trajectory planning considering view overlap and baseline constraints could improve reconstruction quality.
+
+\subsubsection{Segmentation Ground Truth}
+
+The pipeline skips real-time segmentation to improve efficiency. While segmentation can be generated offline, this requires additional processing steps. Integration of efficient real-time segmentation would streamline the workflow.
+
+\subsubsection{Coordinate System Conversion}
+
+The \texttt{build\_transform\_matrix} function for COLMAP format is currently incomplete, returning identity rotation matrices. Full implementation requires proper quaternion-to-rotation-matrix conversion and coordinate system alignment between ASVSim (X-forward, Y-right, Z-down) and COLMAP conventions.
+
+\subsubsection{Dynamic Elements}
+
+The current system assumes static environments. Real polar environments include dynamic ice floes, changing lighting conditions, and weather effects that are not yet incorporated.
+
+\subsection{Comparison with Related Work}
+
+Compared to existing marine simulation datasets \parencite{bingham2019virtual, ebadi2020lakes}, this work provides:
+
+\textbf{Advantages:}
+\begin{itemize}
+    \item Multi-modal synchronization (RGB, depth, LiDAR, pose)
+    \item Higher frame rates through rendering optimization
+    \item Direct COLMAP format output
+    \item Configurable collection parameters
+\end{itemize}
+
+\textbf{Disadvantages:}
+\begin{itemize}
+    \item Lower resolution (640$\times$480 vs. 1920$\times$1080)
+    \item Non-polar environment (LakeEnv vs. ice-covered)
+    \item No semantic segmentation annotations
+\end{itemize}
+
+The trade-offs reflect prioritization of collection efficiency and pipeline completeness over maximum resolution and environment fidelity.
+
+\subsection{Implications for Polar Navigation}
+
+While the current implementation uses a lake environment, the methodology directly transfers to polar scenarios:
+
+\begin{itemize}
+    \item Sensor configurations (camera, LiDAR) remain applicable
+    \item Data formats and synchronization mechanisms are environment-agnostic
+    \item Trajectory strategies can be adapted for ice navigation patterns
+    \item The 3DGS reconstruction pipeline is independent of scene content
+\end{itemize}
+
+The key requirement for polar application is access to appropriate UE5 assets depicting ice formations, which are available through the Unreal Marketplace (Fab) \parencite{fab2024arctic}.
+
+\subsection{Future Research Directions}
+
+Based on the limitations and opportunities identified, several directions for future research emerge:
+
+\subsubsection{Polar Environment Integration}
+
+Acquire and integrate polar-specific assets (icebergs, ice sheets, ice floes) into the simulation environment. This will enable collection of datasets directly relevant to polar navigation scenarios.
+
+\subsubsection{Perception Module Development}
+
+Integrate SAM3 and Depth Anything 3 for real-time ice detection and depth estimation. Fine-tune these models on collected datasets to improve domain-specific performance.
+
+\subsubsection{3DGS Training and Evaluation}
+
+Complete the 3DGS reconstruction pipeline by:
+\begin{itemize}
+    \item Implementing proper pose transformation
+    \item Training 3DGS models on collected datasets
+    \item Evaluating reconstruction quality (PSNR, SSIM)
+    \item Exploring multi-scale progressive 3DGS for polar scenes
+\end{itemize}
+
+\subsubsection{Path Planning Implementation}
+
+Develop and integrate path planning algorithms:
+\begin{itemize}
+    \item Global planners (A*, D* Lite) using 3DGS maps
+    \item Local planners (VFH+, DWA) using LiDAR data
+    \item Dynamic re-planning triggered by perception updates
+\end{itemize}
+
+\subsubsection{Sim-to-Real Transfer}
+
+Investigate techniques for transferring algorithms trained in simulation to real-world polar conditions, including domain adaptation and sim-to-real validation strategies.
+
+\subsection{Contribution to the Field}
+
+This work contributes to marine autonomous navigation research by:
+
+\begin{enumerate}
+    \item \textbf{Establishing best practices} for multi-modal data collection in ASVSim, including rendering optimization and sensor configuration
+
+    \item \textbf{Demonstrating feasibility} of efficient large-scale dataset generation from high-fidelity marine simulation
+
+    \item \textbf{Providing a reusable pipeline} that bridges simulation and 3D reconstruction workflows
+
+    \item \textbf{Documenting technical solutions} to common integration challenges (color spaces, API differences, coordinate systems)
+\end{enumerate}
+
+The methodology and lessons learned are transferable to other simulation-based marine robotics research, beyond the specific polar navigation application.

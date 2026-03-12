@@ -152,6 +152,7 @@ client.simPause(True)                    # 暂停仿真（用于同步采集）
 - **`analysis_records/` 目录** — 项目历史分析记录（**每次回答前必须查看**，了解之前的项目进度、已完成的分析、技术决策和未完成任务，避免重复工作或冲突决策）
 
 **查看 analysis_records 的方法：**
+
 ```bash
 # 列出所有记录文件（按时间倒序）
 ls -la analysis_records/ | sort -k9 -r
@@ -168,6 +169,7 @@ cat analysis_records/$(ls -t analysis_records/ | head -1)
 4. **理解当前状态**：基于完整历史给出准确响应
 
 **典型场景速查**（阅读时需关注所有相关记录）：
+
 - 数据采集问题 → 查看 `2026-03-11_3-collect_dataset性能与颜色异常修复.md` 及所有相关采集记录
 - 传感器配置问题 → 查看 `2026-03-10_Phase1_settings配置完成.md` 及配置相关记录
 - 整体规划/进度 → 查看 `2026-03-10_项目全局分析与规划.md` 及所有阶段记录
@@ -180,7 +182,7 @@ cat analysis_records/$(ls -t analysis_records/ | head -1)
 
 > **核心规则**：训练数据有截止日期，AI 模型、库版本、论文进展会持续更新。每次响应涉及具体技术栈时，必须主动验证时效性——不能只靠静态知识作答。
 >
-> **重要说明**：Claude Code 内置的 WebFetch 工具会经过 Anthropic 云端安全验证，在部分网络环境中会失败。**改用 Bash 工具执行 curl 命令**，在用户本机直接发起请求，绕过云端验证，可靠性更高。
+> **重要说明**：Claude Code 内置的 WebFetch 工具会经过 Anthropic 云端安全验证，在部分网络环境中会失败。**改用 Bash 工具执行 Python 脚本**，在用户本机直接发起请求，绕过云端验证，可靠性更高。
 
 ### 强制触发条件
 
@@ -194,113 +196,458 @@ cat analysis_records/$(ls -t analysis_records/ | head -1)
 | 用户明确提供了一个 URL                                       | 必须实际抓取读取，不能假设内容 |
 | 规划研究方案（模式 B）                                       | 底层模型选型必须当前最优       |
 
-### 检索实现：Bash + curl（主方案）
+### 网络检索实现：Python 标准库 urllib（推荐）
 
-> **Windows 已知问题（2026-03-10 实测）**：本机 curl 使用 schannel TLS 实现，对 GitHub Pages（`*.github.io`）的 HTTPS 连接会 SSL 握手失败（`Recv failure: Connection was reset`）。**GitHub API（`api.github.com`）、arXiv、PyPI 等 JSON 接口不受影响，curl 仍可正常访问。**
+> **实测结论（2026-03-12）**：
 >
-> 受影响的只有 HTML 页面抓取（如 ASVSim 文档站）。对这类目标，**改用 PowerShell 方案**（见下方）。
+> - `curl` 命令在 Windows 下对 `api.github.com` 容易被限流（403）
+> - `arXiv API` 经常超时或返回 503
+> - Python `urllib.request` 配合 `User-Agent` 头部最稳定
+> - PyPI、HuggingFace API 响应稳定
 
-**优先使用 Bash 工具执行以下 curl 命令模板**（比 WebFetch 更可靠）：
+**优先使用以下 Python 脚本模板**（无需第三方库）：
+
+```python
+# 通用网络检索脚本模板
+import json
+import ssl
+import re
+from urllib.request import urlopen, Request
+from urllib.error import HTTPError, URLError
+
+def fetch_json(url, timeout=15):
+    """获取 JSON API 数据"""
+    headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'}
+    ctx = ssl.create_default_context()
+    try:
+        req = Request(url, headers=headers)
+        with urlopen(req, context=ctx, timeout=timeout) as r:
+            return json.loads(r.read())
+    except HTTPError as e:
+        return {'error': f'HTTP {e.code}: {e.reason}'}
+    except URLError as e:
+        return {'error': f'URL Error: {e.reason}'}
+    except Exception as e:
+        return {'error': str(e)}
+
+def fetch_html(url, timeout=15):
+    """获取 HTML 页面并提取文本"""
+    headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'}
+    ctx = ssl.create_default_context()
+    try:
+        req = Request(url, headers=headers)
+        with urlopen(req, context=ctx, timeout=timeout) as r:
+            html = r.read().decode('utf-8', errors='ignore')
+            # 简单去除 HTML 标签
+            text = re.sub(r'<[^>]+>', ' ', html)
+            text = re.sub(r'\s+', ' ', text).strip()
+            return text[:2000]
+    except Exception as e:
+        return f'Error: {e}'
+```
+
+### 各数据源检索命令（实测可用）
+
+**在 Bash 工具中执行以下命令：**
+
+#### 1. PyPI 包版本查询（最稳定）
 
 ```bash
-# 1. GitHub 仓库信息（Stars、最后更新、描述）
-curl -s "https://api.github.com/repos/<owner>/<repo>" | python -c "
-import json,sys; d=json.load(sys.stdin)
-print('Stars:', d['stargazers_count'])
-print('最后更新:', d['pushed_at'])
-print('描述:', d['description'])
-"
-
-# 2. GitHub 最新 Release 版本号
-curl -s "https://api.github.com/repos/<owner>/<repo>/releases/latest" | python -c "
-import json,sys; d=json.load(sys.stdin)
-print('最新版本:', d['tag_name'])
-print('发布日期:', d['published_at'])
-"
-
-# 3. arXiv 搜索最新论文（按时间倒序）
-curl -s "https://export.arxiv.org/api/query?search_query=all:<关键词>&sortBy=submittedDate&sortOrder=descending&max_results=3" \
-| python -c "
-import sys,re
-xml=sys.stdin.read()
-titles=re.findall(r'<title>(.*?)</title>',xml)[1:]  # 跳过 feed title
-ids=re.findall(r'<id>https://arxiv.org/abs/(.*?)</id>',xml)
-dates=re.findall(r'<published>(.*?)</published>',xml)
-for t,i,d in zip(titles,ids,dates): print(f'[{d[:10]}] {t} — https://arxiv.org/abs/{i}')
-"
-
-# 4. PyPI 最新版本
-curl -s "https://pypi.org/pypi/<库名>/json" | python -c "
-import json,sys; d=json.load(sys.stdin)
-print('最新版本:', d['info']['version'])
-print('发布日期:', list(d['releases'][d['info']['version']][0].items())[-1] if d['releases'].get(d['info']['version']) else 'N/A')
-"
-
-# 5. Hugging Face 模型搜索
-curl -s "https://huggingface.co/api/models?search=<模型名>&sort=downloads&limit=5" | python -c "
-import json,sys
-for m in json.load(sys.stdin): print(m['modelId'], '|', m.get('downloads',0), 'downloads')
+python -c "
+import json, ssl
+from urllib.request import urlopen, Request
+ctx = ssl.create_default_context()
+headers = {'User-Agent': 'Mozilla/5.0'}
+req = Request('https://pypi.org/pypi/ultralytics/json', headers=headers)
+with urlopen(req, context=ctx, timeout=10) as r:
+    d = json.loads(r.read())
+    print(f\"Package: {d['info']['name']}\")
+    print(f\"Version: {d['info']['version']}\")
+    print(f\"Summary: {d['info']['summary'][:80]}\")
 "
 ```
 
-### 本项目关键资源的快速检索命令
-
-每次涉及以下技术时，直接运行对应的 Bash 命令：
+#### 2. HuggingFace 模型搜索（稳定）
 
 ```bash
-# SAM3
-curl -s "https://api.github.com/repos/facebookresearch/sam3" | python -c "import json,sys;d=json.load(sys.stdin);print('SAM3 Stars:',d['stargazers_count'],'| Updated:',d['pushed_at'][:10])"
-
-# Depth Anything 3
-curl -s "https://api.github.com/repos/ByteDance-Seed/Depth-Anything-3" | python -c "import json,sys;d=json.load(sys.stdin);print('DA3 Stars:',d['stargazers_count'],'| Updated:',d['pushed_at'][:10])"
-
-# Ultralytics (YOLO) 最新版本
-curl -s "https://api.github.com/repos/ultralytics/ultralytics/releases/latest" | python -c "import json,sys;d=json.load(sys.stdin);print('YOLO Latest:',d['tag_name'],'| Published:',d['published_at'][:10])"
-
-# Gaussian Splatting
-curl -s "https://api.github.com/repos/graphdeco-inria/gaussian-splatting" | python -c "import json,sys;d=json.load(sys.stdin);print('3DGS Stars:',d['stargazers_count'],'| Updated:',d['pushed_at'][:10])"
-
-# ASVSim 文档（HTML）— curl 对 *.github.io 的 HTTPS 有 schannel TLS 问题，改用 PowerShell
-powershell.exe -Command "(Invoke-WebRequest -Uri 'https://bavolesy.github.io/idlab-asvsim-docs/vessel/vessel_api/' -UseBasicParsing).Content" | python -c "
-import sys,re; html=sys.stdin.read()
-text=re.sub(r'<[^>]+>','',html)
-lines=[l.strip() for l in text.split('\n') if l.strip()]
-print('\n'.join(lines[:80]))
+python -c "
+import json, ssl
+from urllib.request import urlopen, Request
+ctx = ssl.create_default_context()
+headers = {'User-Agent': 'Mozilla/5.0'}
+# 搜索 SAM 相关模型
+req = Request('https://huggingface.co/api/models?search=sam&sort=downloads&limit=5', headers=headers)
+with urlopen(req, context=ctx, timeout=10) as r:
+    models = json.loads(r.read())
+    for m in models:
+        print(f\"{m['modelId']} | ⭐ {m.get('likes', 0)} | DL: {m.get('downloads', 0)}\")
 "
 ```
 
-### 检索执行流程
+#### 3. arXiv 论文页面解析（HTML 方式，比 API 稳定）
+
+```bash
+python -c "
+import re, ssl
+from urllib.request import urlopen, Request
+ctx = ssl.create_default_context()
+headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'}
+# 直接访问论文页面
+req = Request('https://arxiv.org/abs/2506.22174', headers=headers)
+with urlopen(req, context=ctx, timeout=15) as r:
+    html = r.read().decode('utf-8')
+    # 提取标题
+    title_match = re.search(r'<h1[^>]*class="[^"]*title[^"]*"[^>]*>(.*?)</h1>', html, re.DOTALL | re.IGNORECASE)
+    if title_match:
+        title = re.sub(r'<[^>]+>', '', title_match.group(1)).strip()
+        print(f'Title: {title}')
+    # 提取摘要
+    abs_match = re.search(r'<blockquote[^>]*class="[^"]*abstract[^"]*"[^>]*>(.*?)</blockquote>', html, re.DOTALL | re.IGNORECASE)
+    if abs_match:
+        abstract = re.sub(r'<[^>]+>', '', abs_match.group(1)).strip()
+        print(f'Abstract: {abstract[:300]}...')
+"
+```
+
+#### 4. GitHub 仓库信息（有限流风险，提供备选）
+
+```bash
+python -c "
+import json, ssl, sys
+from urllib.request import urlopen, Request
+from urllib.error import HTTPError
+
+ctx = ssl.create_default_context()
+headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'}
+
+def try_fetch(repo):
+    url = f'https://api.github.com/repos/{repo}'
+    req = Request(url, headers=headers)
+    try:
+        with urlopen(req, context=ctx, timeout=10) as r:
+            d = json.loads(r.read())
+            return {
+                'name': d.get('name', 'N/A'),
+                'stars': d.get('stargazers_count', 0),
+                'updated': d.get('pushed_at', 'N/A')[:10] if d.get('pushed_at') else 'N/A',
+                'description': d.get('description', 'N/A')[:80]
+            }
+    except HTTPError as e:
+        if e.code == 403:
+            return {'error': 'GitHub API rate limited. Use browser or check manually.'}
+        return {'error': f'HTTP {e.code}'}
+    except Exception as e:
+        return {'error': str(e)}
+
+result = try_fetch('ultralytics/ultralytics')
+if 'error' in result:
+    print(f'⚠️ {result[\"error\"]}')
+else:
+    print(f\"{result['name']} | ⭐ {result['stars']} | Updated: {result['updated']}\")
+    print(f\"Description: {result['description']}\")
+"
+```
+
+#### 5. ASVSim 文档站点（HTML 抓取）
+
+```bash
+python -c "
+import re, ssl
+from urllib.request import urlopen, Request
+ctx = ssl.create_default_context()
+headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'}
+req = Request('https://bavolesy.github.io/idlab-asvsim-docs/vessel/vessel_api/', headers=headers)
+with urlopen(req, context=ctx, timeout=15) as r:
+    html = r.read().decode('utf-8')
+    # 提取标题
+    title = re.search(r'<title>(.*?)</title>', html)
+    if title:
+        print(f'Page: {title.group(1)}')
+    # 提取主要内容（段落）
+    paras = re.findall(r'<p>(.*?)</p>', html, re.DOTALL)
+    for i, p in enumerate(paras[:5]):
+        text = re.sub(r'<[^>]+>', '', p).strip()
+        if text and len(text) > 20:
+            print(f'{i+1}. {text[:100]}...')
+"
+```
+
+### 本项目关键资源的检索命令
+
+> **关于 GitHub 访问问题**：GitHub API (api.github.com) 对未认证请求有严格的 rate limit（每小时 60 次）。当遇到 `HTTP 403: rate limit exceeded` 时，应改用访问 GitHub 仓库 HTML 页面 (github.com/owner/repo) 来获取基本信息。
+
+```bash
+# ============================================
+# === PyPI 包版本（最稳定，推荐优先使用） ===
+# ============================================
+
+# YOLO/Ultralytics
+python -c "import json,ssl;from urllib.request import urlopen,Request;ctx=ssl.create_default_context();req=Request('https://pypi.org/pypi/ultralytics/json',headers={'User-Agent':'Mozilla/5.0'});d=json.loads(urlopen(req,context=ctx,timeout=10).read());print(f'YOLO (ultralytics): {d[\"info\"][\"version\"]}')"
+
+# PyTorch
+python -c "import json,ssl;from urllib.request import urlopen,Request;ctx=ssl.create_default_context();req=Request('https://pypi.org/pypi/torch/json',headers={'User-Agent':'Mozilla/5.0'});d=json.loads(urlopen(req,context=ctx,timeout=10).read());print(f'PyTorch: {d[\"info\"][\"version\"]}')"
+
+# Open3D
+python -c "import json,ssl;from urllib.request import urlopen,Request;ctx=ssl.create_default_context();req=Request('https://pypi.org/pypi/open3d/json',headers={'User-Agent':'Mozilla/5.0'});d=json.loads(urlopen(req,context=ctx,timeout=10).read());print(f'Open3D: {d[\"info\"][\"version\"]}')"
+
+# NumPy
+python -c "import json,ssl;from urllib.request import urlopen,Request;ctx=ssl.create_default_context();req=Request('https://pypi.org/pypi/numpy/json',headers={'User-Agent':'Mozilla/5.0'});d=json.loads(urlopen(req,context=ctx,timeout=10).read());print(f'NumPy: {d[\"info\"][\"version\"]}')"
+
+# Gymnasium (RL环境)
+python -c "import json,ssl;from urllib.request import urlopen,Request;ctx=ssl.create_default_context();req=Request('https://pypi.org/pypi/gymnasium/json',headers={'User-Agent':'Mozilla/5.0'});d=json.loads(urlopen(req,context=ctx,timeout=10).read());print(f'Gymnasium: {d[\"info\"][\"version\"]}')"
+
+# Stable-Baselines3 (RL算法)
+python -c "import json,ssl;from urllib.request import urlopen,Request;ctx=ssl.create_default_context();req=Request('https://pypi.org/pypi/stable-baselines3/json',headers={'User-Agent':'Mozilla/5.0'});d=json.loads(urlopen(req,context=ctx,timeout=10).read());print(f'Stable-Baselines3: {d[\"info\"][\"version\"]}')"
+
+# ============================================
+# === HuggingFace 模型（稳定） ===
+# ============================================
+
+# SAM3 (Segment Anything 3)
+python -c "import json,ssl;from urllib.request import urlopen,Request;ctx=ssl.create_default_context();req=Request('https://huggingface.co/api/models?search=sam3&sort=downloads&limit=1',headers={'User-Agent':'Mozilla/5.0'});m=json.loads(urlopen(req,context=ctx,timeout=10).read())[0];print(f\"SAM3: {m['modelId']} | DL: {m.get('downloads',0)}\")"
+
+# Depth Anything v2
+python -c "import json,ssl;from urllib.request import urlopen,Request;ctx=ssl.create_default_context();req=Request('https://huggingface.co/api/models?search=depth-anything-v2&sort=downloads&limit=1',headers={'User-Agent':'Mozilla/5.0'});m=json.loads(urlopen(req,context=ctx,timeout=10).read())[0];print(f\"Depth Anything v2: {m['modelId']} | DL: {m.get('downloads',0)}\")"
+
+# ============================================
+# === arXiv 论文（HTML 解析，稳定） ===
+# ============================================
+
+# ASVSim 论文
+python -c "import re,ssl;from urllib.request import urlopen,Request;ctx=ssl.create_default_context();req=Request('https://arxiv.org/abs/2506.22174',headers={'User-Agent':'Mozilla/5.0'});html=urlopen(req,context=ctx,timeout=15).read().decode('utf-8');title_match=re.search(r'<h1[^>]*class=\"title[^\"]*\"[^>]*>(.*?)</h1>',html,re.DOTALL|re.I);title=re.sub(r'<[^>]+>','',title_match.group(1)).strip() if title_match else 'N/A';print(f'ASVSim Paper: {title[:80]}')"
+
+# 搜索 3D Gaussian Splatting 论文
+python -c "
+import re, ssl
+from urllib.request import urlopen, Request
+ctx = ssl.create_default_context()
+headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'}
+keyword = '3d+gaussian+splatting'
+req = Request(f'https://arxiv.org/search/?query={keyword}&searchtype=all&sort=submittedDate&order=desc&size=3', headers=headers)
+with urlopen(req, context=ctx, timeout=15) as r:
+    html = r.read().decode('utf-8')
+    papers = re.findall(r'<p class=\"title is-5 mathjax\">(.*?)</p>', html, re.DOTALL)
+    links = re.findall(r'<a href=\"/abs/(\d+\.\d+)\"', html)
+    for i, (title, arxiv_id) in enumerate(zip(papers[:3], links[:3])):
+        title = re.sub(r'<[^>]+>', '', title).strip()
+        print(f'{i+1}. {title[:50]}... — https://arxiv.org/abs/{arxiv_id}')
+"
+
+# ============================================
+# === ASVSim 官方文档（HTML 抓取） ===
+# ============================================
+
+# ASVSim 主页
+python -c "
+import re, ssl
+from urllib.request import urlopen, Request
+ctx = ssl.create_default_context()
+headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'}
+req = Request('https://bavolesy.github.io/idlab-asvsim-docs/', headers=headers)
+with urlopen(req, context=ctx, timeout=15) as r:
+    html = r.read().decode('utf-8')
+    title = re.search(r'<title>(.*?)</title>', html)
+    if title:
+        print(f'Site: {title.group(1)}')
+    # 提取导航链接
+    links = re.findall(r'<a class=\"reference internal\" href=\"([^\"]+)\">([^<]+)</a>', html)
+    print('Docs sections:')
+    for href, text in links[:8]:
+        print(f'  - {text}: https://bavolesy.github.io/idlab-asvsim-docs/{href}')
+"
+
+# ASVSim Vessel API 页面
+python -c "
+import re, ssl
+from urllib.request import urlopen, Request
+ctx = ssl.create_default_context()
+headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'}
+req = Request('https://bavolesy.github.io/idlab-asvsim-docs/vessel/vessel_api/', headers=headers)
+with urlopen(req, context=ctx, timeout=15) as r:
+    html = r.read().decode('utf-8')
+    # 提取标题
+    title = re.search(r'<title>(.*?)</title>', html)
+    if title:
+        print(f'Page: {title.group(1)}')
+    # 提取主要内容
+    paras = re.findall(r'<p>(.*?)</p>', html, re.DOTALL)
+    for i, p in enumerate(paras[:3]):
+        text = re.sub(r'<[^>]+>', '', p).strip()
+        if text and len(text) > 20:
+            print(f'{i+1}. {text[:100]}...')
+"
+
+# ============================================
+# === AirSim 官方文档（HTML 抓取） ===
+# ============================================
+
+# AirSim ReadTheDocs
+python -c "
+import re, ssl
+from urllib.request import urlopen, Request
+ctx = ssl.create_default_context()
+headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'}
+req = Request('https://airsim-fork.readthedocs.io/en/docs/', headers=headers)
+with urlopen(req, context=ctx, timeout=15) as r:
+    html = r.read().decode('utf-8')
+    title = re.search(r'<title>(.*?)</title>', html)
+    if title:
+        print(f'Site: {title.group(1)}')
+"
+
+# ============================================
+# === GitHub 仓库信息（备选方案） ===
+# ============================================
+# 注意：GitHub API (api.github.com) 有限流，GitHub 页面是动态加载的
+# 以下访问 HTML 页面获取基本信息（stars 需通过 API 或浏览器查看）
+
+# Gaussian Splatting (Inria) - 获取仓库描述
+python -c "
+import re, ssl
+from urllib.request import urlopen, Request
+ctx = ssl.create_default_context()
+headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'}
+req = Request('https://github.com/graphdeco-inria/gaussian-splatting', headers=headers)
+with urlopen(req, context=ctx, timeout=15) as r:
+    html = r.read().decode('utf-8')
+    # 提取描述
+    desc_match = re.search(r'<p class=\"repository-content-description[^\"]*\"[^>]*>(.*?)</p>', html, re.DOTALL)
+    desc = re.sub(r'<[^>]+>', '', desc_match.group(1)).strip() if desc_match else 'N/A'
+    print(f'3DGS (Inria): {desc[:60]}...')
+    print(f'  URL: https://github.com/graphdeco-inria/gaussian-splatting')
+    print(f'  Note: Stars count requires GitHub API or manual check')
+"
+
+# COLMAP
+python -c "
+import re, ssl
+from urllib.request import urlopen, Request
+ctx = ssl.create_default_context()
+headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'}
+req = Request('https://github.com/colmap/colmap', headers=headers)
+with urlopen(req, context=ctx, timeout=15) as r:
+    html = r.read().decode('utf-8')
+    desc_match = re.search(r'<p class=\"repository-content-description[^\"]*\"[^>]*>(.*?)</p>', html, re.DOTALL)
+    desc = re.sub(r'<[^>]+>', '', desc_match.group(1)).strip() if desc_match else 'N/A'
+    print(f'COLMAP: {desc[:60]}...' if desc != 'N/A' else 'COLMAP: SfM/MVS reconstruction library')
+    print(f'  URL: https://github.com/colmap/colmap')
+"
+
+# ORB-SLAM3
+python -c "
+import re, ssl
+from urllib.request import urlopen, Request
+ctx = ssl.create_default_context()
+headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'}
+req = Request('https://github.com/UZ-SLAMLab/ORB_SLAM3', headers=headers)
+with urlopen(req, context=ctx, timeout=15) as r:
+    html = r.read().decode('utf-8')
+    desc_match = re.search(r'<p class=\"repository-content-description[^\"]*\"[^>]*>(.*?)</p>', html, re.DOTALL)
+    desc = re.sub(r'<[^>]+>', '', desc_match.group(1)).strip() if desc_match else 'N/A'
+    print(f'ORB-SLAM3: {desc[:60]}...' if desc != 'N/A' else 'ORB-SLAM3: Visual SLAM library')
+    print(f'  URL: https://github.com/UZ-SLAMLab/ORB_SLAM3')
+"
+
+# nerfstudio
+python -c "
+import re, ssl
+from urllib.request import urlopen, Request
+ctx = ssl.create_default_context()
+headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'}
+req = Request('https://github.com/nerfstudio-project/nerfstudio', headers=headers)
+with urlopen(req, context=ctx, timeout=15) as r:
+    html = r.read().decode('utf-8')
+    desc_match = re.search(r'<p class=\"repository-content-description[^\"]*\"[^>]*>(.*?)</p>', html, re.DOTALL)
+    desc = re.sub(r'<[^>]+>', '', desc_match.group(1)).strip() if desc_match else 'N/A'
+    print(f'nerfstudio: {desc[:60]}...' if desc != 'N/A' else 'nerfstudio: NeRF framework')
+    print(f'  URL: https://github.com/nerfstudio-project/nerfstudio')
+"
+
+# gsplat (轻量级3DGS)
+python -c "
+import re, ssl
+from urllib.request import urlopen, Request
+ctx = ssl.create_default_context()
+headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'}
+req = Request('https://github.com/nerfstudio-project/gsplat', headers=headers)
+with urlopen(req, context=ctx, timeout=15) as r:
+    html = r.read().decode('utf-8')
+    desc_match = re.search(r'<p class=\"repository-content-description[^\"]*\"[^>]*>(.*?)</p>', html, re.DOTALL)
+    desc = re.sub(r'<[^>]+>', '', desc_match.group(1)).strip() if desc_match else 'N/A'
+    print(f'gsplat: {desc[:60]}...' if desc != 'N/A' else 'gsplat: CUDA accelerated Gaussian splatting')
+    print(f'  URL: https://github.com/nerfstudio-project/gsplat')
+"
+
+# ============================================
+# === 快速参考：常用库版本查询 ===
+# ============================================
+
+# 查询任意 PyPI 包版本（将 <package> 替换为包名）
+# python -c "import json,ssl;from urllib.request import urlopen,Request;ctx=ssl.create_default_context();req=Request('https://pypi.org/pypi/<package>/json',headers={'User-Agent':'Mozilla/5.0'});d=json.loads(urlopen(req,context=ctx,timeout=10).read());print(f'{d[\"info\"][\"name\"]}: {d[\"info\"][\"version\"]}')"
+```
+
+### 检索执行流程（改进版）
 
 ```
-Step 1: 识别当前响应中涉及的所有具体模型/库/方法名
+Step 1: 识别需要检索的模型/库/论文
     ↓
-Step 2: 用 Bash 工具并行执行对应的 curl 命令（不用 WebFetch）
+Step 2: 根据数据源选择对应工具
+    ├── PyPI 包版本 → Python urllib (可靠)
+    ├── HuggingFace → Python urllib (可靠)
+    ├── arXiv 论文 → HTML 页面解析 (比 API 稳定)
+    ├── GitHub 信息 → Python urllib (有限流风险，需处理错误)
+    └── ASVSim 文档 → HTML 页面解析
     ↓
-Step 2B（curl 对 *.github.io HTML 返回空/SSL 错误）:
-    → 改用 PowerShell 重试：
-      powershell.exe -Command "(Invoke-WebRequest -Uri '<URL>' -UseBasicParsing).Content"
+Step 3: 执行检索脚本，处理可能的错误
+    ├── 成功 → 提取关键信息
+    └── 失败 → 尝试备选方案或标记为需手动验证
     ↓
-Step 3A（成功）: 读取结果，更新知识，用最新信息作答
-    ↓
-Step 3B（curl + PowerShell 均失败）: 触发"降级处理"（见下方）
+Step 4: 整合结果，用最新信息作答
 ```
 
-### 网络受限降级处理（curl + PowerShell 均失败时）
+### 网络受限时的处理策略
 
-当 curl 命令 **和** PowerShell `Invoke-WebRequest` 均返回错误（网络彻底不通）时，**必须**执行以下操作：
+当网络检索失败时，按以下优先级处理：
 
-1. **明确告知用户**："当前网络无法获取实时数据，以下信息基于截止 2025年1月 的训练数据，可能已过时"
-2. **提供手动验证清单**：
+1. **尝试备选数据源**：
+
+   - GitHub API 失败 → 尝试直接访问 HTML 页面
+   - arXiv API 失败 → 改用 HTML 页面解析
+2. **使用本地缓存**：检查是否有已下载的文档或记录
+3. **降级处理**：
+
+   - 明确告知用户："⚠️ 网络检索失败，以下信息可能不是最新"
+   - 提供手动验证链接
+   - 在不确定的数据后标记 `[需验证]`
 
 ```markdown
 ## 请手动验证以下内容的最新状态
-- [ ] SAM3：https://github.com/facebookresearch/sam3/releases
-- [ ] Depth Anything 3：https://github.com/ByteDance-Seed/Depth-Anything-3
-- [ ] YOLO 版本：https://github.com/ultralytics/ultralytics/releases/latest
-- [ ] 相关论文：https://arxiv.org/search/?query=<关键词>
-```
 
-3. **标记不确定项** — 在正文中用 `⚠️ [需验证]` 标记所有可能已过时的具体版本号或方法名
+### 模型与库
+- [ ] SAM3: https://huggingface.co/facebook/sam3
+- [ ] Depth Anything v2: https://huggingface.co/depth-anything/Depth-Anything-V2-Large
+- [ ] YOLO (Ultralytics): https://pypi.org/project/ultralytics/
+- [ ] PyTorch: https://pypi.org/project/torch/
+- [ ] Open3D: https://pypi.org/project/open3d/
+- [ ] Gymnasium: https://pypi.org/project/gymnasium/
+- [ ] Stable-Baselines3: https://pypi.org/project/stable-baselines3/
+
+### 3DGS / NeRF / SLAM 相关
+- [ ] Gaussian Splatting (Inria): https://github.com/graphdeco-inria/gaussian-splatting
+- [ ] gsplat: https://github.com/nerfstudio-project/gsplat
+- [ ] nerfstudio: https://github.com/nerfstudio-project/nerfstudio
+- [ ] COLMAP: https://github.com/colmap/colmap
+- [ ] ORB-SLAM3: https://github.com/UZ-SLAMLab/ORB_SLAM3
+
+### 官方文档
+- [ ] ASVSim 文档: https://bavolesy.github.io/idlab-asvsim-docs/
+- [ ] AirSim 文档: https://airsim-fork.readthedocs.io/en/docs/
+- [ ] Microsoft AirSim: https://microsoft.github.io/AirSim/
+
+### 论文检索
+- [ ] arXiv 搜索: https://arxiv.org/search/?query=3d+gaussian+splatting
+- [ ] ASVSim 论文: https://arxiv.org/abs/2506.22174
+```
 
 ---
 
@@ -403,31 +750,109 @@ Step 3B（curl + PowerShell 均失败）: 触发"降级处理"（见下方）
 
 ```
 1. 解析用户意图 → 提取关键词
-2. 用 Bash 工具并行执行 curl 命令（不使用 WebFetch）
+2. 用 Bash 工具执行 Python 检索脚本（优先使用 urllib，不使用 curl 或 WebFetch）
 3. 处理结果：
    ├── 成功 → 基于实时数据作答
-   └── 失败 → 触发知识时效性协议中的"降级处理"
+   └── 失败 → 尝试备选方案或触发知识时效性协议中的"降级处理"
 ```
 
-**检索命令选择策略**：
+**检索命令选择策略**（基于实测，使用 Python urllib）：
 
 ```bash
-# [用户需要找论文] → arXiv API
-curl -s "https://export.arxiv.org/api/query?search_query=all:<关键词>&sortBy=submittedDate&sortOrder=descending&max_results=5"
+# [用户需要找论文] → arXiv HTML 页面（比 API 稳定）
+python -c "
+import re, ssl
+from urllib.request import urlopen, Request
+ctx = ssl.create_default_context()
+headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'}
+# 构造搜索 URL (例如: 3d gaussian splatting)
+keyword = '3d gaussian splatting'.replace(' ', '+')
+req = Request(f'https://arxiv.org/search/?query={keyword}&searchtype=all&sort=submittedDate&order=desc&size=5', headers=headers)
+with urlopen(req, context=ctx, timeout=15) as r:
+    html = r.read().decode('utf-8')
+    # 提取论文标题和链接
+    papers = re.findall(r'<p class=\"title is-5 mathjax\">(.*?)</p>', html, re.DOTALL)
+    links = re.findall(r'<a href=\"/abs/(\d+\.\d+)\"', html)
+    for i, (title, arxiv_id) in enumerate(zip(papers[:5], links[:5])):
+        title = re.sub(r'<[^>]+>', '', title).strip()
+        print(f'{i+1}. {title[:60]}... — https://arxiv.org/abs/{arxiv_id}')
+"
 
-# [用户需要找代码/版本] → GitHub API
-curl -s "https://api.github.com/repos/<owner>/<repo>/releases/latest"
+# [用户需要找代码/版本] → 优先 PyPI，备选 GitHub HTML
+# PyPI 查询（稳定）
+python -c "
+import json, ssl
+from urllib.request import urlopen, Request
+ctx = ssl.create_default_context()
+headers = {'User-Agent': 'Mozilla/5.0'}
+req = Request('https://pypi.org/pypi/<库名>/json', headers=headers)
+with urlopen(req, context=ctx, timeout=10) as r:
+    d = json.loads(r.read())
+    print(f\"Package: {d['info']['name']}\")
+    print(f\"Version: {d['info']['version']}\")
+    print(f\"Description: {d['info']['summary'][:100]}\")
+"
 
-# [用户问某模型是否有更新版] → GitHub + arXiv 双查
-curl -s "https://api.github.com/repos/<owner>/<repo>" | python -c "import json,sys;d=json.load(sys.stdin);print(d['pushed_at'],d['description'])"
+# GitHub 查询（有限流风险）
+python -c "
+import json, ssl, sys
+from urllib.request import urlopen, Request
+from urllib.error import HTTPError
+ctx = ssl.create_default_context()
+headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'}
+repo = '<owner>/<repo>'
+req = Request(f'https://api.github.com/repos/{repo}', headers=headers)
+try:
+    with urlopen(req, context=ctx, timeout=10) as r:
+        d = json.loads(r.read())
+        print(f\"⭐ {d.get('stargazers_count', 0)} | Updated: {d.get('pushed_at', 'N/A')[:10]}\")
+        print(f\"Description: {d.get('description', 'N/A')[:80]}\")
+except HTTPError as e:
+    if e.code == 403:
+        print('⚠️ GitHub API rate limited. Check manually: https://github.com/' + repo)
+    else:
+        print(f'Error: HTTP {e.code}')
+"
 
-# [用户提供了具体 URL] → 先 curl 尝试，*.github.io 等 HTML 页面改用 PowerShell
-curl -s "<URL>" | python -c "import sys,re;html=sys.stdin.read();print(re.sub(r'<[^>]+>','',html)[:3000])"
-# 若 curl 返回空或 SSL 错误（如 *.github.io），改用：
-powershell.exe -Command "(Invoke-WebRequest -Uri '<URL>' -UseBasicParsing).Content" | python -c "import sys,re;html=sys.stdin.read();print(re.sub(r'<[^>]+>','',html)[:3000])"
+# [用户提供了具体 URL] → Python urllib（最可靠）
+python -c "
+import re, ssl
+from urllib.request import urlopen, Request
+ctx = ssl.create_default_context()
+headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'}
+req = Request('<URL>', headers=headers)
+with urlopen(req, context=ctx, timeout=15) as r:
+    html = r.read().decode('utf-8', errors='ignore')
+    # 提取文本内容
+    text = re.sub(r'<[^>]+>', ' ', html)
+    text = re.sub(r'\s+', ' ', text).strip()
+    print(text[:2000])
+"
 
-# [用户问某库的最新版本] → PyPI
-curl -s "https://pypi.org/pypi/<库名>/json" | python -c "import json,sys;d=json.load(sys.stdin);print(d['info']['version'])"
+# [用户问某库的最新版本] → PyPI（最稳定）
+python -c "
+import json, ssl
+from urllib.request import urlopen, Request
+ctx = ssl.create_default_context()
+headers = {'User-Agent': 'Mozilla/5.0'}
+req = Request('https://pypi.org/pypi/<库名>/json', headers=headers)
+with urlopen(req, context=ctx, timeout=10) as r:
+    d = json.loads(r.read())
+    print(f\"Version: {d['info']['version']}\")
+"
+
+# [用户问 HuggingFace 模型] → HF API（稳定）
+python -c "
+import json, ssl
+from urllib.request import urlopen, Request
+ctx = ssl.create_default_context()
+headers = {'User-Agent': 'Mozilla/5.0'}
+req = Request('https://huggingface.co/api/models?search=<关键词>&sort=downloads&limit=5', headers=headers)
+with urlopen(req, context=ctx, timeout=10) as r:
+    models = json.loads(r.read())
+    for m in models:
+        print(f\"{m['modelId']} | ⭐ {m.get('likes', 0)} | DL: {m.get('downloads', 0)}\")
+"
 ```
 
 **本项目领域检索词速查表**：

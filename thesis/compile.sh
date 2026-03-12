@@ -1,28 +1,47 @@
 #!/bin/bash
+# ============================================================
+# 论文编译脚本 (Linux/macOS)
+# Compile Thesis Script for Linux/macOS
+# ============================================================
 
-echo "=========================================="
-echo "   论文编译脚本"
-echo "=========================================="
+echo "========================================="
+echo "Compiling Thesis: Polar Route Planning and 3D Reconstruction"
+echo "========================================="
 echo
 
-echo "[1/4] 第一次编译..."
-xelatex -interaction=nonstopmode dissertation.tex
+cd "$(dirname "$0")"
 
-echo "[2/4] 处理参考文献..."
-bibtex dissertation
-
-echo "[3/4] 第二次编译..."
-xelatex -interaction=nonstopmode dissertation.tex
-
-echo "[4/4] 第三次编译..."
-xelatex -interaction=nonstopmode dissertation.tex
-
-echo
-echo "=========================================="
-if [ -f "dissertation.pdf" ]; then
-    echo "   编译成功！"
-    echo "   输出文件: dissertation.pdf"
-else
-    echo "   编译失败，请检查错误"
+# Check if pdflatex exists
+if ! command -v pdflatex &> /dev/null; then
+    echo "ERROR: pdflatex not found. Please install TeX Live."
+    exit 1
 fi
-echo "=========================================="
+
+# Check if biber exists
+if ! command -v biber &> /dev/null; then
+    echo "ERROR: biber not found. Please install TeX Live."
+    exit 1
+fi
+
+echo "Step 1: First pdflatex pass..."
+pdflatex -interaction=nonstopmode main.tex || { echo "ERROR: First pdflatex pass failed."; exit 1; }
+
+echo "Step 2: Running biber..."
+biber main || { echo "ERROR: Biber failed."; exit 1; }
+
+echo "Step 3: Second pdflatex pass..."
+pdflatex -interaction=nonstopmode main.tex || { echo "ERROR: Second pdflatex pass failed."; exit 1; }
+
+echo "Step 4: Final pdflatex pass..."
+pdflatex -interaction=nonstopmode main.tex || { echo "ERROR: Final pdflatex pass failed."; exit 1; }
+
+echo
+echo "========================================="
+echo "Compilation successful!"
+echo "Output: main.pdf"
+echo "========================================="
+
+# Move PDF to out directory
+mkdir -p out
+cp main.pdf out/thesis.pdf
+echo "PDF copied to: out/thesis.pdf"

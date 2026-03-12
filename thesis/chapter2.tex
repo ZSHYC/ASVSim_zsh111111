@@ -1,0 +1,93 @@
+% ============================================================
+% Chapter II: Literature Review
+% ============================================================
+\clearpage
+\section{LITERATURE REVIEW}
+
+\subsection{Autonomous Navigation in Polar Environments}
+
+\subsubsection{Challenges of Polar Navigation}
+
+Navigation in ice-covered waters presents unique challenges distinct from conventional maritime operations. \citeauthor{fu2018review} identified ice detection and tracking, path planning in dynamic ice fields, and collision avoidance as the three primary technical challenges for autonomous navigation in polar regions. The presence of ice introduces significant uncertainty in vessel dynamics, as ice loads can cause sudden changes in motion that are difficult to predict \parencite{nguyen2019learning}.
+
+The diversity of ice formations adds complexity to perception tasks. Icebergs, bergy bits, growlers, pack ice, and brash ice each exhibit different visual and physical characteristics, requiring robust detection algorithms capable of generalizing across these variations \parencite{mcmahon2015autonomous}. Furthermore, polar environmental conditions---including low light during winter months, fog, snow, and glare from ice surfaces---significantly degrade sensor performance \parencite{desmond2018field}.
+
+\subsubsection{Existing Approaches to Ice Navigation}
+
+Traditional ice navigation relies primarily on radar and human expertice. While marine radar can detect large ice features, its performance is limited for small ice fragments and in heavy ice concentrations \parencite{foley2015automated}. Modern systems increasingly incorporate electro-optical cameras and LiDAR for enhanced perception \parencite{kudriavtsev2019ice}.
+
+\citeauthor{kim2015sea} proposed a vision-based ice detection system using texture analysis and morphological operations, achieving promising results in clear conditions but struggling with variable lighting. More recent approaches leverage deep learning for ice segmentation. \citeauthor{choi2021ship} developed a convolutional neural network (CNN) for sea ice classification using SAR imagery, demonstrating superior performance compared to traditional methods.
+
+For path planning, \citeauthor{zaccone2018optimal} presented a dynamic programming approach for optimal routing in ice-covered waters, considering ice thickness and concentration. \citeauthor{zhang2019path} proposed an A*-based algorithm with ice cost functions, while \citeauthor{li2021dynamic} introduced reinforcement learning for adaptive navigation in dynamic ice fields.
+
+\subsection{Simulation for Marine Autonomous Systems}
+
+\subsubsection{The Role of Simulation in Marine Robotics}
+
+Simulation has become indispensable for developing autonomous marine systems. \citeauthor{parasuraman2022simulation} emphasized that simulation enables safe testing of edge cases and failure modes that would be dangerous or impossible to evaluate in real-world trials. For ice navigation specifically, simulation provides controlled environments for testing algorithms across diverse ice scenarios that may occur rarely in practice \parencite{zhang2021polar}.
+
+Maritime simulators range from simplified 2D environments to high-fidelity 3D physics-based simulations. Gazebo with the VRX (Virtual RobotX) environment has been widely used for surface vehicle simulation \parencite{bingham2019virtual}, though its visual fidelity is limited for camera-based perception research. Unity-based simulators offer improved graphics but may lack specialized marine physics models \parencite{shah2018airsim}.
+
+\subsubsection{Unreal Engine for Marine Simulation}
+
+Unreal Engine 5 represents the current state of the art in real-time rendering, offering photorealistic graphics through features such as Nanite virtualized geometry and Lumen global illumination \parencite{epic2023unreal}. These capabilities make it particularly suitable for computer vision research where realistic visual appearance is crucial.
+
+\citeauthor{schroeder2020asvsim} developed ASVSim specifically for autonomous surface vehicle research, integrating Unreal Engine's rendering capabilities with specialized vessel physics models. ASVSim supports multiple sensor modalities including cameras, LiDAR, and IMU, with configurable parameters that match real sensor specifications. The simulator has been validated against field trials, demonstrating realistic vessel dynamics and sensor behavior \parencite{schroeder2022validation}.
+
+Recent work by \citeauthor{ebadi2020lakes} demonstrated the use of Unreal Engine for lake environment simulation, showing that high-fidelity simulation can effectively support algorithm development for surface vehicles. However, specialized configurations for polar environments remain underdeveloped.
+
+\subsection{3D Reconstruction and Neural Rendering}
+
+\subsubsection{Traditional 3D Reconstruction Methods}
+
+Structure from Motion (SfM) and Multi-View Stereo (MVS) have been the dominant approaches for 3D reconstruction from images. COLMAP, developed by \citeauthor{schoenberger2016sfm}, provides an open-source implementation combining feature matching, sparse reconstruction, and dense stereo. While effective for many scenarios, these methods struggle with textureless surfaces common in ice and snow environments \parencite{zhang2020critical}.
+
+LiDAR-based reconstruction offers an alternative that is less dependent on surface texture. However, the sparse nature of LiDAR point clouds (particularly for line-scanning sensors) and challenges with reflective ice surfaces limit reconstruction completeness \parencite{kuemmerle2018lidar}.
+
+\subsubsection{Neural Radiance Fields}
+
+Neural Radiance Fields (NeRF), introduced by \citeauthor{mildenhall2020nerf}, revolutionized novel view synthesis by representing scenes as continuous volumetric functions parameterized by neural networks. NeRF achieves photorealistic rendering from sparse input views but requires substantial computational resources for training and rendering.
+
+Numerous extensions have addressed NeRF's limitations. \citeauthor{martin2021nerf} proposed NeRF in the Wild for unconstrained photo collections. \citeauthor{barron2021mip} introduced Mip-NeRF to address aliasing issues. For large scenes, \citeauthor{zhang2020nerf++} and \citeauthor{xu2022point} developed hierarchical representations that scale to outdoor environments.
+
+\subsubsection{3D Gaussian Splatting}
+
+3D Gaussian Splatting (3DGS), presented by \citeauthor{kerbl20233d} at SIGGRAPH 2023, represents a fundamental shift in neural scene representation. Rather than using implicit neural networks, 3DGS explicitly represents scenes as collections of anisotropic 3D Gaussians. This representation combines the advantages of point-based methods (efficiency, flexibility) with the expressiveness of neural approaches.
+
+The key innovation lies in the differentiable rasterization of Gaussians, enabling real-time rendering (30+ FPS at 1080p) while maintaining quality comparable to NeRF. The explicit representation also facilitates editing and manipulation operations that are challenging with implicit representations \parencite{yang2023deformable}.
+
+Applications of 3DGS have expanded rapidly. \citeauthor{fan2023large} demonstrated large scene reconstruction using 3DGS. \citeauthor{tang2023radial} adapted the approach for unbounded 360-degree scenes. For dynamic scenes, \citeauthor{katsumata2023efficient} proposed deformable Gaussian splatting.
+
+\subsection{Multi-Modal Perception for Navigation}
+
+\subsubsection{Instance Segmentation}
+
+Accurate instance segmentation of ice features is essential for navigation planning. The Segment Anything Model (SAM), developed by \citeauthor{kirillov2023segment}, provides a foundation model for image segmentation that can generalize to novel objects with minimal prompting. SAM2 \parencite{ravi2024sam2} extended this to video sequences with improved temporal consistency.
+
+SAM3 \parencite{sam32026} further advances the architecture with hierarchical encoders and enhanced promptable inference, particularly improving performance on small objects and boundaries---critical capabilities for detecting fragmented ice. Recent work has explored adapting SAM for marine environments, with \cite{zhang2024marine} proposing specialized fine-tuning strategies for ship and iceberg detection.
+
+\subsubsection{Depth Estimation}
+
+Monocular depth estimation has progressed significantly through the Depth Anything series. Depth Anything V1 \parencite{depthanything2023} established a robust baseline using a large-scale dataset and ViT encoders. Depth Anything V2 \parencite{depthanythingv22024} improved generalization through better data curation and architectural refinements.
+
+Depth Anything 3 \parencite{depthanything32025} represents the current state of the art, with particular improvements for challenging conditions including low texture and extreme weather. The model supports metric depth estimation (in meters) rather than relative depth, making it directly applicable for navigation applications. \citeauthor{ranftl2020towards} demonstrated that combining monocular depth with multi-view constraints can achieve metric accuracy competitive with active sensors.
+
+\subsubsection{Sensor Fusion}
+
+Fusing camera and LiDAR data combines the dense texture information of images with the accurate geometry of point clouds. \citeauthor{shao2019pfr} proposed early fusion approaches projecting LiDAR points into image space. \citeauthor{liang2018deep} demonstrated that deep feature-level fusion outperforms simple projection-based methods.
+
+For polar navigation, \citeauthor{meng2018uav} showed that camera-LiDAR fusion significantly improves obstacle detection compared to single-modality approaches. The calibration between sensors is critical---\citeauthor{geiger2012automatic} provided methods for joint calibration that achieve sub-pixel accuracy.
+
+\subsection{Research Gaps}
+
+From this review, several gaps in the existing literature become apparent:
+
+\textbf{Gap 1: Integrated simulation-to-reconstruction pipelines.} While individual components (simulation, data collection, 3D reconstruction) are well-studied, integrated frameworks that bridge these stages with proper data formatting and coordinate alignment remain underdeveloped.
+
+\textbf{Gap 2: Optimized data collection for 3DGS.} Existing data collection approaches for marine simulation do not specifically address the requirements of 3D Gaussian Splatting, which benefits from particular viewpoint distributions and multi-scale coverage.
+
+\textbf{Gap 3: Real-time considerations.} Most 3D reconstruction research focuses on offline batch processing. Systems that support real-time or near-real-time reconstruction for navigation applications are less explored.
+
+\textbf{Gap 4: Domain-specific adaptation.} General-purpose perception and reconstruction algorithms are not optimized for the unique characteristics of polar environments, including ice geometry, reflective surfaces, and varying illumination.
+
+This thesis addresses these gaps by developing an integrated framework specifically designed for polar navigation applications, with careful attention to the interfaces between simulation, data collection, and reconstruction modules.

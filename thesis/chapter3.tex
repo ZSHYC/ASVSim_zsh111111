@@ -1,0 +1,346 @@
+% ============================================================
+% Chapter III: Methodology
+% ============================================================
+\clearpage
+\section{METHODOLOGY}
+
+\subsection{System Architecture Overview}
+
+The proposed framework consists of three interconnected layers: the simulation environment layer, the data acquisition layer, and the reconstruction and planning layer. Figure \ref{fig:system_architecture} illustrates the overall system architecture and data flow.
+
+\begin{figure}[htbp]
+\centering
+% Placeholder for system architecture diagram
+\fbox{\parbox{0.8\textwidth}{\centering
+\vspace{2cm}
+System Architecture Diagram\\
+(UE5 + ASVSim Simulation Environment)\\
+$\downarrow$\\
+(Multi-Modal Data Collection Pipeline)\\
+$\downarrow$\\
+(3DGS Reconstruction + Path Planning)
+\vspace{2cm}
+}}
+\caption{System architecture showing the three-layer framework integrating simulation environment, data collection, and reconstruction/planning modules.}
+\label{fig:system_architecture}
+\end{figure}
+
+The simulation environment layer, built upon Unreal Engine 5 and ASVSim, provides realistic physics-based vessel dynamics and high-fidelity rendering. The data acquisition layer implements automated collection of synchronized multi-modal sensor data. The reconstruction and planning layer processes the collected data for 3D Gaussian Splatting training and supports path planning algorithms.
+
+\subsection{Simulation Environment Configuration}
+
+\subsubsection{ASVSim and Unreal Engine 5 Integration}
+
+ASVSim \parencite{schroeder2020asvsim} is an autonomous surface vehicle simulator built on Unreal Engine 5, providing a Gymnasium-compatible reinforcement learning interface alongside sensor simulation capabilities. The simulator implements physics-based vessel dynamics using the Fossen model \parencite{fossen2011handbook}, which captures the hydrodynamic forces acting on vessels in calm water.
+
+The simulation environment configuration is defined through a \texttt{settings.json} file that specifies:
+
+\begin{itemize}
+    \item Simulation mode and physics engine parameters
+    \item Vehicle properties and initial conditions
+    \item Sensor configurations (cameras, LiDAR)
+    \item Rendering and capture settings
+\end{itemize}
+
+Key simulation parameters are listed in Table \ref{tab:simulation_params}.
+
+\begin{table}[htbp]
+\centering
+\caption{ASVSim Simulation Configuration Parameters}
+\label{tab:simulation_params}
+\begin{tabular}{@{}lll@{}}
+\toprule
+\textbf{Parameter} & \textbf{Value} & \textbf{Description} \\
+\midrule
+SimMode & Vessel & Simulation mode \\
+PhysicsEngine & VesselEngine & Physics engine type \\
+ViewMode & SpringArmChase & Camera view mode \\
+ClockSpeed & 1.0 & Real-time simulation \\
+VehicleType & MilliAmpere & Vessel model \\
+HydroDynamics & FossenCurrent & Hydrodynamics model \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsubsection{Sensor Configuration}
+
+The sensor configuration defines the multi-modal perception capabilities of the simulated vessel. Two primary sensors are configured: a front-facing camera and a top-mounted LiDAR.
+
+\textbf{Camera Configuration:} The front camera is positioned at the vessel bow, providing forward-looking imagery for ice detection and navigation. Camera parameters were determined through systematic optimization to balance field of view, resolution, and computational efficiency.
+
+\begin{table}[htbp]
+\centering
+\caption{Front Camera Configuration}
+\label{tab:camera_config}
+\begin{tabular}{@{}lll@{}}
+\toprule
+\textbf{Parameter} & \textbf{Initial} & \textbf{Optimized} \\
+\midrule
+Resolution & 1280$\times$720 & 640$\times$480 \\
+FOV & 90$^\circ$ & 70$^\circ$ \\
+Position X & 2.5m & 3.5m \\
+Position Z & -1.8m & -2.5m \\
+Pitch & -10$^\circ$ & 0$^\circ$ \\
+Lumen GI & Enabled & Disabled \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The resolution was reduced from 1280$\times$720 to 640$\times$480 based on performance analysis showing that:
+
+\begin{itemize}
+    \item Higher resolution (1280$\times$720) required approximately 55--60 seconds per frame due to Lumen global illumination overhead
+    \item Reduced resolution (640$\times$480) achieved approximately 6.5 seconds per frame---a \textbf{9$\times$ speed improvement}
+    \item The 640$\times$480 resolution maintains sufficient quality for 3DGS training while enabling practical data collection
+\end{itemize}
+
+The field of view was narrowed from 90$^\circ$ to 70$^\circ$ to reduce scene complexity, and the camera position was raised and moved forward to exclude vessel structure from the field of view.
+
+\textbf{LiDAR Configuration:} The top-mounted LiDAR provides 360$^\circ$ horizontal scanning with 16 vertical channels, generating 8,192 points per scan at 10 Hz.
+
+\begin{table}[htbp]
+\centering
+\caption{LiDAR Configuration}
+\label{tab:lidar_config}
+\begin{tabular}{@{}lll@{}}
+\toprule
+\textbf{Parameter} & \textbf{Value} & \textbf{Description} \\
+\midrule
+NumberOfLasers & 16 & Vertical channels \\
+PointsPerSecond & 300,000 & Point generation rate \\
+RotationsPerSecond & 10 & Scan frequency \\
+Range & 100.0m & Maximum detection range \\
+Position Z & -1.0m & Deck-mounted height \\
+DataFrame & SensorLocalFrame & Coordinate reference \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsubsection{Rendering Optimization}
+
+Unreal Engine 5's Lumen global illumination system, while producing photorealistic lighting, significantly impacts SceneCapture performance. Analysis revealed that each image request triggered complete Lumen GI passes, consuming 30--60 seconds per pass at 1280$\times$720 resolution.
+
+The optimization strategy disabled Lumen and other post-processing effects in the \texttt{CameraDefaults.CaptureSettings}:
+
+\begin{lstlisting}[language={}, caption={Optimized Capture Settings}]
+{
+  "ImageType": 0,
+  "Width": 640,
+  "Height": 480,
+  "FOV_Degrees": 70,
+  "LumenGIEnable": false,
+  "LumenReflectionEnable": false,
+  "MotionBlurAmount": 0,
+  "ChromaticAberrationScale": 0.0,
+  "AutoExposureBias": 0.0
+}
+\end{lstlisting}
+
+These optimizations reduced the per-frame acquisition time from approximately 55 seconds to 6--7 seconds while maintaining sufficient image quality for 3D reconstruction.
+
+\subsection{Multi-Modal Data Collection Pipeline}
+
+\subsubsection{Collection Strategy}
+
+The data collection pipeline implements an automated trajectory-based acquisition strategy designed to provide multi-view coverage suitable for 3D Gaussian Splatting training. The vessel follows predefined trajectories while capturing synchronized sensor data at regular intervals.
+
+Three trajectory modes are implemented:
+
+\begin{enumerate}
+    \item \textbf{Circular trajectory:} The vessel maintains constant thrust and angle settings, resulting in a circular path that provides 360$^\circ$ coverage of the surrounding environment.
+
+    \item \textbf{Linear trajectory:} The vessel travels in a straight line for initial scene traversal, followed by turning maneuvers.
+
+    \item \textbf{Random walk:} Directional perturbations are applied at regular intervals to increase trajectory diversity.
+\end{enumerate}
+
+The circular trajectory is the primary mode, using parameters:
+
+\begin{itemize}
+    \item Thrust: 0.3 (30\% of maximum)
+    \item Angle: 0.6 (slight right turn; 0.5 = straight)
+    \item Movement interval: 0.3 seconds between frames
+\end{itemize}
+
+\subsubsection{Data Synchronization}
+
+Ensuring temporal synchronization across sensor modalities is critical for multi-modal fusion. The collection pipeline follows this sequence:
+
+\begin{enumerate}
+    \item Apply vessel control commands
+    \item Wait for physics stabilization (0.3s)
+    \item Capture RGB image and depth map (simultaneous \texttt{simGetImages} call)
+    \item Query vessel state for pose information
+    \item Acquire LiDAR scan
+    \item Save all data with shared timestamp
+\end{enumerate}
+
+Notably, the \texttt{simPause} mechanism was disabled due to compatibility issues with CosysAirSim v3.0.1 that caused scene freezing. Instead, short movement intervals (0.3s) ensure minimal pose variation between sensor readings.
+
+\subsubsection{Image Type Handling}
+
+CosysAirSim uses different ImageType enumerations than standard AirSim, requiring careful configuration:
+
+\begin{table}[htbp]
+\centering
+\caption{CosysAirSim ImageType Enumeration}
+\label{tab:imagetype}
+\begin{tabular}{@{}lll@{}}
+\toprule
+\textbf{ImageType} & \textbf{CosysAirSim} & \textbf{Standard AirSim} \\
+\midrule
+Scene (RGB) & 0 & 0 \\
+DepthPlanar & \textbf{1} & \textbf{2} \\
+DepthVis & 3 & 1 \\
+Segmentation & 5 & 5 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The critical difference is \texttt{DepthPlanar}, which uses value 1 in CosysAirSim rather than 2. This necessitated explicit configuration of all ImageType variants in \texttt{CameraDefaults.CaptureSettings}.
+
+\subsubsection{Data Format Conversion}
+
+Raw sensor data requires conversion to standardized formats:
+
+\textbf{RGB Images:} CosysAirSim returns RGB-ordered data, which must be converted to BGR for OpenCV compatibility:
+
+\begin{lstlisting}[language=Python, caption={RGB to BGR Conversion}]
+def decode_image_safe(response, name=""):
+    raw = np.frombuffer(response.image_data_uint8, dtype=np.uint8)
+    h, w = response.height, response.width
+    total = len(raw)
+
+    if total == h * w * 4:  # RGBA
+        img = raw.reshape(h, w, 4)[:, :, :3]
+        img = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
+    elif total == h * w * 3:  # RGB
+        img = raw.reshape(h, w, 3)
+        img = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
+    return img
+\end{lstlisting}
+
+\textbf{Depth Maps:} Depth values are returned as float32 arrays in meters. Invalid depths (sky, distant objects) are represented as infinity.
+
+\textbf{LiDAR Points:} Point clouds are stored in SensorLocalFrame as N$\times$3 numpy arrays.
+
+\textbf{Pose Information:} Vessel pose includes position (X, Y, Z) and orientation (quaternion: w, x, y, z) from the ASVSim world coordinate system.
+
+\subsection{Output Data Structure}
+
+Collected datasets are organized in timestamped directories with the following structure:
+
+\begin{lstlisting}[language=bash, caption={Dataset Directory Structure}]
+dataset/YYYY_MM_DD_HH_MM_SS/
+|-- rgb/              # RGB images (PNG, BGR format)
+|   |-- 0000.png
+|   |-- 0001.png
+|   `-- ...
+|-- depth/            # Depth maps (NPY, float32, meters)
+|   |-- 0000.npy
+|   |-- 0001.npy
+|   `-- ...
+|-- lidar/            # LiDAR point clouds (JSON)
+|   |-- 0000.json
+|   |-- 0001.json
+|   `-- ...
+|-- meta/             # Metadata and configuration
+|   |-- collection_config.json
+|   `-- collection_report.json
+|-- colmap/           # COLMAP format for 3DGS
+|   `-- transforms.json
+`-- poses.json        # Camera poses (ground truth)
+\end{lstlisting}
+
+\subsubsection{Pose File Format}
+
+The \texttt{poses.json} file contains per-frame pose and camera intrinsics:
+
+\begin{lstlisting}[language={}, caption={Pose JSON Structure}]
+{
+  "frame_id": 0,
+  "position": {"x": 1.2, "y": 0.3, "z": 0.01},
+  "orientation": {"w": 0.99, "x": 0.0, "y": 0.0, "z": 0.1},
+  "speed": 0.45,
+  "camera_intrinsics": {
+    "fx": 466.0, "fy": 466.0,
+    "cx": 320.0, "cy": 240.0,
+    "width": 640, "height": 480,
+    "fov_deg": 70.0
+  },
+  "timestamp": "2026-03-12T10:30:00"
+}
+\end{lstlisting}
+
+Camera intrinsics are computed offline using the pinhole camera model:
+
+\begin{equation}
+f_x = f_y = \frac{W}{2 \tan(\text{FOV}/2)}
+\label{eq:intrinsics}
+\end{equation}
+
+\begin{equation}
+c_x = W/2, \quad c_y = H/2
+\label{eq:principal_point}
+\end{equation}
+
+where $W$ and $H$ are image width and height, and FOV is the field of view in radians.
+
+\subsection{COLMAP Format Conversion}
+
+For 3D Gaussian Splatting training, poses are converted to the transforms.json format used by NeRF and 3DGS implementations:
+
+\begin{lstlisting}[language={}, caption={COLMAP Transforms Format}]
+{
+  "camera_model": "OPENCV",
+  "fl_x": 466.0, "fl_y": 466.0,
+  "cx": 320.0, "cy": 240.0,
+  "w": 640, "h": 480,
+  "frames": [
+    {
+      "file_path": "rgb/0000.png",
+      "transform_matrix": [[...], [...], [...], [...]]
+    }
+  ]
+}
+\end{lstlisting}
+
+The transformation matrix converts from camera coordinates to world coordinates. For simulation data with known ground truth, this enables direct training without Structure-from-Motion preprocessing.
+
+\subsection{Error Handling and Validation}
+
+The data collection pipeline implements robust error handling:
+
+\textbf{Retry Mechanism:} Failed frame acquisitions are automatically retried up to 3 times with 1-second delays.
+
+\textbf{Frame Validation:} Each frame undergoes validation checks:
+
+\begin{itemize}
+    \item Image dimensions match expected resolution
+    \item Depth map contains finite values within expected range
+    \item LiDAR point cloud contains expected number of points (8,192)
+    \item Pose data is finite and within scene bounds
+\end{itemize}
+
+\textbf{Dataset Validation:} Post-collection validation verifies:
+
+\begin{itemize}
+    \item Consistent file counts across modalities
+    \item Sequential frame numbering
+    \item Pose continuity (no large jumps between frames)
+    \item Image quality (proper color channels, no corruption)
+\end{itemize}
+
+\subsection{Implementation Details}
+
+The data collection system is implemented in Python using the CosysAirSim SDK (v3.0.1). Key implementation characteristics:
+
+\begin{itemize}
+    \item \textbf{No multi-threading:} Avoids msgpack-rpc IOLoop errors
+    \item \textbf{No simPause:} Prevents scene freezing in CosysAirSim v3.0.1
+    \item \textbf{Batch API calls:} Multiple image types requested in single \texttt{simGetImages} call
+    \item \textbf{Graceful shutdown:} Proper vessel control release on interruption
+    \item \textbf{Progress tracking:} Real-time display of frame count, position, and timing
+\end{itemize}
+
+The complete source code for the data collection pipeline is provided in Appendix A.

@@ -1,5 +1,118 @@
 {
-    "python-envs.defaultEnvManager": "ms-python.python:conda",
-    "python-envs.defaultPackageManager": "ms-python.python:conda",
-    "markdown.validate.enabled": true
+    // LaTeX Workshop 编译配置
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "thesis-compile (pdflatex -> biber -> pdflatex*2)",
+            "tools": [
+                "pdflatex",
+                "biber",
+                "pdflatex",
+                "pdflatex"
+            ]
+        },
+        {
+            "name": "pdflatex only",
+            "tools": ["pdflatex"]
+        },
+        {
+            "name": "xelatex",
+            "tools": ["xelatex"]
+        }
+    ],
+    "latex-workshop.latex.tools": [
+        {
+            "name": "pdflatex",
+            "command": "pdflatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOC%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "biber",
+            "command": "biber",
+            "args": [
+                "%DOCFILE%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "xelatex",
+            "command": "xelatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOC%"
+            ],
+            "env": {}
+        }
+    ],
+    // 默认使用 thesis 编译流程
+    "latex-workshop.latex.recipe.default": "thesis-compile (pdflatex -> biber -> pdflatex*2)",
+
+    // 编译时自动清理辅助文件
+    "latex-workshop.latex.autoClean.run": "onBuilt",
+
+    // PDF 预览配置
+    "latex-workshop.view.pdf.viewer": "tab",
+    "latex-workshop.view.pdf.internal.port": 0,
+
+    // 语法检查配置（使用 chktex）
+    "latex-workshop.linting.chktex.enabled": true,
+    "latex-workshop.linting.chktex.exec.path": "chktex",
+
+    // 禁用自动编译，使用手动触发
+    "latex-workshop.latex.autoBuild.run": "never",
+
+    // 输出目录（可选，如果希望输出到特定目录）
+    // "latex-workshop.latex.outDir": "./out",
+
+    // 构建前清理的文件
+    "latex-workshop.latex.clean.fileTypes": [
+        "*.aux",
+        "*.bbl",
+        "*.blg",
+        "*.idx",
+        "*.ind",
+        "*.lof",
+        "*.lot",
+        "*.out",
+        "*.toc",
+        "*.acn",
+        "*.acr",
+        "*.alg",
+        "*.glg",
+        "*.glo",
+        "*.gls",
+        "*.fls",
+        "*.log",
+        "*.fdb_latexmk",
+        "*.snm",
+        "*.synctex(busy)",
+        "*.synctex.gz(busy)",
+        "*.nav",
+        "*.bcf",
+        "*.run.xml"
+    ],
+
+    // 格式化配置
+    "latex-workshop.formatting.latex": "latexindent",
+    "latex-workshop.formatting.latexindent.args": [
+        "-c",
+        "%DIR%/",
+        "%TMPFILE%",
+        "-y=defaultIndent: '%INDENT%'"
+    ],
+
+    // 数学公式预览
+    "latex-workshop.mathpreviewpanel.editor.enable": true,
+
+    // 智能提示配置
+    "latex-workshop.intellisense.package.enabled": true,
+    "latex-workshop.intellisense.citation.label": "bibtex",
+    "latex-workshop.intellisense.update.delay": 1000
 }

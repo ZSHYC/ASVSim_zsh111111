@@ -1,0 +1,93 @@
+\contentsline {section}{ACKNOWLEDGEMENTS}{i}{Doc-Start}%
+\contentsline {section}{ABSTRACT}{ii}{Doc-Start}%
+\contentsline {section}{摘\hskip 1em\relax 要}{iii}{Doc-Start}%
+\contentsline {section}{\numberline {I}INTRODUCTION}{1}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Research Background}{1}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Problem Statement}{2}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Research Objectives}{2}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Research Significance}{3}{subsection.1.4}%
+\contentsline {subsection}{\numberline {1.5}Thesis Organization}{3}{subsection.1.5}%
+\contentsline {subsection}{\numberline {1.6}Scope and Limitations}{4}{subsection.1.6}%
+\contentsline {section}{\numberline {II}LITERATURE REVIEW}{5}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Autonomous Navigation in Polar Environments}{5}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}Challenges of Polar Navigation}{5}{subsubsection.2.1.1}%
+\contentsline {subsubsection}{\numberline {2.1.2}Existing Approaches to Ice Navigation}{5}{subsubsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.2}Simulation for Marine Autonomous Systems}{6}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}The Role of Simulation in Marine Robotics}{6}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}Unreal Engine for Marine Simulation}{6}{subsubsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.3}3D Reconstruction and Neural Rendering}{7}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}Traditional 3D Reconstruction Methods}{7}{subsubsection.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.3.2}Neural Radiance Fields}{7}{subsubsection.2.3.2}%
+\contentsline {subsubsection}{\numberline {2.3.3}3D Gaussian Splatting}{7}{subsubsection.2.3.3}%
+\contentsline {subsection}{\numberline {2.4}Multi-Modal Perception for Navigation}{8}{subsection.2.4}%
+\contentsline {subsubsection}{\numberline {2.4.1}Instance Segmentation}{8}{subsubsection.2.4.1}%
+\contentsline {subsubsection}{\numberline {2.4.2}Depth Estimation}{8}{subsubsection.2.4.2}%
+\contentsline {subsubsection}{\numberline {2.4.3}Sensor Fusion}{8}{subsubsection.2.4.3}%
+\contentsline {subsection}{\numberline {2.5}Research Gaps}{9}{subsection.2.5}%
+\contentsline {section}{\numberline {III}METHODOLOGY}{10}{section.3}%
+\contentsline {subsection}{\numberline {3.1}System Architecture Overview}{10}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Simulation Environment Configuration}{10}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}ASVSim and Unreal Engine 5 Integration}{10}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}Sensor Configuration}{11}{subsubsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.3}Rendering Optimization}{12}{subsubsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.3}Multi-Modal Data Collection Pipeline}{13}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}Collection Strategy}{13}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.2}Data Synchronization}{13}{subsubsection.3.3.2}%
+\contentsline {subsubsection}{\numberline {3.3.3}Image Type Handling}{14}{subsubsection.3.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.4}Data Format Conversion}{14}{subsubsection.3.3.4}%
+\contentsline {subsection}{\numberline {3.4}Output Data Structure}{15}{subsection.3.4}%
+\contentsline {subsubsection}{\numberline {3.4.1}Pose File Format}{16}{subsubsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.5}COLMAP Format Conversion}{16}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}Error Handling and Validation}{17}{subsection.3.6}%
+\contentsline {subsection}{\numberline {3.7}Implementation Details}{18}{subsection.3.7}%
+\contentsline {section}{\numberline {IV}EXPERIMENTS AND RESULTS}{19}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Experimental Setup}{19}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.1}Hardware Configuration}{19}{subsubsection.4.1.1}%
+\contentsline {subsubsection}{\numberline {4.1.2}Software Environment}{19}{subsubsection.4.1.2}%
+\contentsline {subsubsection}{\numberline {4.1.3}Simulation Environment}{19}{subsubsection.4.1.3}%
+\contentsline {subsection}{\numberline {4.2}Sensor Validation}{20}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Data Collection Experiments}{20}{subsection.4.3}%
+\contentsline {subsubsection}{\numberline {4.3.1}Experiment 1: Baseline Circular Trajectory}{20}{subsubsection.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.2}Experiment 2: Performance Comparison}{21}{subsubsection.4.3.2}%
+\contentsline {subsubsection}{\numberline {4.3.3}Experiment 3: Trajectory Analysis}{21}{subsubsection.4.3.3}%
+\contentsline {subsection}{\numberline {4.4}Data Quality Analysis}{22}{subsection.4.4}%
+\contentsline {subsubsection}{\numberline {4.4.1}RGB Image Quality}{22}{subsubsection.4.4.1}%
+\contentsline {subsubsection}{\numberline {4.4.2}Depth Map Analysis}{22}{subsubsection.4.4.2}%
+\contentsline {subsubsection}{\numberline {4.4.3}LiDAR Point Cloud Quality}{23}{subsubsection.4.4.3}%
+\contentsline {subsubsection}{\numberline {4.4.4}Pose Continuity}{23}{subsubsection.4.4.4}%
+\contentsline {subsection}{\numberline {4.5}Dataset Validation}{23}{subsection.4.5}%
+\contentsline {subsection}{\numberline {4.6}COLMAP Format Verification}{24}{subsection.4.6}%
+\contentsline {subsection}{\numberline {4.7}Discussion of Results}{24}{subsection.4.7}%
+\contentsline {section}{\numberline {V}DISCUSSION}{25}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Interpretation of Results}{25}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Technical Challenges and Solutions}{25}{subsection.5.2}%
+\contentsline {subsubsection}{\numberline {5.2.1}Image Color Space Conversion}{25}{subsubsection.5.2.1}%
+\contentsline {subsubsection}{\numberline {5.2.2}Camera Position Optimization}{26}{subsubsection.5.2.2}%
+\contentsline {subsubsection}{\numberline {5.2.3}CosysAirSim API Compatibility}{26}{subsubsection.5.2.3}%
+\contentsline {subsubsection}{\numberline {5.2.4}RPC Call Optimization}{26}{subsubsection.5.2.4}%
+\contentsline {subsection}{\numberline {5.3}Limitations}{26}{subsection.5.3}%
+\contentsline {subsubsection}{\numberline {5.3.1}Environment Fidelity}{26}{subsubsection.5.3.1}%
+\contentsline {subsubsection}{\numberline {5.3.2}Trajectory Diversity}{27}{subsubsection.5.3.2}%
+\contentsline {subsubsection}{\numberline {5.3.3}Segmentation Ground Truth}{27}{subsubsection.5.3.3}%
+\contentsline {subsubsection}{\numberline {5.3.4}Coordinate System Conversion}{27}{subsubsection.5.3.4}%
+\contentsline {subsubsection}{\numberline {5.3.5}Dynamic Elements}{27}{subsubsection.5.3.5}%
+\contentsline {subsection}{\numberline {5.4}Comparison with Related Work}{27}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.5}Implications for Polar Navigation}{28}{subsection.5.5}%
+\contentsline {subsection}{\numberline {5.6}Future Research Directions}{28}{subsection.5.6}%
+\contentsline {subsubsection}{\numberline {5.6.1}Polar Environment Integration}{28}{subsubsection.5.6.1}%
+\contentsline {subsubsection}{\numberline {5.6.2}Perception Module Development}{28}{subsubsection.5.6.2}%
+\contentsline {subsubsection}{\numberline {5.6.3}3DGS Training and Evaluation}{29}{subsubsection.5.6.3}%
+\contentsline {subsubsection}{\numberline {5.6.4}Path Planning Implementation}{29}{subsubsection.5.6.4}%
+\contentsline {subsubsection}{\numberline {5.6.5}Sim-to-Real Transfer}{29}{subsubsection.5.6.5}%
+\contentsline {subsection}{\numberline {5.7}Contribution to the Field}{29}{subsection.5.7}%
+\contentsline {section}{\numberline {VI}CONCLUSION}{30}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Summary of Work}{30}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Key Findings}{30}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Contributions}{31}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}Limitations}{31}{subsection.6.4}%
+\contentsline {subsection}{\numberline {6.5}Future Work}{31}{subsection.6.5}%
+\contentsline {subsection}{\numberline {6.6}Closing Remarks}{32}{subsection.6.6}%
+\contentsline {section}{\numberline {A}DATA COLLECTION SOURCE CODE}{37}{appendix.A}%
+\contentsline {subsection}{\numberline {1.1}Main Collection Script (3-collect\_dataset\_v2.py)}{37}{subsection.A.1}%
+\contentsline {subsection}{\numberline {1.2}ASVSim Settings Configuration}{38}{subsection.A.2}%
+\contentsline {subsection}{\numberline {1.3}Dataset Validation Script}{41}{subsection.A.3}%
