@@ -58,7 +58,9 @@
       "Bash(source /d/miniforge3/etc/profile.d/conda.sh && conda activate bishe && pip install -U ultralytics 2>&1 | tail -20)",
       "Bash(source /d/miniforge3/etc/profile.d/conda.sh && conda activate bishe && python batch_segment_sam3.py --dataset /c/Users/zsh/Desktop/ASVSim_zsh/dataset/2026_03_13_01_50_19 2>&1 | head -100)",
       "Bash(source /d/miniforge3/etc/profile.d/conda.sh && conda activate bishe && python batch_segment_sam3.py --dataset /c/Users/zsh/Desktop/ASVSim_zsh/dataset/2026_03_13_01_50_19 2>&1)",
-      "Bash(source /d/miniforge3/etc/profile.d/conda.sh && conda activate bishe && python validate_sam3_masks.py 2>&1)"
+      "Bash(source /d/miniforge3/etc/profile.d/conda.sh && conda activate bishe && python validate_sam3_masks.py 2>&1)",
+      "Bash(ls /c/Users/zsh/Desktop/ASVSim_zsh/tools/*.py | wc -l && echo \"---\" && ls /c/Users/zsh/Desktop/ASVSim_zsh/tools/*.py)",
+      "Bash(ls -lh /c/Users/zsh/Desktop/ASVSim_zsh/tools/*.py)"
     ],
     "additionalDirectories": [
       "c:\\Users\\zsh\\Documents\\AirSim"

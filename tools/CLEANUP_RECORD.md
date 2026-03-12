@@ -102,3 +102,53 @@ rm tools/download_models.py
 ---
 
 **创建时间**: 2026-03-13
+
+---
+
+## 2026-03-13 第二次清理
+
+### 执行的操作
+
+1. **移动 test_output 到正确位置**
+   - `tools/test_output/da3_batch_2026_03_13_01_50_19` → `test_output/` (202MB)
+   - `tools/test_output/sam3_batch_2026_03_13_01_50_19` → `test_output/` (135MB)
+   - 删除空的 `tools/test_output/` 目录
+
+2. **删除一次性测试脚本** (5个文件，~39K)
+   - `download_models_phase4.py` - 模型下载完成，不再需要
+   - `test_da3_cpu.py` - 已升级 GPU，不再需要 CPU 版本
+   - `test_da3_inference.py` - 已被 `batch_process_da3.py` 替代
+   - `test_da3_official.py` - 已被 `batch_process_da3.py` 替代
+   - `test_models.py` - Phase 4 初期验证完成
+
+### 清理后结构
+
+**tools/ 目录** (9个核心脚本 + 2个文档):
+- `batch_process_da3.py` - DA3 批量深度估计 ⭐核心
+- `batch_segment_sam3.py` - SAM 3 批量分割 ⭐核心
+- `validate_sam3_masks.py` - SAM 3 掩码验证
+- `validate_da3_poses.py` - DA3 位姿验证
+- `analyze_depth_alignment.py` - 深度对齐分析
+- `generate_segmentation.py` - ASVSim 分割生成
+- `validate_dataset.py` - 数据集验证
+- `verify_camera_settings.py` - 相机设置验证
+- `verify_gpu_support.py` - GPU 验证
+- `CLEANUP_RECORD.md` - 本记录
+- `CLEANUP_SUGGESTIONS.md` - 清理建议文档
+
+**test_output/ 目录**:
+- `da3_batch_2026_03_13_01_50_19/` - DA3 深度输出 (126张)
+- `sam3_batch_2026_03_13_01_50_19/` - SAM 3 分割输出 (94张)
+- `da3_cpu/` - CPU 测试输出
+- `da3_official/` - GPU 测试输出
+- `depth_alignment_analysis/` - 深度对齐分析
+- `pose_analysis/` - 位姿分析
+- `sam3_mask_validation/` - 掩码验证
+
+### 数据验证
+
+- DA3 深度图: 126 张 ✅
+- SAM 3 分割: 94 张 ✅
+- 所有数据完整无损
+
+---
