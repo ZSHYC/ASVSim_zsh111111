@@ -33,7 +33,13 @@
       "Bash(python -c \"import numpy as np; d = np.load\\('C:/Users/zsh/Desktop/ASVSim_zsh/dataset/2026_03_12_20_53_24/depth/0000.npy'\\); print\\(f'Shape: {d.shape}'\\); print\\(f'Dtype: {d.dtype}'\\); print\\(f'Range: [{d.min\\(\\):.2f}, {d.max\\(\\):.2f}]'\\); print\\(f'NaN count: {np.sum\\(~np.isfinite\\(d\\)\\)}'\\)\")",
       "Bash(python -c \"import cv2; img = cv2.imread\\('C:/Users/zsh/Desktop/ASVSim_zsh/dataset/2026_03_12_20_53_24/rgb/0000.png'\\); print\\(f'Shape: {img.shape}'\\); print\\(f'Dtype: {img.dtype}'\\); print\\(f'Pixel range: [{img.min\\(\\)}, {img.max\\(\\)}]'\\)\")",
       "WebFetch(domain:ai.meta.com)",
-      "WebFetch(domain:depth-anything-3.github.io)"
+      "WebFetch(domain:depth-anything-3.github.io)",
+      "WebFetch(domain:docs.nvidia.com)",
+      "WebFetch(domain:www.nvidia.com)",
+      "Bash(nvidia-smi 2>/dev/null || echo \"nvidia-smi not found\")",
+      "Bash(df -h /d 2>/dev/null | tail -1 || wmic logicaldisk get size,freespace,caption | grep D:)",
+      "Bash(conda create:*)",
+      "Bash(conda activate:*)"
     ],
     "additionalDirectories": [
       "c:\\Users\\zsh\\Documents\\AirSim"

@@ -1,0 +1,75 @@
+# 模型路径配置
+# 指向 D 盘存储，节省 C 盘空间
+
+models:
+  sam3:
+    checkpoint: "D:/ASVSim_models/sam3/sam3.pt"
+    config: null
+    # SAM 3 需要先申请权限：https://huggingface.co/facebook/sam3
+
+  depth_anything_3:
+    # DA3-LARGE (1.53GB) - 推荐
+    large: "D:/ASVSim_models/depth_anything_3/da3_large.safetensors"
+
+    # DA3-MONO (1.24GB) - 单目深度备选
+    mono_large: "D:/ASVSim_models/depth_anything_3/da3_mono.safetensors"
+
+    # 注意：DA3 使用 .safetensors 格式而非 .pth
+    # 这是 Hugging Face 的标准格式
+
+    # 完整版（1.4B，功能最全但显存占用高）- 可选
+    # nested_giant: "D:/ASVSim_models/depth_anything_3/da3_nested_giant.safetensors"
+
+  # 其他可能的模型
+  # clip:
+  #   checkpoint: "D:/ASVSim_models/clip/clip_vit_large.pth"
+
+# 缓存路径 - 都指向 D 盘
+cache:
+  huggingface: "D:/ASVSim_models/cache/hub"
+  torch: "D:/ASVSim_models/cache/torch"
+  pip: "D:/ASVSim_models/cache/pip"
+
+# 数据集路径
+datasets:
+  # 当前正在使用的数据集（软链接或复制到 C 盘便于访问）
+  current: "C:/Users/zsh/Desktop/ASVSim_zsh/dataset/2026_03_12_20_53_24"
+
+  # 数据集备份（大文件放 D 盘）
+  backup_dir: "D:/ASVSim_models/datasets"
+
+  # 历史数据集列表
+  history:
+    - "2026_03_12_20_53_24"
+
+# 输出路径
+output:
+  # 实验结果输出
+  experiments: "D:/ASVSim_models/experiments"
+
+  # 日志
+  logs: "D:/ASVSim_models/logs"
+
+  # 临时文件
+  temp: "D:/ASVSim_models/temp"
+
+# 设备配置
+device:
+  # 默认使用 GPU
+  use_cuda: true
+
+  # 显存优化设置（针对 12GB 显存）
+  mixed_precision: true  # 使用 FP16 混合精度
+  gradient_checkpointing: false  # 是否使用梯度检查点（训练时）
+  max_batch_size: 1  # 最大 batch size
+
+# 下载配置
+download:
+  # HuggingFace 镜像（国内用户可启用）
+  # endpoint: "https://hf-mirror.com"
+
+  # 并行下载数
+  num_workers: 4
+
+  # 超时时间（秒）
+  timeout: 300
