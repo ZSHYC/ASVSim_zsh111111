@@ -39,7 +39,14 @@
       "Bash(nvidia-smi 2>/dev/null || echo \"nvidia-smi not found\")",
       "Bash(df -h /d 2>/dev/null | tail -1 || wmic logicaldisk get size,freespace,caption | grep D:)",
       "Bash(conda create:*)",
-      "Bash(conda activate:*)"
+      "Bash(conda activate:*)",
+      "Bash(source /c/ProgramData/miniconda3/etc/profile.d/conda.sh && conda activate bishe && pip uninstall torch torchvision torchaudio -y)",
+      "Bash(where conda:*)",
+      "Bash(source /d/miniforge3/etc/profile.d/conda.sh && conda activate bishe && pip uninstall torch torchvision torchaudio -y)",
+      "Bash(source /d/miniforge3/etc/profile.d/conda.sh && conda activate bishe && pip install --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/cu128 2>&1)",
+      "Bash(source /d/miniforge3/etc/profile.d/conda.sh && conda activate bishe && pip uninstall xformers -y && pip install --pre xformers --index-url https://download.pytorch.org/whl/nightly/cu128 2>&1 | tail -20)",
+      "Bash(source /d/miniforge3/etc/profile.d/conda.sh && conda activate bishe && python tools/verify_gpu_support.py)",
+      "Bash(source /d/miniforge3/etc/profile.d/conda.sh && conda activate bishe && cd tools && python test_da3_official.py 2>&1)"
     ],
     "additionalDirectories": [
       "c:\\Users\\zsh\\Documents\\AirSim"
