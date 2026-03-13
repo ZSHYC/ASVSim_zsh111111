@@ -1,0 +1,35 @@
+{
+  "skill_name": "thesis-helper",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "我是计算机视觉专业的学生，研究方向是目标检测，想了解一下标准的英文论文结构应该怎么安排，每个部分要写什么内容",
+      "expected_output": "提供计算机视觉英文论文的标准结构，包括各章节的具体内容和写作要点，体现英文论文特点，符合理工科论文规范"
+    },
+    {
+      "id": 2,
+      "prompt": "请帮我生成一篇关于基于Transformer的目标检测算法的本科毕业论文，要求约8000词，符合哈尔滨工程大学的格式要求",
+      "expected_output": "生成完整的英文论文，包含Abstract、Introduction、Related Work、Methodology、Experiments、Results、Conclusion、References等章节，符合哈尔滨工程大学格式要求，约8000词"
+    },
+    {
+      "id": 3,
+      "prompt": "我的Introduction写得很乱，不知道怎么组织，请帮我修改并提供英文写作模板",
+      "expected_output": "指出Introduction的组织问题，提供标准结构（Background、Problem Statement、Research Objectives、Contributions、Paper Organization），给出英文写作模板和常用句型"
+    },
+    {
+      "id": 4,
+      "prompt": "参考文献应该用什么样的格式？我学校要求用Harvard格式",
+      "expected_output": "提供Harvard格式的详细说明和示例，包括期刊、专著、会议论文、学位论文、网页等不同类型文献的格式"
+    },
+    {
+      "id": 5,
+      "prompt": "我是机器人工程专业的学生，研究强化学习在机器人控制中的应用，请帮我规划Methodology部分的结构",
+      "expected_output": "针对机器人工程和强化学习提供Methodology写作指导，包括问题建模（MDP）、算法设计、网络架构、训练策略、仿真环境等内容"
+    },
+    {
+      "id": 6,
+      "prompt": "请检查我的论文目录结构是否符合哈尔滨工程大学的格式要求",
+      "expected_output": "根据哈尔滨工程大学格式要求检查目录结构，包括标题层级（一级罗马数字、二级三级阿拉伯数字）、字体字号、行距等要求"
+    }
+  ]
+}
