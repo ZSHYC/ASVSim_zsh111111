@@ -18,8 +18,8 @@ See: .planning/PROJECT.md (updated 2026-03-13)
 
 | Phase | Status | Requirements Complete | Progress |
 |-------|--------|----------------------|----------|
-| 1: Content Audit | Not Started | 0/4 | 0% |
-| 2: Data Preparation | Not Started | 0/9 | 0% |
+| 1: Content Audit | **Completed** | 4/4 | 100% |
+| 2: Data Preparation | **In Progress** | 0/9 | 0% |
 | 3: Core Content Update | Not Started | 0/3 | 0% |
 | 4: Literature Update | Not Started | 0/4 | 0% |
 | 5: Front Matter & Polish | Not Started | 0/9 | 0% |
