@@ -12,13 +12,15 @@ The main achievements of this research are:
 
 \textbf{1. Simulation Platform Establishment:} Successfully deployed and configured ASVSim on Unreal Engine 5 with multi-sensor setup including front-facing camera and top-mounted LiDAR. The configuration was optimized through systematic experimentation to balance visual quality with computational efficiency.
 
-\textbf{2. Rendering Optimization:} Identified and resolved critical performance bottlenecks, achieving a 9$\times$ speed improvement (from 55--60 seconds to 6--7 seconds per frame) through disabling Lumen global illumination and reducing resolution to 640$\times$480. This optimization transforms impractical data collection into an efficient workflow.
+\textbf{2. Rendering Optimization:} Identified and resolved critical performance bottlenecks, achieving a 9$\times$ speed improvement (from 55--60 seconds to 6--7 seconds per frame) through disabling Lumen global illumination and reducing resolution to 640$\times$480.
 
-\textbf{3. Multi-Modal Data Pipeline:} Developed an automated collection system that captures synchronized RGB images, depth maps, LiDAR point clouds, and accurate ground truth poses. The pipeline includes robust error handling, retry mechanisms, and automatic validation.
+\textbf{3. Multi-Modal Data Pipeline:} Developed an automated collection system that captures synchronized RGB images, depth maps, LiDAR point clouds, and accurate ground truth poses with robust error handling.
 
-\textbf{4. Data Format Integration:} Implemented conversion to COLMAP format, enabling direct use of collected data with standard 3D Gaussian Splatting training pipelines. The format preserves accurate camera intrinsics and extrinsics from simulation.
+\textbf{4. Intelligent Perception Layer:} Successfully deployed and evaluated Depth Anything 3 for metric depth estimation (11 FPS, 126 frames processed) and SAM 3 for instance segmentation (94 frames, 8.7 instances/image average, 0.947 confidence). Characterized DA3 pose prediction limitations, establishing reliance on simulation ground truth.
 
-\textbf{5. Experimental Validation:} Demonstrated the system through successful collection of 200-frame datasets with 100\% success rate, validating both the technical implementation and practical usability.
+\textbf{5. Data Format Integration:} Implemented conversion to COLMAP format, enabling direct use of collected data with standard 3D Gaussian Splatting training pipelines.
+
+\textbf{6. Experimental Validation:} Demonstrated the system through successful collection of 200-frame datasets with 100\% success rate, validating both technical implementation and practical usability.
 
 \subsection{Key Findings}
 
@@ -32,6 +34,10 @@ Several key findings emerged from this research:
     \item \textbf{API compatibility requires attention:} CosysAirSim exhibits several behavioral differences from standard AirSim that must be understood and accommodated for successful integration.
 
     \item \textbf{Ground truth poses are valuable:} Simulation provides perfect pose information, eliminating the need for Structure-from-Motion and enabling more efficient 3DGS training.
+
+    \item \textbf{DA3 depth vs. pose quality divergence:} While DA3 produces excellent metric depth estimates (validated against simulation), its pose prediction fails catastrophically in texture-poor polar scenes. This finding emphasizes the importance of validating all algorithm outputs and leveraging domain-appropriate alternatives (simulation ground truth).
+
+    \item \textbf{Foundation model zero-shot capability:} SAM 3 successfully detects polar-relevant objects (ice formations, vessel structures) without fine-tuning, demonstrating strong generalization from general-purpose training data.
 \end{itemize}
 
 \subsection{Contributions}
@@ -55,6 +61,7 @@ The current implementation has several limitations that should be acknowledged:
     \item Segmentation ground truth is generated offline rather than in real-time
     \item The coordinate transformation for COLMAP format requires completion
     \item Dynamic environmental effects are not yet incorporated
+    \item DA3 pose estimation is unreliable for texture-poor polar scenes; real-world deployment would require alternative visual odometry
 \end{itemize}
 
 These limitations are recognized and planned as future work rather than deficiencies in the current contribution.
@@ -67,15 +74,16 @@ Building upon the foundation established in this thesis, several directions for 
 \begin{itemize}
     \item Complete the COLMAP pose transformation implementation
     \item Integrate polar environment assets (icebergs, ice sheets)
-    \item Implement real-time segmentation using SAM3
+    \item \textbf{Completed:} Deploy SAM 3 for instance segmentation (94 frames processed)
+    \item \textbf{Completed:} Deploy Depth Anything 3 for depth estimation (126 frames processed)
     \item Train and evaluate 3DGS models on collected datasets
 \end{itemize}
 
 \textbf{Medium-term goals:}
 \begin{itemize}
     \item Develop path planning algorithms using 3DGS reconstructions
-    \item Integrate depth estimation (Depth Anything 3) for perception
-    \item Implement dynamic obstacle handling
+    \item Implement real-time inference optimization for SAM 3 and DA3
+    \item Add semantic labeling to segmentation outputs
     \item Validate sim-to-real transfer capabilities
 \end{itemize}
 

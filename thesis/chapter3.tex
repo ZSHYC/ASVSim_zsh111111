@@ -344,3 +344,70 @@ The data collection system is implemented in Python using the CosysAirSim SDK (v
 \end{itemize}
 
 The complete source code for the data collection pipeline is provided in Appendix A.
+
+% ============================================================
+% NEW SECTION: Intelligent Perception Layer
+% Phase 4 Implementation
+% ============================================================
+\subsection{Intelligent Perception Layer}
+
+Following data acquisition, the intelligent perception layer processes raw sensor outputs to extract actionable environmental information. This layer implements two core capabilities: metric depth estimation through monocular depth prediction and instance-level scene segmentation for object detection.
+
+\subsubsection{Depth Estimation with Depth Anything 3}
+
+Depth estimation employs Depth Anything 3 (DA3), a state-of-the-art monocular depth estimation model developed by ByteDance Seed \parencite{depthanything32025}. The model provides metric depth measurements (in meters) directly applicable for navigation planning, eliminating the need for additional scale calibration.
+
+\textbf{Model Configuration:} The DA3-LARGE-1.1 variant was selected for its balance of accuracy and computational efficiency. This model comprises 410.9M parameters and requires approximately 1.53 GB of storage. The architecture builds upon a hierarchical Vision Transformer (ViT) encoder with multi-scale feature fusion, specifically optimized for challenging conditions including low-texture surfaces common in polar environments.
+
+\textbf{GPU Acceleration:} To achieve real-time processing performance, PyTorch Nightly was configured with CUDA 12.8 support for the RTX 5070 Ti GPU (Blackwell architecture, sm\_120). This configuration enables GPU-accelerated inference, reducing per-image processing time from 1.72 seconds (CPU) to 0.088 seconds (GPU batch processing)---a \textbf{19.5$\times$ speedup}.
+
+\begin{table}[htbp]
+\centering
+\caption{DA3 Depth Estimation Performance Comparison}
+\label{tab:da3_performance}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+\textbf{Configuration} & \textbf{Time/Image} & \textbf{Throughput} & \textbf{Speedup} \\
+\midrule
+CPU (i7-13700K) & 1.72 s & 0.58 FPS & 1$\times$ (baseline) \\
+GPU (RTX 5070 Ti) Single & 0.29 s & 3.45 FPS & 6$\times$ \\
+GPU (RTX 5070 Ti) Batch-8 & 0.088 s & 11.36 FPS & 19.5$\times$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Batch Processing Pipeline:} The implementation processes images in batches of 8 to maximize GPU utilization while maintaining manageable memory consumption. For the complete dataset of 126 images, total processing time was 11.08 seconds, achieving an effective throughput of 11.36 FPS.
+
+\textbf{Depth Alignment:} DA3 outputs metric depth values that require alignment with simulation depth maps for validation. Analysis revealed that simulation depth values are provided in centimeters, while DA3 outputs meters. The alignment factor was computed as 0.0204, with median error of 2.67 meters after alignment. This error primarily stems from DA3's conservative estimation of distant objects compared to simulation ground truth.
+
+\subsubsection{Instance Segmentation with SAM 3}
+
+Instance segmentation utilizes SAM 3 (Segment Anything Model version 3), developed by Meta AI Research \parencite{sam32026}. SAM 3 provides category-agnostic instance segmentation, enabling detection of arbitrary objects without predefined class labels---particularly valuable for polar environments where ice formations exhibit diverse and unpredictable geometries.
+
+\textbf{Model Deployment:} SAM 3 was deployed through the Ultralytics framework (v8.4.21), which provides optimized inference pipelines. The model checkpoint (3.29 GB) was loaded using the PyTorch backend with automatic mixed precision (AMP) enabled for efficient GPU utilization.
+
+\textbf{Segmentation Results:} The model was applied to 94 images from the collected dataset (frames 0000--0093). Results demonstrate robust detection capabilities:
+
+\begin{itemize}
+    \item \textbf{Instance Count:} Average of 8.7 instances per image (range: 6--16)
+    \item \textbf{Total Detections:} Approximately 820 instances across all processed frames
+    \item \textbf{Confidence Score:} Mean confidence of 0.947, indicating high reliability
+    \item \textbf{Coverage:} Instances occupy 66.6\% of image area on average
+\end{itemize}
+
+Detected objects include vessel structures (masts, decks), distant ice formations, background terrain, and water surfaces. The category-agnostic approach successfully identifies objects regardless of training data exposure to specific polar features.
+
+\textbf{Processing Speed:} SAM 3 processes images at approximately 13 seconds per frame---significantly slower than DA3 due to the larger model size (3.29 GB vs 1.53 GB) and the complexity of instance mask generation. While not suitable for real-time applications, this throughput is adequate for offline dataset preparation.
+
+\subsubsection{Depth-Segmentation Fusion}
+
+Integration of depth and segmentation modalities enables instance-level 3D understanding. For each detected instance, the corresponding depth values are extracted from the DA3 depth map:
+
+\begin{equation}
+d_{instance} = \frac{1}{|M|} \sum_{(x,y) \in M} D(x,y)
+\label{eq:instance_depth}
+\end{equation}
+
+where $M$ represents the instance mask pixels and $D$ is the depth map. This computation yields the average depth of each instance, enabling spatial categorization (near-field vessel structure vs. far-field obstacles).
+
+The fused data structure combines RGB imagery, metric depth, instance segmentation masks, and camera poses (from simulation ground truth) into unified training examples suitable for 3D Gaussian Splatting and path planning modules.

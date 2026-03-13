@@ -71,6 +71,12 @@ The \texttt{build\_transform\_matrix} function for COLMAP format is currently in
 
 The current system assumes static environments. Real polar environments include dynamic ice floes, changing lighting conditions, and weather effects that are not yet incorporated.
 
+\subsubsection{Perception Algorithm Limitations}
+
+While Depth Anything 3 provides high-quality depth estimates, its pose prediction functionality proved unreliable for the target application (Section 4.6). The failure stems from insufficient scene texture and limited baseline between views---characteristics inherent to the smooth water and ice surfaces in polar environments. This limitation necessitates reliance on simulation ground truth poses, which are unavailable in real-world deployments.
+
+Similarly, SAM 3's instance segmentation, while accurate, provides only category-agnostic masks without semantic labels (``iceberg,'' ``vessel,'' ``water''). Additional post-processing or fine-tuning would be required for semantically-aware navigation planning.
+
 \subsection{Comparison with Related Work}
 
 Compared to existing marine simulation datasets \parencite{bingham2019virtual, ebadi2020lakes}, this work provides:
@@ -115,13 +121,18 @@ Acquire and integrate polar-specific assets (icebergs, ice sheets, ice floes) in
 
 \subsubsection{Perception Module Development}
 
-Integrate SAM3 and Depth Anything 3 for real-time ice detection and depth estimation. Fine-tune these models on collected datasets to improve domain-specific performance.
+\textbf{Status: Partially Completed.} SAM 3 and Depth Anything 3 have been successfully integrated for offline ice detection and depth estimation (Section 4.4--4.5). Remaining work includes:
+\begin{itemize}
+    \item Fine-tuning these models on collected datasets to improve domain-specific performance
+    \item Implementing real-time inference optimization for onboard deployment
+    \item Adding semantic labeling to SAM 3 outputs for category-aware planning
+\end{itemize}
 
 \subsubsection{3DGS Training and Evaluation}
 
 Complete the 3DGS reconstruction pipeline by:
 \begin{itemize}
-    \item Implementing proper pose transformation
+    \item Implementing proper pose transformation (using simulation ground truth)
     \item Training 3DGS models on collected datasets
     \item Evaluating reconstruction quality (PSNR, SSIM)
     \item Exploring multi-scale progressive 3DGS for polar scenes
