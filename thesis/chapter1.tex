@@ -48,9 +48,9 @@ This research contributes to the field of intelligent marine navigation in sever
 
 \textbf{Theoretical significance:} The integration of real-time 3D reconstruction with autonomous navigation planning represents a novel research direction. The multi-scale progressive 3DGS approach proposed in this work advances the state of the art in neural scene representation for maritime applications.
 
-\textbf{Practical significance:} The developed simulation framework and data collection pipeline provide researchers with accessible tools for developing and testing polar navigation algorithms. The methodology reduces the cost and risk associated with field trials while enabling comprehensive scenario coverage.
+\textbf{Practical significance:} The developed simulation framework and data collection pipeline provide researchers with accessible tools for developing and testing polar navigation algorithms. The intelligent perception layer, integrating SAM3 for sea ice segmentation and Depth Anything 3 for depth estimation, advances the practical applicability of foundation models in maritime environments. The methodology reduces the cost and risk associated with field trials while enabling comprehensive scenario coverage.
 
-\textbf{Methodological contribution:} The systematic approach to sensor configuration, data synchronization, and format conversion establishes best practices for multi-modal marine data collection in simulation environments.
+\textbf{Methodological contribution:} The systematic approach to sensor configuration, data synchronization, and format conversion establishes best practices for multi-modal marine data collection in simulation environments. The evaluation of DA3's pose prediction limitations provides valuable insights for the research community regarding the practical constraints of foundation models in specialized domains.
 
 \subsection{Thesis Organization}
 
@@ -80,10 +80,10 @@ This research focuses specifically on the simulation environment setup and multi
 The following aspects are identified as limitations and deferred to future work:
 
 \begin{itemize}
-    \item Implementation of perception algorithms (SAM3 and Depth Anything 3 integration)
     \item Full 3DGS training and novel view synthesis evaluation
     \item Path planning algorithm development and testing
     \item Real-world validation and sim-to-real transfer
+    \item Multi-scenario generalization beyond the LakeEnv environment
 \end{itemize}
 
-Despite these limitations, the work establishes a solid foundation for subsequent phases of the research program, with the data collection pipeline ready to support training and evaluation of perception and planning modules.
+Despite these limitations, the work establishes a solid foundation for subsequent phases of the research program. The data collection pipeline and intelligent perception layer provide essential capabilities for training and evaluation of reconstruction and planning modules. Notably, the evaluation revealed important constraints regarding DA3's pose prediction accuracy, which informs the design of future integration strategies.

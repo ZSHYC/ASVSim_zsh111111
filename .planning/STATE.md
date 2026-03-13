@@ -21,7 +21,7 @@ See: .planning/PROJECT.md (updated 2026-03-13)
 | 1: Content Audit | ✅ Completed | 4/4 | 100% |
 | 2: Data Preparation | ✅ Completed | 9/9 | 100% |
 | 3: Core Content Update | ✅ Completed | 3/3 | 100% |
-| 4: Literature Update | 🔄 In Progress | 0/4 | 0% |
+| 4: Literature Update | ✅ Completed | 4/4 | 100% |
 | 5: Front Matter & Polish | ⏳ Not Started | 0/9 | 0% |
 
 ---

@@ -1,17 +1,17 @@
 [0] Config.pm:328> INFO - This is Biber 2.21
 [0] Config.pm:331> INFO - Logfile is 'main.blg'
-[67] biber-MSWIN64:342> INFO - === 
-[94] Biber.pm:421> INFO - Reading 'main.bcf'
-[162] Biber.pm:1002> INFO - Found 50 citekeys in bib section 0
-[171] Biber.pm:4487> INFO - Processing section 0
-[178] Biber.pm:4678> INFO - Looking for bibtex file 'references.bib' for section 0
-[216] bibtex.pm:1713> INFO - LaTeX decoding ...
-[248] bibtex.pm:1519> INFO - Found BibTeX data source 'references.bib'
-[483] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[483] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[483] Biber.pm:4307> INFO - Sorting list 'nyt/global//global/global/global' of type 'entry' with template 'nyt' and locale 'en-US'
-[483] Biber.pm:4313> INFO - No sort tailoring available for locale 'en-US'
-[513] bbl.pm:676> INFO - Writing 'main.bbl' with encoding 'UTF-8'
-[540] bbl.pm:779> INFO - Output to main.bbl
-[541] Biber.pm:132> WARN - I didn't find a database entry for 'xu2022point' (section 0)
-[541] Biber.pm:134> INFO - WARNINGS: 1
+[70] biber-MSWIN64:342> INFO - === 
+[97] Biber.pm:421> INFO - Reading 'main.bcf'
+[165] Biber.pm:1002> INFO - Found 52 citekeys in bib section 0
+[174] Biber.pm:4487> INFO - Processing section 0
+[181] Biber.pm:4678> INFO - Looking for bibtex file 'references.bib' for section 0
+[222] bibtex.pm:1713> INFO - LaTeX decoding ...
+[257] bibtex.pm:1519> INFO - Found BibTeX data source 'references.bib'
+[497] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[497] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[497] Biber.pm:4307> INFO - Sorting list 'nyt/global//global/global/global' of type 'entry' with template 'nyt' and locale 'en-US'
+[497] Biber.pm:4313> INFO - No sort tailoring available for locale 'en-US'
+[568] bbl.pm:676> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[597] bbl.pm:779> INFO - Output to main.bbl
+[597] Biber.pm:132> WARN - I didn't find a database entry for 'xu2022point' (section 0)
+[597] Biber.pm:134> INFO - WARNINGS: 1

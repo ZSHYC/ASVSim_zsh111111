@@ -85,7 +85,7 @@
 | CONT-01 | Phase 1 | Pending |
 | CONT-02 | Phase 2 | Pending |
 | CONT-03 | Phase 3 | Pending |
-| CONT-04 | Phase 4 | Pending |
+| CONT-04 | Phase 4 | Complete |
 | CONT-05 | Phase 5 | Pending |
 | FIG-01 | Phase 2 | Pending |
 | FIG-02 | Phase 2 | Pending |
@@ -105,9 +105,9 @@
 | FRONT-02 | Phase 5 | Pending |
 | FRONT-03 | Phase 5 | Pending |
 | FRONT-04 | Phase 5 | Pending |
-| REF-01 | Phase 4 | Pending |
-| REF-02 | Phase 4 | Pending |
-| REF-03 | Phase 4 | Pending |
+| REF-01 | Phase 4 | Complete |
+| REF-02 | Phase 4 | Complete |
+| REF-03 | Phase 4 | Complete |
 | REF-04 | Phase 5 | Pending |
 
 **Coverage:**
