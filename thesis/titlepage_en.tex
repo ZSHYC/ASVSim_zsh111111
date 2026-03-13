@@ -1,5 +1,5 @@
 % ============================================================
-% 英文扉页 (English Title Page)
+% 英文扉页 (English Title Page) - 严格按模板
 % ============================================================
 \begin{titlepage}
 \thispagestyle{empty}
@@ -7,10 +7,10 @@
 
 \vspace*{0.5cm}
 
-% Student ID（右对齐）
+% Student ID（小4号，右对齐）
 \begin{flushright}
 \fontsize{12pt}{18pt}\selectfont
-Student\quad ID:\underline{\makebox[5cm]{2022XXXXXXXX}}
+Student\hspace{2em}ID:\underline{\makebox[5cm]{2022281110}}
 \end{flushright}
 
 \vspace{1.5cm}
@@ -22,17 +22,18 @@ Using Unreal Engine and 3D Gaussian Splatting}
 
 \vspace{4cm}
 
-% 信息表格（右对齐标签）
-\begin{tabular}{rp{8cm}}
-\fontsize{14pt}{21pt}\selectfont Student's name &: {\fontsize{14pt}{21pt}\selectfont Zhang Shihao} \\[0.5cm]
-\fontsize{14pt}{21pt}\selectfont College &: {\fontsize{14pt}{21pt}\selectfont Southampton Ocean Engineering Joint Institute} \\[0.5cm]
-\fontsize{14pt}{21pt}\selectfont Program &: {\fontsize{14pt}{21pt}\selectfont Naval Architecture and Ocean Engineering} \\[0.5cm]
-\fontsize{14pt}{21pt}\selectfont Supervisor &: {\fontsize{14pt}{21pt}\selectfont Xing Xianglei / Dominic Taunton} \\[0.5cm]
-\fontsize{14pt}{21pt}\selectfont Supervisor's Title &: {\fontsize{14pt}{21pt}\selectfont Associate Professor / Professor} \\[0.5cm]
-\fontsize{14pt}{21pt}\selectfont University &: {\fontsize{14pt}{21pt}\selectfont Harbin Engineering University} \\[0.5cm]
-\fontsize{14pt}{21pt}\selectfont Submission Date &: {\fontsize{14pt}{21pt}\selectfont May 2026} \\[0.5cm]
-\fontsize{14pt}{21pt}\selectfont Oral Defense Date &: {\fontsize{14pt}{21pt}\selectfont May 2026} \\[0.5cm]
-\fontsize{14pt}{21pt}\selectfont Degree award &: {\fontsize{14pt}{21pt}\selectfont Harbin Engineering University} \\
+% 信息表格（小4号，右对齐标签）
+\fontsize{12pt}{18pt}\selectfont
+\begin{tabular}{@{}rp{8cm}@{}}
+Student's name &: Zhang Shihao \\[0.5cm]
+College &: Southampton Ocean Engineering Joint Institute \\[0.5cm]
+Program &: Naval Architecture and Ocean Engineering \\[0.5cm]
+Supervisor &: Xing Xianglei / Dominic Taunton \\[0.5cm]
+Supervisor's Title &: Associate Professor / Professor \\[0.5cm]
+University &: Harbin Engineering University \\[0.5cm]
+Submission Date &: May 2026 \\[0.5cm]
+Oral Defense Date &: May 2026 \\[0.5cm]
+Degree award &: Harbin Engineering University \\
 \end{tabular}
 
 \end{center}

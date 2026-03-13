@@ -1,59 +1,72 @@
-\documentclass[12pt,a4paper]{article}
+\documentclass[12pt,a4paper,twoside]{article}
 
 % ============================================================
 % 哈尔滨工程大学本科生毕业论文 LaTeX 模板
-% 专业：船舶与海洋工程（英文）
-% 论文题目：Polar Route Planning and 3D Reconstruction
-%          Using Unreal Engine and 3D Gaussian Splatting
+% 严格按22级论文模板格式
 % ============================================================
 
-% 页面设置（上28mm、下28mm、左25mm、右25mm）
-\usepackage[top=28mm,bottom=28mm,left=25mm,right=25mm]{geometry}
+% 页面设置
+\usepackage[top=28mm,bottom=28mm,left=25mm,right=25mm,headheight=30pt]{geometry}
 
 % 字体和编码
 \usepackage{times}
 \usepackage[T1]{fontenc}
-\usepackage[UTF8]{ctex}  % 中文支持
+\usepackage[UTF8]{ctex}
 
 % 图形和绘图
-\usepackage{tikz}  % TikZ绘图包（用于书脊等）
+\usepackage{tikz}
 \usetikzlibrary{calc,positioning}
 
-% 行距设置（固定值22磅）
+% 行距设置
 \usepackage{setspace}
 \setstretch{1.3}
 
-% 段落缩进（2字符）
+% 段落缩进
 \setlength{\parindent}{2em}
 
 % 章节标题格式
 \usepackage{titlesec}
 
-% 一级标题：小2号Times New Roman Bold，罗马数字(I, II, III...)
+% 一级标题：小2号Times New Roman Bold，罗马数字，居中
 \titleformat{\section}
   {\centering\fontsize{18pt}{22pt}\selectfont\bfseries}
   {\thesection}{1em}{}
 \renewcommand{\thesection}{\Roman{section}}
+\titlespacing*{\section}{0pt}{1\baselineskip}{1\baselineskip}
 
-% 二级标题：小3号Times New Roman Bold，阿拉伯数字(1.1, 1.2...)
+% 二级标题：小3号Times New Roman Bold
 \titleformat{\subsection}
   {\fontsize{15pt}{22pt}\selectfont\bfseries}
   {\thesubsection}{1em}{}
 \renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection}}
 
-% 三级标题：4号Times New Roman Bold，阿拉伯数字(1.1.1, 1.1.2...)
+% 三级标题：4号Times New Roman Bold
 \titleformat{\subsubsection}
   {\fontsize{14pt}{22pt}\selectfont\bfseries}
   {\thesubsubsection}{1em}{}
 \renewcommand{\thesubsubsection}{\arabic{section}.\arabic{subsection}.\arabic{subsubsection}}
 
-% 页眉页脚
+% 页眉页脚设置
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[C]{\fontsize{10.5pt}{15.75pt}\selectfont Harbin Engineering University Bachelor's Thesis}
+
+% 页眉：论文标题居中（双页和单页都显示标题）
+\fancyhead[C]{\fontsize{10.5pt}{15.75pt}\selectfont Polar Route Planning and 3D Reconstruction Using Unreal Engine and 3D Gaussian Splatting}
 \fancyfoot[C]{\thepage}
-\renewcommand{\headrulewidth}{0.4pt}
+
+% 页眉线：上细下粗
+\renewcommand{\headrule}{%
+  \vspace{-2pt}
+  \begin{tikzpicture}
+    \draw[line width=0.4pt] (0,0) -- (\textwidth,0);
+    \draw[line width=1.5pt] (0,-2pt) -- (\textwidth,-2pt);
+  \end{tikzpicture}
+  \vspace{2pt}
+}
+
+% 章节标题标记
+\renewcommand{\sectionmark}[1]{\markboth{\Roman{section}. \MakeUppercase{#1}}{}}
 
 % 图表
 \usepackage{graphicx}
@@ -90,7 +103,7 @@
   numbersep=8pt
 }
 
-% 参考文献（Harvard格式）
+% 参考文献
 \usepackage[backend=biber,style=authoryear,natbib=true]{biblatex}
 \addbibresource{references.bib}
 
@@ -105,55 +118,49 @@
 % 颜色
 \usepackage{xcolor}
 
-% 旋转（用于书脊）
-\usepackage{graphicx}
-
 % ============================================================
-% 文档开始
+% 文档开始 - 严格按模板顺序
 % ============================================================
 \begin{document}
 
-% ===== 前置部分（不编页码）=====
-% 书脊（单独一页，竖排）
-\input{spine}
-
-% 中文封面
-\input{cover_chinese}
-
-% 英文封面
+% ===== 1. 英文封面 (无页码) =====
 \input{cover}
 
-% 中文扉页
-\input{titlepage_zh}
+% ===== 2. 中文封面 (无页码) =====
+\input{cover_chinese}
 
-% 英文扉页
+% ===== 3. 书脊 (无页码) =====
+\input{spine}
+
+% ===== 4. 英文扉页 (无页码) =====
 \input{titlepage_en}
 
-% 原创性声明和授权声明
+% ===== 5. 中文扉页 (无页码) =====
+\input{titlepage_zh}
+
+% ===== 6-9. 声明页（4页，无页码）=====
 \input{declarations}
 
-% ===== 前置部分（罗马数字页码）=====
+% ===== 10. 空白页（模板中有）=====
 \clearpage
-\pagestyle{empty}
+\thispagestyle{empty}
+\null
+
+% ===== 11. ABSTRACT（罗马数字页码开始）=====
+\cleardoublepage
+\pagestyle{fancy}
 \pagenumbering{roman}
-
-% 致谢
-\input{acknowledgements}
-
-% 摘要
+\setcounter{page}{1}
 \input{abstract}
 
-% 目录
-\clearpage
-\pagestyle{fancy}
+% ===== 12. 目录（续罗马数字）=====
+\cleardoublepage
 \tableofcontents
-\newpage
 
-% ===== 正文部分（阿拉伯数字页码）=====
+% ===== 13. 正文（阿拉伯数字页码）=====
+\cleardoublepage
 \pagenumbering{arabic}
 \setcounter{page}{1}
-
-% 各章节
 \input{chapter1}
 \input{chapter2}
 \input{chapter3}
@@ -161,13 +168,32 @@
 \input{chapter5}
 \input{chapter6}
 
-% 参考文献
-\clearpage
-\printbibliography[title=REFERENCES]
+% ===== 14. 参考文献 =====
+\cleardoublepage
+\section*{Reference}
+\addcontentsline{toc}{section}{Reference}
+\printbibliography[heading=none]
 
-% 附录
-\clearpage
-\appendix
+% ===== 15. 致谢 =====
+\cleardoublepage
+\section*{致\quad 谢}
+\addcontentsline{toc}{section}{致\quad 谢}
+\input{acknowledgements}
+
+% ===== 16. 学术成果 =====
+\cleardoublepage
+\section*{Published papers and research achievements during the pursuit of bachelor's degree}
+\addcontentsline{toc}{section}{Published papers and research achievements during the pursuit of bachelor's degree}
+
+\vspace{2cm}
+\begin{center}
+(No content)
+\end{center}
+
+% ===== 17. 附录 =====
+\cleardoublepage
+\section*{Appendix}
+\addcontentsline{toc}{section}{Appendix}
 \input{appendix}
 
 \end{document}

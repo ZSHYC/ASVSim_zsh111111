@@ -1,46 +1,47 @@
 % ============================================================
-% 中文扉页 (Chinese Title Page)
+% 中文扉页 (Chinese Title Page) - 严格按模板，必须在一页内
 % ============================================================
 \begin{titlepage}
 \thispagestyle{empty}
 \begin{center}
 
-\vspace*{0.5cm}
+\vspace*{0.3cm}
 
-% 学号、密级（右对齐）
+% 学号、密级（小4号，居右）
 \begin{flushright}
 \fontsize{12pt}{18pt}\selectfont
-学\quad 号：\underline{\makebox[5cm]{2022XXXXXXXX}}\\[0.3cm]
-密\quad 级：\underline{\makebox[5cm]{公开}}
+学\hspace{2em}号：\underline{\makebox[4cm]{2022281110}}\\[0.15cm]
+密\hspace{2em}级：\underline{\makebox[4cm]{公开}}
 \end{flushright}
 
-\vspace{1.5cm}
+\vspace{0.8cm}
 
 % 中文题目（2号黑体）
 {\fontsize{22pt}{33pt}\selectfont\bfseries
-基于 Unreal Engine 和 3D Gaussian Splatting 的\\[0.5cm]
+基于 Unreal Engine 和 3D Gaussian Splatting 的\\[0.25cm]
 极地路径规划与三维重建}
 
-\vspace{1cm}
+\vspace{0.6cm}
 
-% 英文IP Title
+% 英文题目（小2号Times New Roman Bold）
 {\fontsize{18pt}{27pt}\selectfont\bfseries
-Polar Route Planning and 3D Reconstruction Using\\[0.3cm]
+Polar Route Planning and 3D Reconstruction Using\\[0.15cm]
 Unreal Engine and 3D Gaussian Splatting}
 
-\vspace{3cm}
+\vspace{1.2cm}
 
-% 信息表格
-\begin{tabular}{rp{8cm}}
-\fontsize{14pt}{21pt}\selectfont 学\quad 生\quad 姓\quad 名：& \fontsize{14pt}{21pt}\selectfont 张时昊 \\[0.5cm]
-\fontsize{14pt}{21pt}\selectfont 所\quad 在\quad 学\quad 院：& \fontsize{14pt}{21pt}\selectfont 南安普顿海洋工程联合学院 \\[0.5cm]
-\fontsize{14pt}{21pt}\selectfont 所\quad 在\quad 专\quad 业：& \fontsize{14pt}{21pt}\selectfont 船舶与海洋工程 \\[0.5cm]
-\fontsize{14pt}{21pt}\selectfont 指\quad 导\quad 教\quad 师：& \fontsize{14pt}{21pt}\selectfont 邢向磊 / Dominic Taunton \\[0.5cm]
-\fontsize{14pt}{21pt}\selectfont 职\qquad\qquad\qquad 称：& \fontsize{14pt}{21pt}\selectfont 副教授 / 教授 \\[0.5cm]
-\fontsize{14pt}{21pt}\selectfont 所\quad 在\quad 单\quad 位：& \fontsize{14pt}{21pt}\selectfont 哈尔滨工程大学 \\[0.5cm]
-\fontsize{14pt}{21pt}\selectfont 论文提交日期：& \fontsize{14pt}{21pt}\selectfont 2026 年 5 月 \\[0.5cm]
-\fontsize{14pt}{21pt}\selectfont 论文答辩日期：& \fontsize{14pt}{21pt}\selectfont 2026 年 5 月 \\[0.5cm]
-\fontsize{14pt}{21pt}\selectfont 学位授予单位：& \fontsize{14pt}{21pt}\selectfont 哈尔滨工程大学 \\
+% 信息表格（小4号）- 使用small行距确保一页
+\fontsize{12pt}{16pt}\selectfont
+\begin{tabular}{@{}r@{：}l@{}}
+学\hspace{2em}生\hspace{2em}姓\hspace{2em}名 & 张时昊 \\[0.2cm]
+所\hspace{2em}在\hspace{2em}学\hspace{2em}院 & 南安普顿海洋工程联合学院 \\[0.2cm]
+所\hspace{2em}在\hspace{2em}专\hspace{2em}业 & 船舶与海洋工程 \\[0.2cm]
+指\hspace{2em}导\hspace{2em}教\hspace{2em}师 & 邢向磊 / Dominic Taunton \\[0.2cm]
+职\hspace{2em}称 & 副教授 / 教授 \\[0.2cm]
+所\hspace{2em}在\hspace{2em}单\hspace{2em}位 & 哈尔滨工程大学 \\[0.2cm]
+论文提交日期 & 2026 年 5 月 \\[0.2cm]
+论文答辩日期 & 2026 年 5 月 \\[0.2cm]
+学位授予单位 & 哈尔滨工程大学 \\
 \end{tabular}
 
 \end{center}

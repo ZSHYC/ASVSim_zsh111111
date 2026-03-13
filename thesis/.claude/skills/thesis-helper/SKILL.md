@@ -53,8 +53,8 @@ description: |
 | **提交日期**              | May 2026                                                                                 |
 | **答辩日期**              | May 2026                                                                                 |
 | **学位授予单位**          | Harbin Engineering University                                                            |
-
-**学科方向：** 船舶与海洋工程 + 计算机视觉/三维重建/机器人工程/具身智能
+| **学号**                  | 2022281110                                                                               |
+| **学科方向**              | 船舶与海洋工程 + 计算机视觉/三维重建/机器人工程/具身智能                                 |
 
 **研究关键词：** Unreal Engine, 3D Gaussian Splatting, Polar Route Planning, 3D Reconstruction, Naval Architecture
 
