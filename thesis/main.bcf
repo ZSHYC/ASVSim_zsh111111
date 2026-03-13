@@ -2428,10 +2428,12 @@
     <bcf:citekey order="52" intorder="1">geiger2012automatic</bcf:citekey>
     <bcf:citekey order="53" intorder="1">schroeder2020asvsim</bcf:citekey>
     <bcf:citekey order="54" intorder="1">fossen2011handbook</bcf:citekey>
-    <bcf:citekey order="55" intorder="1">kerbl20233d</bcf:citekey>
-    <bcf:citekey order="56" intorder="1">bingham2019virtual</bcf:citekey>
-    <bcf:citekey order="56" intorder="2">ebadi2020lakes</bcf:citekey>
-    <bcf:citekey order="57" intorder="1">fab2024arctic</bcf:citekey>
+    <bcf:citekey order="55" intorder="1">depthanything32025</bcf:citekey>
+    <bcf:citekey order="56" intorder="1">sam32026</bcf:citekey>
+    <bcf:citekey order="57" intorder="1">kerbl20233d</bcf:citekey>
+    <bcf:citekey order="58" intorder="1">bingham2019virtual</bcf:citekey>
+    <bcf:citekey order="58" intorder="2">ebadi2020lakes</bcf:citekey>
+    <bcf:citekey order="59" intorder="1">fab2024arctic</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nyt">
