@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.11)  14 MAR 2026 04:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.11)  14 MAR 2026 04:15
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1021,7 +1021,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 28
 )
 \Hy@SectionHShift=\skip94
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 112.
+Package hyperref Info: Option `colorlinks' set `true' on input line 114.
  (d:/texlive/2026/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \heavyrulewidth=\dimen299
@@ -1047,98 +1047,134 @@ Package: multirow 2024/11/12 v2.9 Span multiple rows of a table
 \multirow@cntb=\count484
 \multirow@dima=\skip96
 \bigstrutjot=\dimen312
+) (d:/texlive/2026/texmf-dist/tex/latex/tocloft/tocloft.sty
+Package: tocloft 2017/08/31 v2.3i parameterised ToC, etc., typesetting
+Package tocloft Info: The document has section divisions on input line 51.
+\cftparskip=\skip97
+\cftbeforetoctitleskip=\skip98
+\cftaftertoctitleskip=\skip99
+\cftbeforepartskip=\skip100
+\cftpartnumwidth=\skip101
+\cftpartindent=\skip102
+\cftbeforesecskip=\skip103
+\cftsecindent=\skip104
+\cftsecnumwidth=\skip105
+\cftbeforesubsecskip=\skip106
+\cftsubsecindent=\skip107
+\cftsubsecnumwidth=\skip108
+\cftbeforesubsubsecskip=\skip109
+\cftsubsubsecindent=\skip110
+\cftsubsubsecnumwidth=\skip111
+\cftbeforeparaskip=\skip112
+\cftparaindent=\skip113
+\cftparanumwidth=\skip114
+\cftbeforesubparaskip=\skip115
+\cftsubparaindent=\skip116
+\cftsubparanumwidth=\skip117
+\cftbeforeloftitleskip=\skip118
+\cftafterloftitleskip=\skip119
+\cftbeforefigskip=\skip120
+\cftfigindent=\skip121
+\cftfignumwidth=\skip122
+\c@lofdepth=\count485
+\c@lotdepth=\count486
+\cftbeforelottitleskip=\skip123
+\cftafterlottitleskip=\skip124
+\cftbeforetabskip=\skip125
+\cfttabindent=\skip126
+\cfttabnumwidth=\skip127
 ) (d:/texlive/2026/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.enc
 File: UTF8.enc 2021/10/16 4.8.5
 ) (d:/texlive/2026/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.chr
 File: UTF8.chr 2021/10/16 4.8.5
 )
-\@quotelevel=\count485
-\@quotereset=\count486
+\@quotelevel=\count487
+\@quotereset=\count488
  (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for C00/song/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for C05/song/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for C09/song/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for C10/song/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for C20/song/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for C19/song/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for C40/song/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for C42/song/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for C43/song/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for C50/song/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for C52/song/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for C49/song/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for C60/mj/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for C61/mj/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for C63/mj/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for C64/mj/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for C65/mj/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for C70/song/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for C31/song/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for C32/song/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for C33/song/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for C34/song/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for C35/song/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for C36/song/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for C37/song/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for C80/song/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for C81/song/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for C01/song/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for C11/song/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for C21/song/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for C41/song/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for C62/song/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 130.
+LaTeX Font Info:    ... okay on input line 130.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 130.
+LaTeX Font Info:    ... okay on input line 130.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 130.
+LaTeX Font Info:    ... okay on input line 130.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 130.
+LaTeX Font Info:    ... okay on input line 130.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 130.
+LaTeX Font Info:    ... okay on input line 130.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 130.
+LaTeX Font Info:    ... okay on input line 130.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 130.
+LaTeX Font Info:    ... okay on input line 130.
+LaTeX Font Info:    Checking defaults for C00/song/m/n on input line 130.
+LaTeX Font Info:    ... okay on input line 130.
+LaTeX Font Info:    Checking defaults for C05/song/m/n on input line 130.
+LaTeX Font Info:    ... okay on input line 130.
+LaTeX Font Info:    Checking defaults for C09/song/m/n on input line 130.
+LaTeX Font Info:    ... okay on input line 130.
+LaTeX Font Info:    Checking defaults for C10/song/m/n on input line 130.
+LaTeX Font Info:    ... okay on input line 130.
+LaTeX Font Info:    Checking defaults for C20/song/m/n on input line 130.
+LaTeX Font Info:    ... okay on input line 130.
+LaTeX Font Info:    Checking defaults for C19/song/m/n on input line 130.
+LaTeX Font Info:    ... okay on input line 130.
+LaTeX Font Info:    Checking defaults for C40/song/m/n on input line 130.
+LaTeX Font Info:    ... okay on input line 130.
+LaTeX Font Info:    Checking defaults for C42/song/m/n on input line 130.
+LaTeX Font Info:    ... okay on input line 130.
+LaTeX Font Info:    Checking defaults for C43/song/m/n on input line 130.
+LaTeX Font Info:    ... okay on input line 130.
+LaTeX Font Info:    Checking defaults for C50/song/m/n on input line 130.
+LaTeX Font Info:    ... okay on input line 130.
+LaTeX Font Info:    Checking defaults for C52/song/m/n on input line 130.
+LaTeX Font Info:    ... okay on input line 130.
+LaTeX Font Info:    Checking defaults for C49/song/m/n on input line 130.
+LaTeX Font Info:    ... okay on input line 130.
+LaTeX Font Info:    Checking defaults for C60/mj/m/n on input line 130.
+LaTeX Font Info:    ... okay on input line 130.
+LaTeX Font Info:    Checking defaults for C61/mj/m/n on input line 130.
+LaTeX Font Info:    ... okay on input line 130.
+LaTeX Font Info:    Checking defaults for C63/mj/m/n on input line 130.
+LaTeX Font Info:    ... okay on input line 130.
+LaTeX Font Info:    Checking defaults for C64/mj/m/n on input line 130.
+LaTeX Font Info:    ... okay on input line 130.
+LaTeX Font Info:    Checking defaults for C65/mj/m/n on input line 130.
+LaTeX Font Info:    ... okay on input line 130.
+LaTeX Font Info:    Checking defaults for C70/song/m/n on input line 130.
+LaTeX Font Info:    ... okay on input line 130.
+LaTeX Font Info:    Checking defaults for C31/song/m/n on input line 130.
+LaTeX Font Info:    ... okay on input line 130.
+LaTeX Font Info:    Checking defaults for C32/song/m/n on input line 130.
+LaTeX Font Info:    ... okay on input line 130.
+LaTeX Font Info:    Checking defaults for C33/song/m/n on input line 130.
+LaTeX Font Info:    ... okay on input line 130.
+LaTeX Font Info:    Checking defaults for C34/song/m/n on input line 130.
+LaTeX Font Info:    ... okay on input line 130.
+LaTeX Font Info:    Checking defaults for C35/song/m/n on input line 130.
+LaTeX Font Info:    ... okay on input line 130.
+LaTeX Font Info:    Checking defaults for C36/song/m/n on input line 130.
+LaTeX Font Info:    ... okay on input line 130.
+LaTeX Font Info:    Checking defaults for C37/song/m/n on input line 130.
+LaTeX Font Info:    ... okay on input line 130.
+LaTeX Font Info:    Checking defaults for C80/song/m/n on input line 130.
+LaTeX Font Info:    ... okay on input line 130.
+LaTeX Font Info:    Checking defaults for C81/song/m/n on input line 130.
+LaTeX Font Info:    ... okay on input line 130.
+LaTeX Font Info:    Checking defaults for C01/song/m/n on input line 130.
+LaTeX Font Info:    ... okay on input line 130.
+LaTeX Font Info:    Checking defaults for C11/song/m/n on input line 130.
+LaTeX Font Info:    ... okay on input line 130.
+LaTeX Font Info:    Checking defaults for C21/song/m/n on input line 130.
+LaTeX Font Info:    ... okay on input line 130.
+LaTeX Font Info:    Checking defaults for C41/song/m/n on input line 130.
+LaTeX Font Info:    ... okay on input line 130.
+LaTeX Font Info:    Checking defaults for C62/song/m/n on input line 130.
+LaTeX Font Info:    ... okay on input line 130.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 130.
+LaTeX Font Info:    ... okay on input line 130.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 130.
+LaTeX Font Info:    ... okay on input line 130.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1176,16 +1212,16 @@ LaTeX Font Info:    ... okay on input line 124.
 
 (d:/texlive/2026/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count487
+\scratchcounter=\count489
 \scratchdimen=\dimen313
 \scratchbox=\box72
-\nofMPsegments=\count488
-\nofMParguments=\count489
+\nofMPsegments=\count490
+\nofMParguments=\count491
 \everyMPshowfont=\toks42
-\MPscratchCnt=\count490
+\MPscratchCnt=\count492
 \MPscratchDim=\dimen314
-\MPnumerator=\count491
-\makeMPintoPDFobject=\count492
+\MPnumerator=\count493
+\makeMPintoPDFobject=\count494
 \everyMPtoPDFconversion=\toks43
 ) (d:/texlive/2026/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -1197,7 +1233,7 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\c@lstlisting=\count493
+\c@lstlisting=\count495
 Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
  (d:/texlive/2026/texmf-dist/tex/latex/biblatex/lbx/english.lbx
@@ -1219,9 +1255,9 @@ Package biblatex Warning: The following entry could not be found
 (biblatex)                LaTeX afterwards.
 
 )
-Package biblatex Info: Reference section=0 on input line 124.
-Package biblatex Info: Reference segment=0 on input line 124.
-Package hyperref Info: Link coloring ON on input line 124.
+Package biblatex Info: Reference section=0 on input line 130.
+Package biblatex Info: Reference segment=0 on input line 130.
+Package hyperref Info: Link coloring ON on input line 130.
  (./main.out) (./main.out)
 \@outlinefile=\write5
 \openout5 = `main.out'.
@@ -1279,23 +1315,11 @@ l.28 \clearpage
 
 ] [6
 
-] (./abstract.tex
-Overfull \hbox (1.5pt too wide) has occurred while \output is active
-[][]
- []
-
-
-Package fancyhdr Warning: \headheight is too small (30.0pt): 
-(fancyhdr)                Make it at least 40.02495pt, for example:
-(fancyhdr)                \setlength{\headheight}{40.02495pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
-
-[1
+] (./abstract.tex [1
 
 
 ]
-Overfull \hbox (1.5pt too wide) has occurred while \output is active
+Overfull \hbox (3.0pt too wide) has occurred while \output is active
 [][]
  []
 
@@ -1313,7 +1337,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                replaced by space on input line 24.
 
 )
-Overfull \hbox (1.5pt too wide) has occurred while \output is active
+Overfull \hbox (3.0pt too wide) has occurred while \output is active
 [][]
  []
 
@@ -1327,7 +1351,7 @@ Package fancyhdr Warning: \headheight is too small (30.0pt):
 [3
 
 ]
-Overfull \hbox (1.5pt too wide) has occurred while \output is active
+Overfull \hbox (3.0pt too wide) has occurred while \output is active
 [][]
  []
 
@@ -1341,19 +1365,10 @@ Package fancyhdr Warning: \headheight is too small (30.0pt):
 [4
 
 ] (./main.toc
-Overfull \hbox (1.5pt too wide) has occurred while \output is active
-[][]
- []
+Underfull \vbox (badness 7186) has occurred while \output is active []
 
-
-Package fancyhdr Warning: \headheight is too small (30.0pt): 
-(fancyhdr)                Make it at least 40.02495pt, for example:
-(fancyhdr)                \setlength{\headheight}{40.02495pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
-
-[5]
-Overfull \hbox (1.5pt too wide) has occurred while \output is active
+ [5]
+Overfull \hbox (3.0pt too wide) has occurred while \output is active
 [][]
  []
 
@@ -1365,7 +1380,10 @@ Package fancyhdr Warning: \headheight is too small (30.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
 
 [6]
-Overfull \hbox (1.5pt too wide) has occurred while \output is active
+Underfull \vbox (badness 4132) has occurred while \output is active []
+
+
+Overfull \hbox (3.0pt too wide) has occurred while \output is active
 [][]
  []
 
@@ -1377,7 +1395,10 @@ Package fancyhdr Warning: \headheight is too small (30.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
 
 [7]
-Overfull \hbox (1.5pt too wide) has occurred while \output is active
+Underfull \vbox (badness 2181) has occurred while \output is active []
+
+
+Overfull \hbox (3.0pt too wide) has occurred while \output is active
 [][]
  []
 
@@ -1393,7 +1414,7 @@ Package fancyhdr Warning: \headheight is too small (30.0pt):
 \openout6 = `main.toc'.
 
 
-Overfull \hbox (1.5pt too wide) has occurred while \output is active
+Overfull \hbox (3.0pt too wide) has occurred while \output is active
 [][]
  []
 
@@ -1405,7 +1426,7 @@ Package fancyhdr Warning: \headheight is too small (30.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
 
 [9]
-Overfull \hbox (1.5pt too wide) has occurred while \output is active
+Overfull \hbox (3.0pt too wide) has occurred while \output is active
 [][]
  []
 
@@ -1416,7 +1437,9 @@ Package fancyhdr Warning: \headheight is too small (30.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
 
-[10] (./chapter1.tex
+[10
+
+] (./chapter1.tex
 Overfull \hbox (0.18837pt too wide) in paragraph at lines 9--10
 []\T1/ptm/m/n/12 The Arc-tic re-gion has ex-pe-ri-enced sig-nif-i-cant en-vi-ron-men-tal changes over the past decades,
  []
@@ -1425,7 +1448,7 @@ Overfull \hbox (0.18837pt too wide) in paragraph at lines 9--10
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
-Overfull \hbox (1.5pt too wide) has occurred while \output is active
+Overfull \hbox (3.0pt too wide) has occurred while \output is active
 [][]
  []
 
@@ -1443,9 +1466,8 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has b
 l.16 
       [1
 
-
 ]
-Overfull \hbox (1.5pt too wide) has occurred while \output is active
+Overfull \hbox (3.0pt too wide) has occurred while \output is active
 [][]
  []
 
@@ -1462,7 +1484,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has b
                    \relax 
 l.26 
       [2]
-Overfull \hbox (1.5pt too wide) has occurred while \output is active
+Overfull \hbox (3.0pt too wide) has occurred while \output is active
 [][]
  []
 
@@ -1479,7 +1501,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has b
                    \relax 
 l.43 \end{enumerate}
                      [3]
-Overfull \hbox (1.5pt too wide) has occurred while \output is active
+Overfull \hbox (3.0pt too wide) has occurred while \output is active
 [][]
  []
 
@@ -1500,7 +1522,7 @@ LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 74
  (d:/texlive/2026/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
-Overfull \hbox (1.5pt too wide) has occurred while \output is active
+Overfull \hbox (3.0pt too wide) has occurred while \output is active
 [][]
  []
 
@@ -1517,7 +1539,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.5}) has b
                    \relax 
 l.85     \item R
                 eal-world validation and sim-to-real transfer [5]) (./chapter2.tex
-Overfull \hbox (1.5pt too wide) has occurred while \output is active
+Overfull \hbox (3.0pt too wide) has occurred while \output is active
 [][]
  []
 
@@ -1534,7 +1556,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.6}) has b
                    \relax 
 l.4 \clearpage
                [6]
-Overfull \hbox (1.5pt too wide) has occurred while \output is active
+Overfull \hbox (3.0pt too wide) has occurred while \output is active
 [][]
  []
 
@@ -1556,7 +1578,7 @@ Overfull \hbox (6.76358pt too wide) in paragraph at lines 27--28
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
-Overfull \hbox (1.5pt too wide) has occurred while \output is active
+Overfull \hbox (3.0pt too wide) has occurred while \output is active
 [][]
  []
 
@@ -1568,7 +1590,7 @@ Package fancyhdr Warning: \headheight is too small (30.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
 
 [8]
-Overfull \hbox (1.5pt too wide) has occurred while \output is active
+Overfull \hbox (3.0pt too wide) has occurred while \output is active
 [][]
  []
 
@@ -1584,7 +1606,7 @@ Package fancyhdr Warning: \headheight is too small (30.0pt):
 LaTeX Warning: Citation 'xu2022point' on page 10 undefined on input line 51.
 
 
-Overfull \hbox (1.5pt too wide) has occurred while \output is active
+Overfull \hbox (3.0pt too wide) has occurred while \output is active
 [][]
  []
 
@@ -1596,7 +1618,7 @@ Package fancyhdr Warning: \headheight is too small (30.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
 
 [10]
-Overfull \hbox (1.5pt too wide) has occurred while \output is active
+Overfull \hbox (3.0pt too wide) has occurred while \output is active
 [][]
  []
 
@@ -1608,7 +1630,7 @@ Package fancyhdr Warning: \headheight is too small (30.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
 
 [11]
-Overfull \hbox (1.5pt too wide) has occurred while \output is active
+Overfull \hbox (3.0pt too wide) has occurred while \output is active
 [][]
  []
 
@@ -1620,7 +1642,7 @@ Package fancyhdr Warning: \headheight is too small (30.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
 
 [12]
-Overfull \hbox (1.5pt too wide) has occurred while \output is active
+Overfull \hbox (3.0pt too wide) has occurred while \output is active
 [][]
  []
 
@@ -1632,7 +1654,7 @@ Package fancyhdr Warning: \headheight is too small (30.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
 
 [13]) (./chapter3.tex
-Overfull \hbox (1.5pt too wide) has occurred while \output is active
+Overfull \hbox (3.0pt too wide) has occurred while \output is active
 [][]
  []
 
@@ -1647,7 +1669,7 @@ Package fancyhdr Warning: \headheight is too small (30.0pt):
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
-Overfull \hbox (1.5pt too wide) has occurred while \output is active
+Overfull \hbox (3.0pt too wide) has occurred while \output is active
 [][]
  []
 
@@ -1665,7 +1687,7 @@ LaTeX Font Info:    Trying to load font information for T1+pcr on input line 36.
  (d:/texlive/2026/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
-Overfull \hbox (1.5pt too wide) has occurred while \output is active
+Overfull \hbox (3.0pt too wide) has occurred while \output is active
 [][]
  []
 
@@ -1677,7 +1699,7 @@ Package fancyhdr Warning: \headheight is too small (30.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
 
 [16]
-Overfull \hbox (1.5pt too wide) has occurred while \output is active
+Overfull \hbox (3.0pt too wide) has occurred while \output is active
 [][]
  []
 
@@ -1695,7 +1717,7 @@ Overfull \hbox (177.29579pt too wide) in paragraph at lines 123--124
 
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 125.
 
-Overfull \hbox (1.5pt too wide) has occurred while \output is active
+Overfull \hbox (3.0pt too wide) has occurred while \output is active
 [][]
  []
 
@@ -1707,7 +1729,7 @@ Package fancyhdr Warning: \headheight is too small (30.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
 
 [18]
-Overfull \hbox (1.5pt too wide) has occurred while \output is active
+Overfull \hbox (3.0pt too wide) has occurred while \output is active
 [][]
  []
 
@@ -1731,7 +1753,7 @@ Overfull \hbox (98.60037pt too wide) in paragraph at lines 200--201
 (d:/texlive/2026/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2025/11/14 1.11b listings language file
 )
-Overfull \hbox (1.5pt too wide) has occurred while \output is active
+Overfull \hbox (3.0pt too wide) has occurred while \output is active
 [][]
  []
 
@@ -1747,7 +1769,7 @@ File: lstlang1.sty 2025/11/14 1.11b listings language file
 ) (d:/texlive/2026/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2025/11/14 1.11b listings language file
 )
-Overfull \hbox (1.5pt too wide) has occurred while \output is active
+Overfull \hbox (3.0pt too wide) has occurred while \output is active
 [][]
  []
 
@@ -1762,7 +1784,7 @@ Package fancyhdr Warning: \headheight is too small (30.0pt):
 Underfull \vbox (badness 1221) has occurred while \output is active []
 
 
-Overfull \hbox (1.5pt too wide) has occurred while \output is active
+Overfull \hbox (3.0pt too wide) has occurred while \output is active
 [][]
  []
 
@@ -1774,7 +1796,7 @@ Package fancyhdr Warning: \headheight is too small (30.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
 
 [22]
-Overfull \hbox (1.5pt too wide) has occurred while \output is active
+Overfull \hbox (3.0pt too wide) has occurred while \output is active
 [][]
  []
 
@@ -1786,7 +1808,7 @@ Package fancyhdr Warning: \headheight is too small (30.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
 
 [23]
-Overfull \hbox (1.5pt too wide) has occurred while \output is active
+Overfull \hbox (3.0pt too wide) has occurred while \output is active
 [][]
  []
 
@@ -1803,7 +1825,7 @@ Overfull \hbox (5.19055pt too wide) in paragraph at lines 362--363
  []
 
 
-Overfull \hbox (1.5pt too wide) has occurred while \output is active
+Overfull \hbox (3.0pt too wide) has occurred while \output is active
 [][]
  []
 
@@ -1815,7 +1837,7 @@ Package fancyhdr Warning: \headheight is too small (30.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
 
 [25]
-Overfull \hbox (1.5pt too wide) has occurred while \output is active
+Overfull \hbox (3.0pt too wide) has occurred while \output is active
 [][]
  []
 
@@ -1827,7 +1849,7 @@ Package fancyhdr Warning: \headheight is too small (30.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
 
 [26]) (./chapter4.tex
-Overfull \hbox (1.5pt too wide) has occurred while \output is active
+Overfull \hbox (3.0pt too wide) has occurred while \output is active
 [][]
  []
 
@@ -1839,7 +1861,7 @@ Package fancyhdr Warning: \headheight is too small (30.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
 
 [27]
-Overfull \hbox (1.5pt too wide) has occurred while \output is active
+Overfull \hbox (3.0pt too wide) has occurred while \output is active
 [][]
  []
 
@@ -1858,7 +1880,7 @@ Overfull \hbox (70.45963pt too wide) in paragraph at lines 64--65
  []
 
 
-Overfull \hbox (1.5pt too wide) has occurred while \output is active
+Overfull \hbox (3.0pt too wide) has occurred while \output is active
 [][]
  []
 
@@ -1870,7 +1892,7 @@ Package fancyhdr Warning: \headheight is too small (30.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
 
 [29]
-Overfull \hbox (1.5pt too wide) has occurred while \output is active
+Overfull \hbox (3.0pt too wide) has occurred while \output is active
 [][]
  []
 
@@ -1882,7 +1904,7 @@ Package fancyhdr Warning: \headheight is too small (30.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
 
 [30]
-Overfull \hbox (1.5pt too wide) has occurred while \output is active
+Overfull \hbox (3.0pt too wide) has occurred while \output is active
 [][]
  []
 
@@ -1894,7 +1916,7 @@ Package fancyhdr Warning: \headheight is too small (30.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
 
 [31]
-Overfull \hbox (1.5pt too wide) has occurred while \output is active
+Overfull \hbox (3.0pt too wide) has occurred while \output is active
 [][]
  []
 
@@ -1906,7 +1928,7 @@ Package fancyhdr Warning: \headheight is too small (30.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
 
 [32]
-Overfull \hbox (1.5pt too wide) has occurred while \output is active
+Overfull \hbox (3.0pt too wide) has occurred while \output is active
 [][]
  []
 
@@ -1921,7 +1943,7 @@ Package fancyhdr Warning: \headheight is too small (30.0pt):
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
-Overfull \hbox (1.5pt too wide) has occurred while \output is active
+Overfull \hbox (3.0pt too wide) has occurred while \output is active
 [][]
  []
 
@@ -1936,7 +1958,7 @@ Package fancyhdr Warning: \headheight is too small (30.0pt):
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
-Overfull \hbox (1.5pt too wide) has occurred while \output is active
+Overfull \hbox (3.0pt too wide) has occurred while \output is active
 [][]
  []
 
@@ -1954,7 +1976,7 @@ File: figures/phase4/fig_da3_depth_comparison.png Graphic file (type png)
 Package pdftex.def Info: figures/phase4/fig_da3_depth_comparison.png  used on input line 337.
 (pdftex.def)             Requested size: 364.19667pt x 91.04303pt.
 
-Overfull \hbox (1.5pt too wide) has occurred while \output is active
+Overfull \hbox (3.0pt too wide) has occurred while \output is active
 [][]
  []
 
@@ -1977,7 +1999,7 @@ File: figures/phase4/fig_sam3_segmentation_0020.png Graphic file (type png)
 Package pdftex.def Info: figures/phase4/fig_sam3_segmentation_0020.png  used on input line 393.
 (pdftex.def)             Requested size: 204.85846pt x 153.64247pt.
 
-Overfull \hbox (1.5pt too wide) has occurred while \output is active
+Overfull \hbox (3.0pt too wide) has occurred while \output is active
 [][]
  []
 
@@ -2000,7 +2022,7 @@ File: figures/phase4/fig_da3_motion_analysis.png Graphic file (type png)
 Package pdftex.def Info: figures/phase4/fig_da3_motion_analysis.png  used on input line 440.
 (pdftex.def)             Requested size: 218.51521pt x 145.66885pt.
 
-Overfull \hbox (1.5pt too wide) has occurred while \output is active
+Overfull \hbox (3.0pt too wide) has occurred while \output is active
 [][]
  []
 
@@ -2012,7 +2034,7 @@ Package fancyhdr Warning: \headheight is too small (30.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
 
 [38 <./figures/phase4/fig_sam3_segmentation_0000.png (PNG copy)> <./figures/phase4/fig_sam3_segmentation_0020.png (PNG copy)>]
-Overfull \hbox (1.5pt too wide) has occurred while \output is active
+Overfull \hbox (3.0pt too wide) has occurred while \output is active
 [][]
  []
 
@@ -2024,7 +2046,7 @@ Package fancyhdr Warning: \headheight is too small (30.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
 
 [39 <./figures/phase4/fig_da3_pose_trajectory_3d.png> <./figures/phase4/fig_da3_motion_analysis.png>]) (./chapter5.tex
-Overfull \hbox (1.5pt too wide) has occurred while \output is active
+Overfull \hbox (3.0pt too wide) has occurred while \output is active
 [][]
  []
 
@@ -2039,7 +2061,7 @@ Package fancyhdr Warning: \headheight is too small (30.0pt):
 Underfull \vbox (badness 1231) has occurred while \output is active []
 
 
-Overfull \hbox (1.5pt too wide) has occurred while \output is active
+Overfull \hbox (3.0pt too wide) has occurred while \output is active
 [][]
  []
 
@@ -2053,7 +2075,7 @@ Package fancyhdr Warning: \headheight is too small (30.0pt):
 [41
 
 ]
-Overfull \hbox (1.5pt too wide) has occurred while \output is active
+Overfull \hbox (3.0pt too wide) has occurred while \output is active
 [][]
  []
 
@@ -2065,7 +2087,7 @@ Package fancyhdr Warning: \headheight is too small (30.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
 
 [42]
-Overfull \hbox (1.5pt too wide) has occurred while \output is active
+Overfull \hbox (3.0pt too wide) has occurred while \output is active
 [][]
  []
 
@@ -2082,7 +2104,7 @@ Overfull \hbox (3.63272pt too wide) in paragraph at lines 82--83
  []
 
 
-Overfull \hbox (1.5pt too wide) has occurred while \output is active
+Overfull \hbox (3.0pt too wide) has occurred while \output is active
 [][]
  []
 
@@ -2094,7 +2116,7 @@ Package fancyhdr Warning: \headheight is too small (30.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
 
 [44]
-Overfull \hbox (1.5pt too wide) has occurred while \output is active
+Overfull \hbox (3.0pt too wide) has occurred while \output is active
 [][]
  []
 
@@ -2106,7 +2128,7 @@ Package fancyhdr Warning: \headheight is too small (30.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
 
 [45]
-Overfull \hbox (1.5pt too wide) has occurred while \output is active
+Overfull \hbox (3.0pt too wide) has occurred while \output is active
 [][]
  []
 
@@ -2118,7 +2140,7 @@ Package fancyhdr Warning: \headheight is too small (30.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
 
 [46]) (./chapter6.tex
-Overfull \hbox (1.5pt too wide) has occurred while \output is active
+Overfull \hbox (3.0pt too wide) has occurred while \output is active
 [][]
  []
 
@@ -2133,7 +2155,7 @@ Package fancyhdr Warning: \headheight is too small (30.0pt):
 Underfull \vbox (badness 3049) has occurred while \output is active []
 
 
-Overfull \hbox (1.5pt too wide) has occurred while \output is active
+Overfull \hbox (3.0pt too wide) has occurred while \output is active
 [][]
  []
 
@@ -2147,7 +2169,7 @@ Package fancyhdr Warning: \headheight is too small (30.0pt):
 [48
 
 ]
-Overfull \hbox (1.5pt too wide) has occurred while \output is active
+Overfull \hbox (3.0pt too wide) has occurred while \output is active
 [][]
  []
 
@@ -2159,7 +2181,7 @@ Package fancyhdr Warning: \headheight is too small (30.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
 
 [49]
-Overfull \hbox (1.5pt too wide) has occurred while \output is active
+Overfull \hbox (3.0pt too wide) has occurred while \output is active
 [][]
  []
 
@@ -2171,7 +2193,7 @@ Package fancyhdr Warning: \headheight is too small (30.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
 
 [50]
-Overfull \hbox (1.5pt too wide) has occurred while \output is active
+Overfull \hbox (3.0pt too wide) has occurred while \output is active
 [][]
  []
 
@@ -2183,7 +2205,7 @@ Package fancyhdr Warning: \headheight is too small (30.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
 
 [51])
-Overfull \hbox (1.5pt too wide) has occurred while \output is active
+Overfull \hbox (3.0pt too wide) has occurred while \output is active
 [][]
  []
 
@@ -2195,7 +2217,7 @@ Package fancyhdr Warning: \headheight is too small (30.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
 
 [52]
-Overfull \hbox (1.5pt too wide) has occurred while \output is active
+Overfull \hbox (3.0pt too wide) has occurred while \output is active
 [][]
  []
 
@@ -2209,7 +2231,7 @@ Package fancyhdr Warning: \headheight is too small (30.0pt):
 [53
 
 ]
-Overfull \hbox (1.5pt too wide) has occurred while \output is active
+Overfull \hbox (3.0pt too wide) has occurred while \output is active
 [][]
  []
 
@@ -2221,7 +2243,7 @@ Package fancyhdr Warning: \headheight is too small (30.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
 
 [54]
-Overfull \hbox (1.5pt too wide) has occurred while \output is active
+Overfull \hbox (3.0pt too wide) has occurred while \output is active
 [][]
  []
 
@@ -2233,7 +2255,7 @@ Package fancyhdr Warning: \headheight is too small (30.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
 
 [55]
-Overfull \hbox (1.5pt too wide) has occurred while \output is active
+Overfull \hbox (3.0pt too wide) has occurred while \output is active
 [][]
  []
 
@@ -2248,10 +2270,10 @@ Package fancyhdr Warning: \headheight is too small (30.0pt):
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \hskip 12.0pt
-(hyperref)                replaced by space on input line 180.
+(hyperref)                replaced by space on input line 188.
 
 (./acknowledgements.tex)
-Overfull \hbox (1.5pt too wide) has occurred while \output is active
+Overfull \hbox (3.0pt too wide) has occurred while \output is active
 [][]
  []
 
@@ -2265,7 +2287,7 @@ Package fancyhdr Warning: \headheight is too small (30.0pt):
 [57
 
 ]
-Overfull \hbox (1.5pt too wide) has occurred while \output is active
+Overfull \hbox (3.0pt too wide) has occurred while \output is active
 [][]
  []
 
@@ -2279,7 +2301,7 @@ Package fancyhdr Warning: \headheight is too small (30.0pt):
 [58
 
 ]
-Overfull \hbox (1.5pt too wide) has occurred while \output is active
+Overfull \hbox (3.0pt too wide) has occurred while \output is active
 [][]
  []
 
@@ -2291,7 +2313,7 @@ Package fancyhdr Warning: \headheight is too small (30.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
 
 [59]
-Overfull \hbox (1.5pt too wide) has occurred while \output is active
+Overfull \hbox (3.0pt too wide) has occurred while \output is active
 [][]
  []
 
@@ -2305,7 +2327,7 @@ Package fancyhdr Warning: \headheight is too small (30.0pt):
 [60
 
 ] (./appendix.tex
-Overfull \hbox (1.5pt too wide) has occurred while \output is active
+Overfull \hbox (3.0pt too wide) has occurred while \output is active
 [][]
  []
 
@@ -2317,7 +2339,7 @@ Package fancyhdr Warning: \headheight is too small (30.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
 
 [61]
-Overfull \hbox (1.5pt too wide) has occurred while \output is active
+Overfull \hbox (3.0pt too wide) has occurred while \output is active
 [][]
  []
 
@@ -2329,7 +2351,7 @@ Package fancyhdr Warning: \headheight is too small (30.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
 
 [62]
-Overfull \hbox (1.5pt too wide) has occurred while \output is active
+Overfull \hbox (3.0pt too wide) has occurred while \output is active
 [][]
  []
 
@@ -2344,7 +2366,7 @@ Package fancyhdr Warning: \headheight is too small (30.0pt):
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
-Overfull \hbox (1.5pt too wide) has occurred while \output is active
+Overfull \hbox (3.0pt too wide) has occurred while \output is active
 [][]
  []
 
@@ -2356,7 +2378,7 @@ Package fancyhdr Warning: \headheight is too small (30.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
 
 [64]
-Overfull \hbox (1.5pt too wide) has occurred while \output is active
+Overfull \hbox (3.0pt too wide) has occurred while \output is active
 [][]
  []
 
@@ -2368,7 +2390,7 @@ Package fancyhdr Warning: \headheight is too small (30.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
 
 [65])
-Overfull \hbox (1.5pt too wide) has occurred while \output is active
+Overfull \hbox (3.0pt too wide) has occurred while \output is active
 [][]
  []
 
@@ -2391,15 +2413,15 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 37951 strings out of 467525
- 705978 string characters out of 5423209
- 1783840 words of memory out of 5000000
- 65482 multiletter control sequences out of 15000+600000
- 720211 words of font info for 224 fonts, out of 8000000 for 9000
+ 38262 strings out of 467525
+ 710906 string characters out of 5423209
+ 1788114 words of memory out of 5000000
+ 65773 multiletter control sequences out of 15000+600000
+ 727871 words of font info for 242 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  102i,12n,107p,1089b,2302s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><d:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><d:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><d:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><d:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><d:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><d:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><d:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><d:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb><d:/texlive/2026/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb><d:/texlive/2026/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><d:/texlive/2026/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><d:/texlive/2026/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (86 pages, 2633787 bytes).
+Output written on main.pdf (86 pages, 2634288 bytes).
 PDF statistics:
  1996 PDF objects out of 2073 (max. 8388607)
  1695 compressed objects within 17 object streams

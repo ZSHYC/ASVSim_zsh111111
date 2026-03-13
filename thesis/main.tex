@@ -51,16 +51,18 @@
 \pagestyle{fancy}
 \fancyhf{}
 
-% 页眉：论文标题居中（双页和单页都显示标题）
-\fancyhead[C]{\fontsize{10.5pt}{15.75pt}\selectfont Polar Route Planning and 3D Reconstruction Using Unreal Engine and 3D Gaussian Splatting}
+% 双页页眉：哈尔滨工程大学本科生毕业论文
+\fancyhead[CE]{\fontsize{10.5pt}{15.75pt}\selectfont 哈尔滨工程大学本科生毕业论文}
+% 单页页眉：章标题
+\fancyhead[CO]{\fontsize{10.5pt}{15.75pt}\selectfont \leftmark}
 \fancyfoot[C]{\thepage}
 
-% 页眉线：上细下粗
+% 页眉线：上细下粗（3磅=1.5pt）
 \renewcommand{\headrule}{%
   \vspace{-2pt}
   \begin{tikzpicture}
     \draw[line width=0.4pt] (0,0) -- (\textwidth,0);
-    \draw[line width=1.5pt] (0,-2pt) -- (\textwidth,-2pt);
+    \draw[line width=3pt] (0,-2pt) -- (\textwidth,-2pt);
   \end{tikzpicture}
   \vspace{2pt}
 }
@@ -118,6 +120,10 @@
 % 颜色
 \usepackage{xcolor}
 
+% 目录格式设置
+\usepackage{tocloft}
+\setlength{\cftbeforesecskip}{0.3em}  % 减小目录章节间距
+
 % ============================================================
 % 文档开始 - 严格按模板顺序
 % ============================================================
@@ -146,19 +152,21 @@
 \thispagestyle{empty}
 \null
 
-% ===== 11. ABSTRACT（罗马数字页码开始）=====
+% ===== 11. ABSTRACT（罗马数字页码开始，无页眉）=====
 \cleardoublepage
-\pagestyle{fancy}
+\thispagestyle{empty}
 \pagenumbering{roman}
 \setcounter{page}{1}
 \input{abstract}
 
-% ===== 12. 目录（续罗马数字）=====
+% ===== 12. 目录（无页眉）=====
 \cleardoublepage
+\thispagestyle{empty}
 \tableofcontents
 
-% ===== 13. 正文（阿拉伯数字页码）=====
+% ===== 13. 正文（阿拉伯数字页码，有页眉）=====
 \cleardoublepage
+\pagestyle{fancy}
 \pagenumbering{arabic}
 \setcounter{page}{1}
 \input{chapter1}
@@ -168,19 +176,19 @@
 \input{chapter5}
 \input{chapter6}
 
-% ===== 14. 参考文献 =====
+% ===== 14. 参考文献（有页眉）=====
 \cleardoublepage
 \section*{Reference}
 \addcontentsline{toc}{section}{Reference}
 \printbibliography[heading=none]
 
-% ===== 15. 致谢 =====
+% ===== 15. 致谢（有页眉）=====
 \cleardoublepage
 \section*{致\quad 谢}
 \addcontentsline{toc}{section}{致\quad 谢}
 \input{acknowledgements}
 
-% ===== 16. 学术成果 =====
+% ===== 16. 学术成果（有页眉）=====
 \cleardoublepage
 \section*{Published papers and research achievements during the pursuit of bachelor's degree}
 \addcontentsline{toc}{section}{Published papers and research achievements during the pursuit of bachelor's degree}
@@ -190,7 +198,7 @@
 (No content)
 \end{center}
 
-% ===== 17. 附录 =====
+% ===== 17. 附录（有页眉）=====
 \cleardoublepage
 \section*{Appendix}
 \addcontentsline{toc}{section}{Appendix}
