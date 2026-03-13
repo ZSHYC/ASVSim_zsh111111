@@ -1,43 +1,50 @@
 % ============================================================
-% 封面 (Title Page)
+% 英文封面 (English Cover) - Page 1
 % ============================================================
 \begin{titlepage}
+\thispagestyle{empty}
 \begin{center}
 
-\vspace*{1cm}
+\vspace*{0.5cm}
 
-{\fontsize{22pt}{33pt}\selectfont\bfseries
+% Student ID（右对齐）
+\begin{flushright}
+\fontsize{12pt}{18pt}\selectfont
+Student ID\quad\underline{\makebox[5cm]{2022XXXXXXXX}}
+\end{flushright}
+
+\vspace{1.5cm}
+
+% 学校名称
+{\fontsize{18pt}{27pt}\selectfont Harbin Engineering University}\\[0.5cm]
+{\fontsize{16pt}{24pt}\selectfont Undergraduate Students Individual Project Report}
+
+\vspace{3cm}
+
+% 英文题目（2号Times New Roman Bold）
+{\fontsize{18pt}{27pt}\selectfont\bfseries
 Polar Route Planning and 3D Reconstruction\\[0.3cm]
 Using Unreal Engine and 3D Gaussian Splatting}
 
-\vspace{2cm}
+\vspace{4cm}
 
-{\fontsize{18pt}{27pt}\selectfont
-A Thesis Submitted in Partial Fulfillment of the Requirements\\[0.3cm]
-for the Degree of Bachelor of Engineering}
+% 信息表格（左对齐标签）
+\begin{flushleft}
+\hspace{2cm}
+\begin{tabular}{rl}
+\fontsize{14pt}{21pt}\selectfont College: & \fontsize{14pt}{21pt}\selectfont Southampton Ocean Engineering Joint Institute \\[0.4cm]
+\fontsize{14pt}{21pt}\selectfont Program Title: & \fontsize{14pt}{21pt}\selectfont Naval Architecture and Ocean Engineering \\[0.4cm]
+\fontsize{14pt}{21pt}\selectfont Student Name: & \fontsize{14pt}{21pt}\selectfont Zhang Shihao \\[0.4cm]
+\fontsize{14pt}{21pt}\selectfont Supervisor: & \fontsize{14pt}{21pt}\selectfont Associate Prof. Xing Xianglei / Prof. Dominic Taunton \\[0.4cm]
+\fontsize{14pt}{21pt}\selectfont Word count: & \fontsize{14pt}{21pt}\selectfont 8087 \\
+\end{tabular}
+\end{flushleft}
 
-\vspace{2cm}
+\vfill
 
-{\fontsize{15pt}{22pt}\selectfont
-by\\[0.5cm]
-\textbf{Zhang Shihao}}
-
-\vspace{2cm}
-
-{\fontsize{14pt}{21pt}\selectfont
-Southampton Ocean Engineering Joint Institute\\[0.3cm]
-Harbin Engineering University}
-
-\vspace{2cm}
-
-{\fontsize{14pt}{21pt}\selectfont
-Supervisor: Associate Professor Xing Xianglei\\[0.3cm]
-Second Supervisor: Professor Dominic Taunton}
-
-\vspace{2cm}
-
-{\fontsize{14pt}{21pt}\selectfont
-May 2026}
+% 底部学校名称和日期
+{\fontsize{14pt}{21pt}\selectfont Harbin Engineering University}\\[0.5cm]
+{\fontsize{14pt}{21pt}\selectfont May, 2026}
 
 \end{center}
 \end{titlepage}

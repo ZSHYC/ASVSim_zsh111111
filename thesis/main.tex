@@ -101,15 +101,34 @@
 % 颜色
 \usepackage{xcolor}
 
+% 旋转（用于书脊）
+\usepackage{graphicx}
+
 % ============================================================
 % 文档开始
 % ============================================================
 \begin{document}
 
-% 封面
+% ===== 前置部分（不编页码）=====
+% 书脊（单独一页，竖排）
+\input{spine}
+
+% 中文封面
+\input{cover_chinese}
+
+% 英文封面
 \input{cover}
 
-% 清空页眉页脚，设置罗马数字页码
+% 中文扉页
+\input{titlepage_zh}
+
+% 英文扉页
+\input{titlepage_en}
+
+% 原创性声明和授权声明
+\input{declarations}
+
+% ===== 前置部分（罗马数字页码）=====
 \clearpage
 \pagestyle{empty}
 \pagenumbering{roman}
@@ -126,7 +145,7 @@
 \tableofcontents
 \newpage
 
-% 正文部分，阿拉伯数字页码
+% ===== 正文部分（阿拉伯数字页码）=====
 \pagenumbering{arabic}
 \setcounter{page}{1}
 
