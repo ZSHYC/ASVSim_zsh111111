@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.11)  14 MAR 2026 04:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.11)  14 MAR 2026 04:37
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1021,7 +1021,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 28
 )
 \Hy@SectionHShift=\skip94
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 114.
+Package hyperref Info: Option `colorlinks' set `true' on input line 138.
  (d:/texlive/2026/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \heavyrulewidth=\dimen299
@@ -1093,88 +1093,88 @@ File: UTF8.chr 2021/10/16 4.8.5
  (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 130.
-LaTeX Font Info:    ... okay on input line 130.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 130.
-LaTeX Font Info:    ... okay on input line 130.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 130.
-LaTeX Font Info:    ... okay on input line 130.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 130.
-LaTeX Font Info:    ... okay on input line 130.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 130.
-LaTeX Font Info:    ... okay on input line 130.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 130.
-LaTeX Font Info:    ... okay on input line 130.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 130.
-LaTeX Font Info:    ... okay on input line 130.
-LaTeX Font Info:    Checking defaults for C00/song/m/n on input line 130.
-LaTeX Font Info:    ... okay on input line 130.
-LaTeX Font Info:    Checking defaults for C05/song/m/n on input line 130.
-LaTeX Font Info:    ... okay on input line 130.
-LaTeX Font Info:    Checking defaults for C09/song/m/n on input line 130.
-LaTeX Font Info:    ... okay on input line 130.
-LaTeX Font Info:    Checking defaults for C10/song/m/n on input line 130.
-LaTeX Font Info:    ... okay on input line 130.
-LaTeX Font Info:    Checking defaults for C20/song/m/n on input line 130.
-LaTeX Font Info:    ... okay on input line 130.
-LaTeX Font Info:    Checking defaults for C19/song/m/n on input line 130.
-LaTeX Font Info:    ... okay on input line 130.
-LaTeX Font Info:    Checking defaults for C40/song/m/n on input line 130.
-LaTeX Font Info:    ... okay on input line 130.
-LaTeX Font Info:    Checking defaults for C42/song/m/n on input line 130.
-LaTeX Font Info:    ... okay on input line 130.
-LaTeX Font Info:    Checking defaults for C43/song/m/n on input line 130.
-LaTeX Font Info:    ... okay on input line 130.
-LaTeX Font Info:    Checking defaults for C50/song/m/n on input line 130.
-LaTeX Font Info:    ... okay on input line 130.
-LaTeX Font Info:    Checking defaults for C52/song/m/n on input line 130.
-LaTeX Font Info:    ... okay on input line 130.
-LaTeX Font Info:    Checking defaults for C49/song/m/n on input line 130.
-LaTeX Font Info:    ... okay on input line 130.
-LaTeX Font Info:    Checking defaults for C60/mj/m/n on input line 130.
-LaTeX Font Info:    ... okay on input line 130.
-LaTeX Font Info:    Checking defaults for C61/mj/m/n on input line 130.
-LaTeX Font Info:    ... okay on input line 130.
-LaTeX Font Info:    Checking defaults for C63/mj/m/n on input line 130.
-LaTeX Font Info:    ... okay on input line 130.
-LaTeX Font Info:    Checking defaults for C64/mj/m/n on input line 130.
-LaTeX Font Info:    ... okay on input line 130.
-LaTeX Font Info:    Checking defaults for C65/mj/m/n on input line 130.
-LaTeX Font Info:    ... okay on input line 130.
-LaTeX Font Info:    Checking defaults for C70/song/m/n on input line 130.
-LaTeX Font Info:    ... okay on input line 130.
-LaTeX Font Info:    Checking defaults for C31/song/m/n on input line 130.
-LaTeX Font Info:    ... okay on input line 130.
-LaTeX Font Info:    Checking defaults for C32/song/m/n on input line 130.
-LaTeX Font Info:    ... okay on input line 130.
-LaTeX Font Info:    Checking defaults for C33/song/m/n on input line 130.
-LaTeX Font Info:    ... okay on input line 130.
-LaTeX Font Info:    Checking defaults for C34/song/m/n on input line 130.
-LaTeX Font Info:    ... okay on input line 130.
-LaTeX Font Info:    Checking defaults for C35/song/m/n on input line 130.
-LaTeX Font Info:    ... okay on input line 130.
-LaTeX Font Info:    Checking defaults for C36/song/m/n on input line 130.
-LaTeX Font Info:    ... okay on input line 130.
-LaTeX Font Info:    Checking defaults for C37/song/m/n on input line 130.
-LaTeX Font Info:    ... okay on input line 130.
-LaTeX Font Info:    Checking defaults for C80/song/m/n on input line 130.
-LaTeX Font Info:    ... okay on input line 130.
-LaTeX Font Info:    Checking defaults for C81/song/m/n on input line 130.
-LaTeX Font Info:    ... okay on input line 130.
-LaTeX Font Info:    Checking defaults for C01/song/m/n on input line 130.
-LaTeX Font Info:    ... okay on input line 130.
-LaTeX Font Info:    Checking defaults for C11/song/m/n on input line 130.
-LaTeX Font Info:    ... okay on input line 130.
-LaTeX Font Info:    Checking defaults for C21/song/m/n on input line 130.
-LaTeX Font Info:    ... okay on input line 130.
-LaTeX Font Info:    Checking defaults for C41/song/m/n on input line 130.
-LaTeX Font Info:    ... okay on input line 130.
-LaTeX Font Info:    Checking defaults for C62/song/m/n on input line 130.
-LaTeX Font Info:    ... okay on input line 130.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 130.
-LaTeX Font Info:    ... okay on input line 130.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 130.
-LaTeX Font Info:    ... okay on input line 130.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for C00/song/m/n on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for C05/song/m/n on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for C09/song/m/n on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for C10/song/m/n on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for C20/song/m/n on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for C19/song/m/n on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for C40/song/m/n on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for C42/song/m/n on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for C43/song/m/n on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for C50/song/m/n on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for C52/song/m/n on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for C49/song/m/n on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for C60/mj/m/n on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for C61/mj/m/n on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for C63/mj/m/n on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for C64/mj/m/n on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for C65/mj/m/n on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for C70/song/m/n on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for C31/song/m/n on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for C32/song/m/n on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for C33/song/m/n on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for C34/song/m/n on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for C35/song/m/n on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for C36/song/m/n on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for C37/song/m/n on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for C80/song/m/n on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for C81/song/m/n on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for C01/song/m/n on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for C11/song/m/n on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for C21/song/m/n on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for C41/song/m/n on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for C62/song/m/n on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1255,9 +1255,9 @@ Package biblatex Warning: The following entry could not be found
 (biblatex)                LaTeX afterwards.
 
 )
-Package biblatex Info: Reference section=0 on input line 130.
-Package biblatex Info: Reference segment=0 on input line 130.
-Package hyperref Info: Link coloring ON on input line 130.
+Package biblatex Info: Reference section=0 on input line 165.
+Package biblatex Info: Reference segment=0 on input line 165.
+Package hyperref Info: Link coloring ON on input line 165.
  (./main.out) (./main.out)
 \@outlinefile=\write5
 \openout5 = `main.out'.
@@ -1318,128 +1318,36 @@ l.28 \clearpage
 ] (./abstract.tex [1
 
 
-]
-Overfull \hbox (3.0pt too wide) has occurred while \output is active
-[][]
- []
-
-
-Package fancyhdr Warning: \headheight is too small (30.0pt): 
-(fancyhdr)                Make it at least 40.02495pt, for example:
-(fancyhdr)                \setlength{\headheight}{40.02495pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
-
-[2]
+] [2]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \hskip 12.0pt
 (hyperref)                replaced by space on input line 24.
 
-)
-Overfull \hbox (3.0pt too wide) has occurred while \output is active
-[][]
- []
+) [3
 
-
-Package fancyhdr Warning: \headheight is too small (30.0pt): 
-(fancyhdr)                Make it at least 40.02495pt, for example:
-(fancyhdr)                \setlength{\headheight}{40.02495pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
-
-[3
-
-]
-Overfull \hbox (3.0pt too wide) has occurred while \output is active
-[][]
- []
-
-
-Package fancyhdr Warning: \headheight is too small (30.0pt): 
-(fancyhdr)                Make it at least 40.02495pt, for example:
-(fancyhdr)                \setlength{\headheight}{40.02495pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
-
-[4
+] [4
 
 ] (./main.toc
-Underfull \vbox (badness 7186) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [5]
-Overfull \hbox (3.0pt too wide) has occurred while \output is active
-[][]
- []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
+ [6]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Package fancyhdr Warning: \headheight is too small (30.0pt): 
-(fancyhdr)                Make it at least 40.02495pt, for example:
-(fancyhdr)                \setlength{\headheight}{40.02495pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
+ [7]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[6]
-Underfull \vbox (badness 4132) has occurred while \output is active []
-
-
-Overfull \hbox (3.0pt too wide) has occurred while \output is active
-[][]
- []
-
-
-Package fancyhdr Warning: \headheight is too small (30.0pt): 
-(fancyhdr)                Make it at least 40.02495pt, for example:
-(fancyhdr)                \setlength{\headheight}{40.02495pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
-
-[7]
-Underfull \vbox (badness 2181) has occurred while \output is active []
-
-
-Overfull \hbox (3.0pt too wide) has occurred while \output is active
-[][]
- []
-
-
-Package fancyhdr Warning: \headheight is too small (30.0pt): 
-(fancyhdr)                Make it at least 40.02495pt, for example:
-(fancyhdr)                \setlength{\headheight}{40.02495pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
-
-[8])
+ [8])
 \tf@toc=\write6
 \openout6 = `main.toc'.
 
 
-Overfull \hbox (3.0pt too wide) has occurred while \output is active
-[][]
- []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-
-Package fancyhdr Warning: \headheight is too small (30.0pt): 
-(fancyhdr)                Make it at least 40.02495pt, for example:
-(fancyhdr)                \setlength{\headheight}{40.02495pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
-
-[9]
-Overfull \hbox (3.0pt too wide) has occurred while \output is active
-[][]
- []
-
-
-Package fancyhdr Warning: \headheight is too small (30.0pt): 
-(fancyhdr)                Make it at least 40.02495pt, for example:
-(fancyhdr)                \setlength{\headheight}{40.02495pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
-
-[10
-
-] (./chapter1.tex
+ [9] [10] (./chapter1.tex
 Overfull \hbox (0.18837pt too wide) in paragraph at lines 9--10
 []\T1/ptm/m/n/12 The Arc-tic re-gion has ex-pe-ri-enced sig-nif-i-cant en-vi-ron-men-tal changes over the past decades,
  []
@@ -1448,71 +1356,24 @@ Overfull \hbox (0.18837pt too wide) in paragraph at lines 9--10
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
-Overfull \hbox (3.0pt too wide) has occurred while \output is active
-[][]
- []
-
-
-Package fancyhdr Warning: \headheight is too small (30.0pt): 
-(fancyhdr)                Make it at least 40.02495pt, for example:
-(fancyhdr)                \setlength{\headheight}{40.02495pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
-
-
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.16 
       [1
 
+
 ]
-Overfull \hbox (3.0pt too wide) has occurred while \output is active
-[][]
- []
-
-
-Package fancyhdr Warning: \headheight is too small (30.0pt): 
-(fancyhdr)                Make it at least 40.02495pt, for example:
-(fancyhdr)                \setlength{\headheight}{40.02495pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
-
-
 pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.26 
       [2]
-Overfull \hbox (3.0pt too wide) has occurred while \output is active
-[][]
- []
-
-
-Package fancyhdr Warning: \headheight is too small (30.0pt): 
-(fancyhdr)                Make it at least 40.02495pt, for example:
-(fancyhdr)                \setlength{\headheight}{40.02495pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
-
-
 pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.43 \end{enumerate}
                      [3]
-Overfull \hbox (3.0pt too wide) has occurred while \output is active
-[][]
- []
-
-
-Package fancyhdr Warning: \headheight is too small (30.0pt): 
-(fancyhdr)                Make it at least 40.02495pt, for example:
-(fancyhdr)                \setlength{\headheight}{40.02495pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
-
-
 pdfTeX warning (ext4): destination with the same identifier (name{page.4}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
@@ -1522,52 +1383,16 @@ LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 74
  (d:/texlive/2026/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
-Overfull \hbox (3.0pt too wide) has occurred while \output is active
-[][]
- []
-
-
-Package fancyhdr Warning: \headheight is too small (30.0pt): 
-(fancyhdr)                Make it at least 40.02495pt, for example:
-(fancyhdr)                \setlength{\headheight}{40.02495pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
-
-
 pdfTeX warning (ext4): destination with the same identifier (name{page.5}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.85     \item R
                 eal-world validation and sim-to-real transfer [5]) (./chapter2.tex
-Overfull \hbox (3.0pt too wide) has occurred while \output is active
-[][]
- []
-
-
-Package fancyhdr Warning: \headheight is too small (30.0pt): 
-(fancyhdr)                Make it at least 40.02495pt, for example:
-(fancyhdr)                \setlength{\headheight}{40.02495pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
-
-
 pdfTeX warning (ext4): destination with the same identifier (name{page.6}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.4 \clearpage
-               [6]
-Overfull \hbox (3.0pt too wide) has occurred while \output is active
-[][]
- []
-
-
-Package fancyhdr Warning: \headheight is too small (30.0pt): 
-(fancyhdr)                Make it at least 40.02495pt, for example:
-(fancyhdr)                \setlength{\headheight}{40.02495pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
-
-[7
+               [6] [7
 
 ]
 Overfull \hbox (6.76358pt too wide) in paragraph at lines 27--28
@@ -1577,170 +1402,26 @@ Overfull \hbox (6.76358pt too wide) in paragraph at lines 27--28
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-
-Overfull \hbox (3.0pt too wide) has occurred while \output is active
-[][]
- []
-
-
-Package fancyhdr Warning: \headheight is too small (30.0pt): 
-(fancyhdr)                Make it at least 40.02495pt, for example:
-(fancyhdr)                \setlength{\headheight}{40.02495pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
-
-[8]
-Overfull \hbox (3.0pt too wide) has occurred while \output is active
-[][]
- []
-
-
-Package fancyhdr Warning: \headheight is too small (30.0pt): 
-(fancyhdr)                Make it at least 40.02495pt, for example:
-(fancyhdr)                \setlength{\headheight}{40.02495pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
-
-[9]
+ [8] [9]
 
 LaTeX Warning: Citation 'xu2022point' on page 10 undefined on input line 51.
 
-
-Overfull \hbox (3.0pt too wide) has occurred while \output is active
-[][]
- []
-
-
-Package fancyhdr Warning: \headheight is too small (30.0pt): 
-(fancyhdr)                Make it at least 40.02495pt, for example:
-(fancyhdr)                \setlength{\headheight}{40.02495pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
-
-[10]
-Overfull \hbox (3.0pt too wide) has occurred while \output is active
-[][]
- []
-
-
-Package fancyhdr Warning: \headheight is too small (30.0pt): 
-(fancyhdr)                Make it at least 40.02495pt, for example:
-(fancyhdr)                \setlength{\headheight}{40.02495pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
-
-[11]
-Overfull \hbox (3.0pt too wide) has occurred while \output is active
-[][]
- []
-
-
-Package fancyhdr Warning: \headheight is too small (30.0pt): 
-(fancyhdr)                Make it at least 40.02495pt, for example:
-(fancyhdr)                \setlength{\headheight}{40.02495pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
-
-[12]
-Overfull \hbox (3.0pt too wide) has occurred while \output is active
-[][]
- []
-
-
-Package fancyhdr Warning: \headheight is too small (30.0pt): 
-(fancyhdr)                Make it at least 40.02495pt, for example:
-(fancyhdr)                \setlength{\headheight}{40.02495pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
-
-[13]) (./chapter3.tex
-Overfull \hbox (3.0pt too wide) has occurred while \output is active
-[][]
- []
-
-
-Package fancyhdr Warning: \headheight is too small (30.0pt): 
-(fancyhdr)                Make it at least 40.02495pt, for example:
-(fancyhdr)                \setlength{\headheight}{40.02495pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
-
-[14]
+[10] [11] [12] [13]) (./chapter3.tex [14]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-
-Overfull \hbox (3.0pt too wide) has occurred while \output is active
-[][]
- []
-
-
-Package fancyhdr Warning: \headheight is too small (30.0pt): 
-(fancyhdr)                Make it at least 40.02495pt, for example:
-(fancyhdr)                \setlength{\headheight}{40.02495pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
-
-[15
+ [15
 
 ]
 LaTeX Font Info:    Trying to load font information for T1+pcr on input line 36.
  (d:/texlive/2026/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
-)
-Overfull \hbox (3.0pt too wide) has occurred while \output is active
-[][]
- []
-
-
-Package fancyhdr Warning: \headheight is too small (30.0pt): 
-(fancyhdr)                Make it at least 40.02495pt, for example:
-(fancyhdr)                \setlength{\headheight}{40.02495pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
-
-[16]
-Overfull \hbox (3.0pt too wide) has occurred while \output is active
-[][]
- []
-
-
-Package fancyhdr Warning: \headheight is too small (30.0pt): 
-(fancyhdr)                Make it at least 40.02495pt, for example:
-(fancyhdr)                \setlength{\headheight}{40.02495pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
-
-[17]
+) [16] [17]
 Overfull \hbox (177.29579pt too wide) in paragraph at lines 123--124
 []\T1/ptm/m/n/12 The op-ti-miza-tion strat-egy dis-abled Lu-men and other post-processing ef-fects in the \T1/pcr/m/n/12 CameraDefaults.CaptureSettings\T1/ptm/m/n/12 : 
  []
 
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 125.
-
-Overfull \hbox (3.0pt too wide) has occurred while \output is active
-[][]
- []
-
-
-Package fancyhdr Warning: \headheight is too small (30.0pt): 
-(fancyhdr)                Make it at least 40.02495pt, for example:
-(fancyhdr)                \setlength{\headheight}{40.02495pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
-
-[18]
-Overfull \hbox (3.0pt too wide) has occurred while \output is active
-[][]
- []
-
-
-Package fancyhdr Warning: \headheight is too small (30.0pt): 
-(fancyhdr)                Make it at least 40.02495pt, for example:
-(fancyhdr)                \setlength{\headheight}{40.02495pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
-
-[19]
+[18] [19]
 Overfull \hbox (1.74744pt too wide) in paragraph at lines 182--183
 []\T1/ptm/m/n/12 CosysAirSim uses dif-fer-ent Im-ageType enu-mer-a-tions than stan-dard Air-Sim, re-quir-ing care-
  []
@@ -1752,242 +1433,38 @@ Overfull \hbox (98.60037pt too wide) in paragraph at lines 200--201
 
 (d:/texlive/2026/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2025/11/14 1.11b listings language file
-)
-Overfull \hbox (3.0pt too wide) has occurred while \output is active
-[][]
- []
-
-
-Package fancyhdr Warning: \headheight is too small (30.0pt): 
-(fancyhdr)                Make it at least 40.02495pt, for example:
-(fancyhdr)                \setlength{\headheight}{40.02495pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
-
-[20] (d:/texlive/2026/texmf-dist/tex/latex/listings/lstlang1.sty
+) [20] (d:/texlive/2026/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2025/11/14 1.11b listings language file
 ) (d:/texlive/2026/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2025/11/14 1.11b listings language file
-)
-Overfull \hbox (3.0pt too wide) has occurred while \output is active
-[][]
- []
-
-
-Package fancyhdr Warning: \headheight is too small (30.0pt): 
-(fancyhdr)                Make it at least 40.02495pt, for example:
-(fancyhdr)                \setlength{\headheight}{40.02495pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
-
-[21]
+) [21]
 Underfull \vbox (badness 1221) has occurred while \output is active []
 
-
-Overfull \hbox (3.0pt too wide) has occurred while \output is active
-[][]
- []
-
-
-Package fancyhdr Warning: \headheight is too small (30.0pt): 
-(fancyhdr)                Make it at least 40.02495pt, for example:
-(fancyhdr)                \setlength{\headheight}{40.02495pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
-
-[22]
-Overfull \hbox (3.0pt too wide) has occurred while \output is active
-[][]
- []
-
-
-Package fancyhdr Warning: \headheight is too small (30.0pt): 
-(fancyhdr)                Make it at least 40.02495pt, for example:
-(fancyhdr)                \setlength{\headheight}{40.02495pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
-
-[23]
-Overfull \hbox (3.0pt too wide) has occurred while \output is active
-[][]
- []
-
-
-Package fancyhdr Warning: \headheight is too small (30.0pt): 
-(fancyhdr)                Make it at least 40.02495pt, for example:
-(fancyhdr)                \setlength{\headheight}{40.02495pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
-
-[24]
+ [22] [23] [24]
 Overfull \hbox (5.19055pt too wide) in paragraph at lines 362--363
 \T1/ptm/m/n/12 con-fig-ured with CUDA 12.8 sup-port for the RTX 5070 Ti GPU (Black-well ar-chi-tec-ture, sm_120).
  []
 
-
-Overfull \hbox (3.0pt too wide) has occurred while \output is active
-[][]
- []
-
-
-Package fancyhdr Warning: \headheight is too small (30.0pt): 
-(fancyhdr)                Make it at least 40.02495pt, for example:
-(fancyhdr)                \setlength{\headheight}{40.02495pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
-
-[25]
-Overfull \hbox (3.0pt too wide) has occurred while \output is active
-[][]
- []
-
-
-Package fancyhdr Warning: \headheight is too small (30.0pt): 
-(fancyhdr)                Make it at least 40.02495pt, for example:
-(fancyhdr)                \setlength{\headheight}{40.02495pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
-
-[26]) (./chapter4.tex
-Overfull \hbox (3.0pt too wide) has occurred while \output is active
-[][]
- []
-
-
-Package fancyhdr Warning: \headheight is too small (30.0pt): 
-(fancyhdr)                Make it at least 40.02495pt, for example:
-(fancyhdr)                \setlength{\headheight}{40.02495pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
-
-[27]
-Overfull \hbox (3.0pt too wide) has occurred while \output is active
-[][]
- []
-
-
-Package fancyhdr Warning: \headheight is too small (30.0pt): 
-(fancyhdr)                Make it at least 40.02495pt, for example:
-(fancyhdr)                \setlength{\headheight}{40.02495pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
-
-[28
+[25] [26]) (./chapter4.tex [27] [28
 
 ]
 Overfull \hbox (70.45963pt too wide) in paragraph at lines 64--65
 []\T1/ptm/m/n/12 Prior to full-scale data col-lec-tion, in-di-vid-ual sen-sors were val-i-dated us-ing the \T1/pcr/m/n/12 2-verify_sensors.py
  []
 
-
-Overfull \hbox (3.0pt too wide) has occurred while \output is active
-[][]
- []
-
-
-Package fancyhdr Warning: \headheight is too small (30.0pt): 
-(fancyhdr)                Make it at least 40.02495pt, for example:
-(fancyhdr)                \setlength{\headheight}{40.02495pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
-
-[29]
-Overfull \hbox (3.0pt too wide) has occurred while \output is active
-[][]
- []
-
-
-Package fancyhdr Warning: \headheight is too small (30.0pt): 
-(fancyhdr)                Make it at least 40.02495pt, for example:
-(fancyhdr)                \setlength{\headheight}{40.02495pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
-
-[30]
-Overfull \hbox (3.0pt too wide) has occurred while \output is active
-[][]
- []
-
-
-Package fancyhdr Warning: \headheight is too small (30.0pt): 
-(fancyhdr)                Make it at least 40.02495pt, for example:
-(fancyhdr)                \setlength{\headheight}{40.02495pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
-
-[31]
-Overfull \hbox (3.0pt too wide) has occurred while \output is active
-[][]
- []
-
-
-Package fancyhdr Warning: \headheight is too small (30.0pt): 
-(fancyhdr)                Make it at least 40.02495pt, for example:
-(fancyhdr)                \setlength{\headheight}{40.02495pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
-
-[32]
-Overfull \hbox (3.0pt too wide) has occurred while \output is active
-[][]
- []
-
-
-Package fancyhdr Warning: \headheight is too small (30.0pt): 
-(fancyhdr)                Make it at least 40.02495pt, for example:
-(fancyhdr)                \setlength{\headheight}{40.02495pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
-
-[33]
+[29] [30] [31] [32] [33]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-
-Overfull \hbox (3.0pt too wide) has occurred while \output is active
-[][]
- []
-
-
-Package fancyhdr Warning: \headheight is too small (30.0pt): 
-(fancyhdr)                Make it at least 40.02495pt, for example:
-(fancyhdr)                \setlength{\headheight}{40.02495pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
-
-[34]
+ [34]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-
-Overfull \hbox (3.0pt too wide) has occurred while \output is active
-[][]
- []
-
-
-Package fancyhdr Warning: \headheight is too small (30.0pt): 
-(fancyhdr)                Make it at least 40.02495pt, for example:
-(fancyhdr)                \setlength{\headheight}{40.02495pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
-
-[35]
+ [35]
 <figures/phase4/fig_da3_depth_comparison.png, id=1157, 1927.2pt x 481.8pt>
 File: figures/phase4/fig_da3_depth_comparison.png Graphic file (type png)
 <use figures/phase4/fig_da3_depth_comparison.png>
 Package pdftex.def Info: figures/phase4/fig_da3_depth_comparison.png  used on input line 337.
 (pdftex.def)             Requested size: 364.19667pt x 91.04303pt.
-
-Overfull \hbox (3.0pt too wide) has occurred while \output is active
-[][]
- []
-
-
-Package fancyhdr Warning: \headheight is too small (30.0pt): 
-(fancyhdr)                Make it at least 40.02495pt, for example:
-(fancyhdr)                \setlength{\headheight}{40.02495pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
-
-[36 <./figures/phase4/fig_da3_depth_comparison.png (PNG copy)>]
+ [36 <./figures/phase4/fig_da3_depth_comparison.png (PNG copy)>]
 <figures/phase4/fig_sam3_segmentation_0000.png, id=1165, 642.4pt x 481.8pt>
 File: figures/phase4/fig_sam3_segmentation_0000.png Graphic file (type png)
 <use figures/phase4/fig_sam3_segmentation_0000.png>
@@ -1998,19 +1475,7 @@ File: figures/phase4/fig_sam3_segmentation_0020.png Graphic file (type png)
 <use figures/phase4/fig_sam3_segmentation_0020.png>
 Package pdftex.def Info: figures/phase4/fig_sam3_segmentation_0020.png  used on input line 393.
 (pdftex.def)             Requested size: 204.85846pt x 153.64247pt.
-
-Overfull \hbox (3.0pt too wide) has occurred while \output is active
-[][]
- []
-
-
-Package fancyhdr Warning: \headheight is too small (30.0pt): 
-(fancyhdr)                Make it at least 40.02495pt, for example:
-(fancyhdr)                \setlength{\headheight}{40.02495pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
-
-[37]
+ [37]
 <figures/phase4/fig_da3_pose_trajectory_3d.png, id=1174, 867.24pt x 722.7pt>
 File: figures/phase4/fig_da3_pose_trajectory_3d.png Graphic file (type png)
 <use figures/phase4/fig_da3_pose_trajectory_3d.png>
@@ -2021,202 +1486,22 @@ File: figures/phase4/fig_da3_motion_analysis.png Graphic file (type png)
 <use figures/phase4/fig_da3_motion_analysis.png>
 Package pdftex.def Info: figures/phase4/fig_da3_motion_analysis.png  used on input line 440.
 (pdftex.def)             Requested size: 218.51521pt x 145.66885pt.
-
-Overfull \hbox (3.0pt too wide) has occurred while \output is active
-[][]
- []
-
-
-Package fancyhdr Warning: \headheight is too small (30.0pt): 
-(fancyhdr)                Make it at least 40.02495pt, for example:
-(fancyhdr)                \setlength{\headheight}{40.02495pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
-
-[38 <./figures/phase4/fig_sam3_segmentation_0000.png (PNG copy)> <./figures/phase4/fig_sam3_segmentation_0020.png (PNG copy)>]
-Overfull \hbox (3.0pt too wide) has occurred while \output is active
-[][]
- []
-
-
-Package fancyhdr Warning: \headheight is too small (30.0pt): 
-(fancyhdr)                Make it at least 40.02495pt, for example:
-(fancyhdr)                \setlength{\headheight}{40.02495pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
-
-[39 <./figures/phase4/fig_da3_pose_trajectory_3d.png> <./figures/phase4/fig_da3_motion_analysis.png>]) (./chapter5.tex
-Overfull \hbox (3.0pt too wide) has occurred while \output is active
-[][]
- []
-
-
-Package fancyhdr Warning: \headheight is too small (30.0pt): 
-(fancyhdr)                Make it at least 40.02495pt, for example:
-(fancyhdr)                \setlength{\headheight}{40.02495pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
-
-[40]
+ [38 <./figures/phase4/fig_sam3_segmentation_0000.png (PNG copy)> <./figures/phase4/fig_sam3_segmentation_0020.png (PNG copy)>] [39 <./figures/phase4/fig_da3_pose_trajectory_3d.png> <./figures/phase4/fig_da3_motion_analysis.png>]) (./chapter5.tex [40]
 Underfull \vbox (badness 1231) has occurred while \output is active []
 
+ [41
 
-Overfull \hbox (3.0pt too wide) has occurred while \output is active
-[][]
- []
-
-
-Package fancyhdr Warning: \headheight is too small (30.0pt): 
-(fancyhdr)                Make it at least 40.02495pt, for example:
-(fancyhdr)                \setlength{\headheight}{40.02495pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
-
-[41
-
-]
-Overfull \hbox (3.0pt too wide) has occurred while \output is active
-[][]
- []
-
-
-Package fancyhdr Warning: \headheight is too small (30.0pt): 
-(fancyhdr)                Make it at least 40.02495pt, for example:
-(fancyhdr)                \setlength{\headheight}{40.02495pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
-
-[42]
-Overfull \hbox (3.0pt too wide) has occurred while \output is active
-[][]
- []
-
-
-Package fancyhdr Warning: \headheight is too small (30.0pt): 
-(fancyhdr)                Make it at least 40.02495pt, for example:
-(fancyhdr)                \setlength{\headheight}{40.02495pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
-
-[43]
+] [42] [43]
 Overfull \hbox (3.63272pt too wide) in paragraph at lines 82--83
 []\T1/ptm/m/n/12 Compared to ex-ist-ing ma-rine sim-u-la-tion datasets ([]Bing-ham et al., [][]2019[][]; []Ebadi, D. Williams,
  []
 
-
-Overfull \hbox (3.0pt too wide) has occurred while \output is active
-[][]
- []
-
-
-Package fancyhdr Warning: \headheight is too small (30.0pt): 
-(fancyhdr)                Make it at least 40.02495pt, for example:
-(fancyhdr)                \setlength{\headheight}{40.02495pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
-
-[44]
-Overfull \hbox (3.0pt too wide) has occurred while \output is active
-[][]
- []
-
-
-Package fancyhdr Warning: \headheight is too small (30.0pt): 
-(fancyhdr)                Make it at least 40.02495pt, for example:
-(fancyhdr)                \setlength{\headheight}{40.02495pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
-
-[45]
-Overfull \hbox (3.0pt too wide) has occurred while \output is active
-[][]
- []
-
-
-Package fancyhdr Warning: \headheight is too small (30.0pt): 
-(fancyhdr)                Make it at least 40.02495pt, for example:
-(fancyhdr)                \setlength{\headheight}{40.02495pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
-
-[46]) (./chapter6.tex
-Overfull \hbox (3.0pt too wide) has occurred while \output is active
-[][]
- []
-
-
-Package fancyhdr Warning: \headheight is too small (30.0pt): 
-(fancyhdr)                Make it at least 40.02495pt, for example:
-(fancyhdr)                \setlength{\headheight}{40.02495pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
-
-[47]
+[44] [45] [46]) (./chapter6.tex [47]
 Underfull \vbox (badness 3049) has occurred while \output is active []
 
+ [48
 
-Overfull \hbox (3.0pt too wide) has occurred while \output is active
-[][]
- []
-
-
-Package fancyhdr Warning: \headheight is too small (30.0pt): 
-(fancyhdr)                Make it at least 40.02495pt, for example:
-(fancyhdr)                \setlength{\headheight}{40.02495pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
-
-[48
-
-]
-Overfull \hbox (3.0pt too wide) has occurred while \output is active
-[][]
- []
-
-
-Package fancyhdr Warning: \headheight is too small (30.0pt): 
-(fancyhdr)                Make it at least 40.02495pt, for example:
-(fancyhdr)                \setlength{\headheight}{40.02495pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
-
-[49]
-Overfull \hbox (3.0pt too wide) has occurred while \output is active
-[][]
- []
-
-
-Package fancyhdr Warning: \headheight is too small (30.0pt): 
-(fancyhdr)                Make it at least 40.02495pt, for example:
-(fancyhdr)                \setlength{\headheight}{40.02495pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
-
-[50]
-Overfull \hbox (3.0pt too wide) has occurred while \output is active
-[][]
- []
-
-
-Package fancyhdr Warning: \headheight is too small (30.0pt): 
-(fancyhdr)                Make it at least 40.02495pt, for example:
-(fancyhdr)                \setlength{\headheight}{40.02495pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
-
-[51])
-Overfull \hbox (3.0pt too wide) has occurred while \output is active
-[][]
- []
-
-
-Package fancyhdr Warning: \headheight is too small (30.0pt): 
-(fancyhdr)                Make it at least 40.02495pt, for example:
-(fancyhdr)                \setlength{\headheight}{40.02495pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-10.02495pt}.
-
-[52]
+] [49] [50] [51]) [52]
 Overfull \hbox (3.0pt too wide) has occurred while \output is active
 [][]
  []
@@ -2270,7 +1555,7 @@ Package fancyhdr Warning: \headheight is too small (30.0pt):
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \hskip 12.0pt
-(hyperref)                replaced by space on input line 188.
+(hyperref)                replaced by space on input line 223.
 
 (./acknowledgements.tex)
 Overfull \hbox (3.0pt too wide) has occurred while \output is active
@@ -2413,15 +1698,15 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 38262 strings out of 467525
- 710906 string characters out of 5423209
- 1788114 words of memory out of 5000000
- 65773 multiletter control sequences out of 15000+600000
- 727871 words of font info for 242 fonts, out of 8000000 for 9000
+ 38254 strings out of 467525
+ 710766 string characters out of 5423209
+ 1787649 words of memory out of 5000000
+ 65768 multiletter control sequences out of 15000+600000
+ 727898 words of font info for 239 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 102i,12n,107p,1089b,2302s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 102i,12n,107p,1089b,2248s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><d:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><d:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><d:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><d:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><d:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><d:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><d:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><d:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb><d:/texlive/2026/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb><d:/texlive/2026/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><d:/texlive/2026/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><d:/texlive/2026/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (86 pages, 2634288 bytes).
+Output written on main.pdf (86 pages, 2624034 bytes).
 PDF statistics:
  1996 PDF objects out of 2073 (max. 8388607)
  1695 compressed objects within 17 object streams
