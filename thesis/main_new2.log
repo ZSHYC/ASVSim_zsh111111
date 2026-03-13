@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.11)  14 MAR 2026 00:23
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.11)  14 MAR 2026 00:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1370,8 +1370,9 @@ File: UTF8.chr 2021/10/16 4.8.5
 )
 \@quotelevel=\count485
 \@quotereset=\count486
- (./main.aux)
-\openout1 = `main.aux'.
+
+No file main_new2.aux.
+\openout1 = `main_new2.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 114.
 LaTeX Font Info:    ... okay on input line 114.
@@ -1455,7 +1456,6 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 114.
 LaTeX Font Info:    ... okay on input line 114.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 114.
 LaTeX Font Info:    ... okay on input line 114.
-
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -1526,31 +1526,22 @@ File: english.lbx 2025/07/10 v3.21 biblatex localization (PK/MW)
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Automatic encoding selection.
 (biblatex)             Assuming data encoding 'utf8'.
-\openout4 = `main.bcf'.
+\openout4 = `main_new2.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file 'main.bbl' found.
- (./main.bbl
+Package biblatex Info: ... file 'main_new2.bbl' not found.
 
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
-(biblatex)                xu2022point
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
-
-)
+No file main_new2.bbl.
 Package biblatex Info: Reference section=0 on input line 114.
 Package biblatex Info: Reference segment=0 on input line 114.
 Package hyperref Info: Link coloring ON on input line 114.
- (./main.out) (./main.out)
 \@outlinefile=\write5
-\openout5 = `main.out'.
+\openout5 = `main_new2.out'.
 
- (./spine.tex
+(./spine.tex
 LaTeX Font Info:    Trying to load font information for C70+rm on input line 14
 .
-
-(d:/texlive/2026/texmf-dist/tex/latex/ctex/fd/c70rm.fd
+ (d:/texlive/2026/texmf-dist/tex/latex/ctex/fd/c70rm.fd
 File: c70rm.fd 2022/07/14 v2.5.10 Chinese font definition (CTEX)
 )
 (d:/texlive/2026/texmf-dist/tex/generic/ctex/zhmap/ctex-zhmap-windows.tex
@@ -1569,26 +1560,24 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [2{d:/texlive/2026/texmf-dist/fonts/enc/dvips/base/8r.enc}])
 (./cover_chinese.tex
-LaTeX Font Info:    Trying to load font information for U+msa on input line 11.
+Package CJKpunct Info: use punctuation spaces for family 'rm' with punctstyle (
+quanjiao) on input line 13.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 13.
 
  (d:/texlive/2026/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 11.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 13.
 
 
 (d:/texlive/2026/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Calculating math sizes for size <14> on input line 33.
-Package CJKpunct Info: use punctuation spaces for family 'rm' with punctstyle (
-quanjiao) on input line 34.
-
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.47 \end{titlepage}
+l.46 \end{titlepage}
                      [1
 
 ]) (./cover.tex
@@ -1648,7 +1637,11 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 ) [4
 
-] [5] (./main.toc
+] [5]
+No file main_new2.toc.
+\tf@toc=\write6
+\openout6 = `main_new2.toc'.
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 15.74998pt, for example:
@@ -1658,47 +1651,36 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [6
 
-]
+] (./chapter1.tex
 
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 15.74998pt, for example:
-(fancyhdr)                \setlength{\headheight}{15.74998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-3.74998pt}.
-
-[7]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 15.74998pt, for example:
-(fancyhdr)                \setlength{\headheight}{15.74998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-3.74998pt}.
-
-[8]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 15.74998pt, for example:
-(fancyhdr)                \setlength{\headheight}{15.74998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-3.74998pt}.
-
-[9])
-\tf@toc=\write6
-\openout6 = `main.toc'.
+LaTeX Warning: Citation 'stocker2013climate' on page 1 undefined on input line 
+9.
 
 
+LaTeX Warning: Citation 'ebner2016polar' on page 1 undefined on input line 9.
 
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 15.74998pt, for example:
-(fancyhdr)                \setlength{\headheight}{15.74998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-3.74998pt}.
 
-[10] (./chapter1.tex
+LaTeX Warning: Citation 'verma2018arctic' on page 1 undefined on input line 9.
+
+
 Overfull \hbox (0.18837pt too wide) in paragraph at lines 9--10
 []\T1/ptm/m/n/12 The Arc-tic re-gion has ex-pe-ri-enced sig-nif-i-cant en-vi-ro
 n-men-tal changes over the past decades,
  []
+
+
+LaTeX Warning: Citation 'fu2018review' on page 1 undefined on input line 11.
+
+
+LaTeX Warning: Citation 'liu2016unmanned' on page 1 undefined on input line 13.
+
+
+
+LaTeX Warning: Citation 'schroeder2020asvsim' on page 1 undefined on input line
+ 15.
+
+
+LaTeX Warning: Citation 'epic2023unreal' on page 1 undefined on input line 15.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1716,6 +1698,15 @@ l.16
       [1
 
 ]
+
+LaTeX Warning: Citation 'kerbl20233d' on page 2 undefined on input line 17.
+
+
+Overfull \hbox (3.7398pt too wide) in paragraph at lines 17--18
+\T1/ptm/m/n/12 der-gone rev-o-lu-tion-ary de-vel-op-ment. 3D Gaus-sian Splat-ti
+ng (3DGS), in-tro-duced by []
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 15.74998pt, for example:
@@ -1782,6 +1773,41 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [6]
 
+LaTeX Warning: Citation 'fu2018review' on page 7 undefined on input line 11.
+
+
+LaTeX Warning: Citation 'nguyen2019learning' on page 7 undefined on input line 
+11.
+
+
+LaTeX Warning: Citation 'mcmahon2015autonomous' on page 7 undefined on input li
+ne 13.
+
+
+LaTeX Warning: Citation 'desmond2018field' on page 7 undefined on input line 13
+.
+
+
+LaTeX Warning: Citation 'foley2015automated' on page 7 undefined on input line 
+17.
+
+
+LaTeX Warning: Citation 'kudriavtsev2019ice' on page 7 undefined on input line 
+17.
+
+
+LaTeX Warning: Citation 'kim2015sea' on page 7 undefined on input line 19.
+
+
+LaTeX Warning: Citation 'choi2021ship' on page 7 undefined on input line 19.
+
+
+Overfull \hbox (5.47957pt too wide) in paragraph at lines 19--20
+\T1/ptm/m/n/12 able light-ing. More re-cent ap-proaches lever-age deep learn-in
+g for ice seg-men-ta-tion. []
+ []
+
+
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 15.74998pt, for example:
 (fancyhdr)                \setlength{\headheight}{15.74998pt}.
@@ -1791,10 +1817,44 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [7
 
 ]
-Overfull \hbox (6.76358pt too wide) in paragraph at lines 27--28
-[]\T1/ptm/m/n/12 Simulation has be-come in-dis-pens-able for de-vel-op-ing au-t
-onomous ma-rine sys-tems. Parasaru-
+
+LaTeX Warning: Citation 'zaccone2018optimal' on page 8 undefined on input line 
+21.
+
+
+LaTeX Warning: Citation 'zhang2019path' on page 8 undefined on input line 21.
+
+
+LaTeX Warning: Citation 'li2021dynamic' on page 8 undefined on input line 21.
+
+
+Overfull \hbox (17.68365pt too wide) in paragraph at lines 21--22
+\T1/ptm/m/n/12 op-ti-mal rout-ing in ice-covered wa-ters, con-sid-er-ing ice th
+ick-ness and con-cen-tra-tion. []
  []
+
+
+LaTeX Warning: Citation 'parasuraman2022simulation' on page 8 undefined on inpu
+t line 27.
+
+
+LaTeX Warning: Citation 'zhang2021polar' on page 8 undefined on input line 27.
+
+
+Overfull \hbox (108.97873pt too wide) in paragraph at lines 27--28
+[]\T1/ptm/m/n/12 Simulation has be-come in-dis-pens-able for de-vel-op-ing au-t
+onomous ma-rine sys-tems. []
+ []
+
+
+LaTeX Warning: Citation 'bingham2019virtual' on page 8 undefined on input line 
+29.
+
+
+LaTeX Warning: Citation 'shah2018airsim' on page 8 undefined on input line 29.
+
+
+LaTeX Warning: Citation 'epic2023unreal' on page 8 undefined on input line 33.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1805,6 +1865,45 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [8]
 
+LaTeX Warning: Citation 'schroeder2020asvsim' on page 9 undefined on input line
+ 35.
+
+
+LaTeX Warning: Citation 'schroeder2022validation' on page 9 undefined on input 
+line 35.
+
+
+Overfull \hbox (58.15834pt too wide) in paragraph at lines 35--36
+\T1/ptm/m/n/12 against field tri-als, demon-strat-ing re-al-is-tic ves-sel dy-n
+am-ics and sen-sor be-hav-ior ([]). 
+ []
+
+
+LaTeX Warning: Citation 'ebadi2020lakes' on page 9 undefined on input line 37.
+
+
+LaTeX Warning: Citation 'schoenberger2016sfm' on page 9 undefined on input line
+ 43.
+
+
+LaTeX Warning: Citation 'zhang2020critical' on page 9 undefined on input line 4
+3.
+
+
+LaTeX Warning: Citation 'kuemmerle2018lidar' on page 9 undefined on input line 
+45.
+
+
+Overfull \hbox (5.97034pt too wide) in paragraph at lines 45--46
+\T1/ptm/m/n/12 chal-lenges with re-flec-tive ice sur-faces limit re-con-struc-t
+ion com-plete-ness ([]). 
+ []
+
+
+LaTeX Warning: Citation 'mildenhall2020nerf' on page 9 undefined on input line 
+49.
+
+
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 15.74998pt, for example:
 (fancyhdr)                \setlength{\headheight}{15.74998pt}.
@@ -1813,7 +1912,49 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [9]
 
+LaTeX Warning: Citation 'martin2021nerf' on page 10 undefined on input line 51.
+
+
+
+LaTeX Warning: Citation 'barron2021mip' on page 10 undefined on input line 51.
+
+
+LaTeX Warning: Citation 'zhang2020nerf++' on page 10 undefined on input line 51
+.
+
+
 LaTeX Warning: Citation 'xu2022point' on page 10 undefined on input line 51.
+
+
+Overfull \hbox (2.55206pt too wide) in paragraph at lines 51--52
+[]\T1/ptm/m/n/12 Numerous ex-ten-sions have ad-dressed NeRF's lim-i-ta-tions. [
+] pro-posed NeRF
+ []
+
+
+LaTeX Warning: Citation 'kerbl20233d' on page 10 undefined on input line 55.
+
+
+LaTeX Warning: Citation 'yang2023deformable' on page 10 undefined on input line
+ 57.
+
+
+LaTeX Warning: Citation 'fan2023large' on page 10 undefined on input line 59.
+
+
+LaTeX Warning: Citation 'tang2023radial' on page 10 undefined on input line 59.
+
+
+
+LaTeX Warning: Citation 'katsumata2023efficient' on page 10 undefined on input 
+line 59.
+
+
+LaTeX Warning: Citation 'kirillov2023segment' on page 10 undefined on input lin
+e 65.
+
+
+LaTeX Warning: Citation 'ravi2024sam2' on page 10 undefined on input line 65.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1824,6 +1965,22 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [10]
 
+LaTeX Warning: Citation 'kirillov2026sam3' on page 11 undefined on input line 6
+7.
+
+
+LaTeX Warning: Citation 'zhang2024marine' on page 11 undefined on input line 69
+.
+
+
+LaTeX Warning: Citation 'depthanything2023' on page 11 undefined on input line 
+73.
+
+
+LaTeX Warning: Citation 'depthanythingv22024' on page 11 undefined on input lin
+e 73.
+
+
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 15.74998pt, for example:
 (fancyhdr)                \setlength{\headheight}{15.74998pt}.
@@ -1832,6 +1989,14 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [11]
 
+LaTeX Warning: Citation 'zhang2025depthanything3' on page 12 undefined on input
+ line 75.
+
+
+LaTeX Warning: Citation 'ranftl2020towards' on page 12 undefined on input line 
+79.
+
+
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 15.74998pt, for example:
 (fancyhdr)                \setlength{\headheight}{15.74998pt}.
@@ -1839,6 +2004,19 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-3.74998pt}.
 
 [12]
+
+LaTeX Warning: Citation 'shao2019pfr' on page 13 undefined on input line 83.
+
+
+LaTeX Warning: Citation 'liang2018deep' on page 13 undefined on input line 83.
+
+
+LaTeX Warning: Citation 'meng2018uav' on page 13 undefined on input line 85.
+
+
+LaTeX Warning: Citation 'geiger2012automatic' on page 13 undefined on input lin
+e 85.
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 15.74998pt, for example:
@@ -1856,6 +2034,18 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [14]
 
+LaTeX Warning: Reference `fig:system_architecture' on page 15 undefined on inpu
+t line 9.
+
+
+LaTeX Warning: Citation 'schroeder2020asvsim' on page 15 undefined on input lin
+e 34.
+
+
+LaTeX Warning: Citation 'fossen2011handbook' on page 15 undefined on input line
+ 34.
+
+
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 15.74998pt, for example:
 (fancyhdr)                \setlength{\headheight}{15.74998pt}.
@@ -1870,6 +2060,10 @@ LaTeX Font Info:    Trying to load font information for T1+pcr on input line 36
  (d:/texlive/2026/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
+
+LaTeX Warning: Reference `tab:simulation_params' on page 16 undefined on input 
+line 45.
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 15.74998pt, for example:
@@ -1970,6 +2164,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-3.74998pt}.
 
 [24]
+
+LaTeX Warning: Citation 'depthanything32025' on page 25 undefined on input line
+ 358.
+
+
 Overfull \hbox (5.19055pt too wide) in paragraph at lines 362--363
 \T1/ptm/m/n/12 con-fig-ured with CUDA 12.8 sup-port for the RTX 5070 Ti GPU (Bl
 ack-well ar-chi-tec-ture, sm_120).
@@ -1983,6 +2182,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-3.74998pt}.
 
 [25]
+
+LaTeX Warning: Citation 'sam32026' on page 26 undefined on input line 385.
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 15.74998pt, for example:
@@ -2031,6 +2233,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [30]
 
+LaTeX Warning: Reference `fig:sample_rgb' on page 31 undefined on input line 16
+8.
+
+
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 15.74998pt, for example:
 (fancyhdr)                \setlength{\headheight}{15.74998pt}.
@@ -2062,13 +2268,20 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-3.74998pt}.
 
 [34]
-<figures/phase4/fig_da3_depth_comparison.png, id=1138, 1927.2pt x 481.8pt>
+
+LaTeX Warning: Reference `tab:da3_results' on page 35 undefined on input line 3
+08.
+
+
+LaTeX Warning: Reference `fig:da3_depth' on page 35 undefined on input line 333
+.
+
+<figures/phase4/fig_da3_depth_comparison.png, id=566, 1927.2pt x 481.8pt>
 File: figures/phase4/fig_da3_depth_comparison.png Graphic file (type png)
 <use figures/phase4/fig_da3_depth_comparison.png>
 Package pdftex.def Info: figures/phase4/fig_da3_depth_comparison.png  used on i
 nput line 337.
 (pdftex.def)             Requested size: 364.19667pt x 91.04303pt.
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 15.74998pt, for example:
@@ -2085,19 +2298,26 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-3.74998pt}.
 
 [36 <./figures/phase4/fig_da3_depth_comparison.png (PNG copy)>]
-<figures/phase4/fig_sam3_segmentation_0000.png, id=1152, 642.4pt x 481.8pt>
+
+LaTeX Warning: Reference `tab:sam3_results' on page 37 undefined on input line 
+362.
+
+
+LaTeX Warning: Reference `fig:sam3_seg' on page 37 undefined on input line 387.
+
+
+<figures/phase4/fig_sam3_segmentation_0000.png, id=582, 642.4pt x 481.8pt>
 File: figures/phase4/fig_sam3_segmentation_0000.png Graphic file (type png)
 <use figures/phase4/fig_sam3_segmentation_0000.png>
 Package pdftex.def Info: figures/phase4/fig_sam3_segmentation_0000.png  used on
  input line 391.
 (pdftex.def)             Requested size: 204.85846pt x 153.64247pt.
-<figures/phase4/fig_sam3_segmentation_0020.png, id=1153, 642.4pt x 481.8pt>
+<figures/phase4/fig_sam3_segmentation_0020.png, id=583, 642.4pt x 481.8pt>
 File: figures/phase4/fig_sam3_segmentation_0020.png Graphic file (type png)
 <use figures/phase4/fig_sam3_segmentation_0020.png>
 Package pdftex.def Info: figures/phase4/fig_sam3_segmentation_0020.png  used on
  input line 393.
 (pdftex.def)             Requested size: 204.85846pt x 153.64247pt.
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 15.74998pt, for example:
@@ -2107,6 +2327,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [37]
 
+LaTeX Warning: Reference `fig:pose_traj' on page 38 undefined on input line 434
+.
+
+
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 15.74998pt, for example:
 (fancyhdr)                \setlength{\headheight}{15.74998pt}.
@@ -2115,13 +2339,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [38 <./figures/phase4/fig_sam3_segmentation_0000.png (PNG copy)> <./figures/pha
 se4/fig_sam3_segmentation_0020.png (PNG copy)>]
-<figures/phase4/fig_da3_pose_trajectory_3d.png, id=1166, 867.24pt x 722.7pt>
+<figures/phase4/fig_da3_pose_trajectory_3d.png, id=600, 867.24pt x 722.7pt>
 File: figures/phase4/fig_da3_pose_trajectory_3d.png Graphic file (type png)
 <use figures/phase4/fig_da3_pose_trajectory_3d.png>
 Package pdftex.def Info: figures/phase4/fig_da3_pose_trajectory_3d.png  used on
  input line 438.
 (pdftex.def)             Requested size: 218.51521pt x 182.08607pt.
-<figures/phase4/fig_da3_motion_analysis.png, id=1168, 867.24pt x 578.16pt>
+<figures/phase4/fig_da3_motion_analysis.png, id=602, 867.24pt x 578.16pt>
 File: figures/phase4/fig_da3_motion_analysis.png Graphic file (type png)
 <use figures/phase4/fig_da3_motion_analysis.png>
 Package pdftex.def Info: figures/phase4/fig_da3_motion_analysis.png  used on in
@@ -2145,6 +2369,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-3.74998pt}.
 
 [40]
+
+LaTeX Warning: Citation 'kerbl20233d' on page 41 undefined on input line 13.
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 15.74998pt, for example:
@@ -2171,9 +2398,18 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-3.74998pt}.
 
 [43]
-Overfull \hbox (3.63272pt too wide) in paragraph at lines 82--83
-[]\T1/ptm/m/n/12 Compared to ex-ist-ing ma-rine sim-u-la-tion datasets ([]Bing-
-ham et al., [][]2019[][]; []Ebadi, D. Williams,
+
+LaTeX Warning: Citation 'bingham2019virtual' on page 44 undefined on input line
+ 82.
+
+
+LaTeX Warning: Citation 'ebadi2020lakes' on page 44 undefined on input line 82.
+
+
+
+Overfull \hbox (0.33134pt too wide) in paragraph at lines 82--83
+[]\T1/ptm/m/n/12 Compared to ex-ist-ing ma-rine sim-u-la-tion datasets ([]; [])
+,
  []
 
 
@@ -2184,6 +2420,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-3.74998pt}.
 
 [44]
+
+LaTeX Warning: Citation 'fab2024arctic' on page 45 undefined on input line 112.
+
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 15.74998pt, for example:
@@ -2251,6 +2491,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [52]
 
+LaTeX Warning: Empty bibliography on input line 166.
+
+(./appendix.tex
+
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 15.74998pt, for example:
 (fancyhdr)                \setlength{\headheight}{15.74998pt}.
@@ -2258,6 +2502,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-3.74998pt}.
 
 [53
+
+
 
 ]
 
@@ -2283,7 +2529,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-3.74998pt}.
 
-[56] (./appendix.tex
+[56]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 15.74998pt, for example:
@@ -2291,10 +2537,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-3.74998pt}.
 
-[57
-
-
-]
+[57])
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 15.74998pt, for example:
@@ -2302,55 +2545,41 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-3.74998pt}.
 
-[58]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 15.74998pt, for example:
-(fancyhdr)                \setlength{\headheight}{15.74998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-3.74998pt}.
-
-[59]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 15.74998pt, for example:
-(fancyhdr)                \setlength{\headheight}{15.74998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-3.74998pt}.
-
-[60]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 15.74998pt, for example:
-(fancyhdr)                \setlength{\headheight}{15.74998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-3.74998pt}.
-
-[61])
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 15.74998pt, for example:
-(fancyhdr)                \setlength{\headheight}{15.74998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-3.74998pt}.
-
-[62] (./main.aux)
+[58] (./main_new2.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2022/07/14>
  ***********
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 8D79EA59B3D86F820BB86F10158FCE3D;20851.
-Package logreq Info: Writing requests to 'main.run.xml'.
-\openout1 = `main.run.xml'.
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `main_new2.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `main_new2.out':
+(rerunfilecheck)             Before: <no file>
+(rerunfilecheck)             After:  8D79EA59B3D86F820BB86F10158FCE3D;20851.
+
+Package biblatex Warning: Please (re)run Biber on the file:
+(biblatex)                main_new2
+(biblatex)                and rerun LaTeX afterwards.
+
+Package logreq Info: Writing requests to 'main_new2.run.xml'.
+\openout1 = `main_new2.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 38036 strings out of 467525
- 707189 string characters out of 5423209
- 1737348 words of memory out of 5000000
- 65533 multiletter control sequences out of 15000+600000
- 735282 words of font info for 275 fonts, out of 8000000 for 9000
+ 37605 strings out of 467525
+ 694810 string characters out of 5423209
+ 1715983 words of memory out of 5000000
+ 65152 multiletter control sequences out of 15000+600000
+ 730231 words of font info for 278 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  102i,12n,107p,1054b,2137s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/s
@@ -2367,43 +2596,43 @@ indows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.t
 tc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/
 simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Window
 s/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c
-:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhe
+:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhe
 i.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fon
-ts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Win
-dows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf
-><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/si
+ts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Win
+dows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc
+><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/si
 msun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/
 Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/
 Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.
 ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts
 /simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windo
 ws/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><
-c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simh
-ei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fo
+c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/sims
+un.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fo
 nts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Wi
 ndows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.tt
-f><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/s
-imsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows
-/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:
-/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun
-.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Font
-s/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Wind
+f><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/s
+imhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows
+/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:
+/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei
+.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Font
+s/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Wind
 ows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc>
-<c:/Windows/Fonts/simsun.ttc><d:/texlive/2026/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmex10.pfb><d:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmmi12.pfb><d:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb
-><d:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><d:/texli
-ve/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><d:/texlive/2026/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><d:/texlive/2026/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmsy8.pfb><d:/texlive/2026/texmf-dist/fonts/type1
-/public/amsfonts/symbols/msam10.pfb><d:/texlive/2026/texmf-dist/fonts/type1/urw
-/courier/ucrr8a.pfb><d:/texlive/2026/texmf-dist/fonts/type1/urw/times/utmb8a.pf
-b><d:/texlive/2026/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><d:/texlive/2026
-/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (82 pages, 2627353 bytes).
+<c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/sim
+sun.ttc><c:/Windows/Fonts/simsun.ttc><d:/texlive/2026/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmex10.pfb><d:/texlive/2026/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmmi12.pfb><d:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mmi8.pfb><d:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><
+d:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><d:/texlive/
+2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><d:/texlive/2026/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><d:/texlive/2026/texmf-dist/fon
+ts/type1/public/amsfonts/symbols/msam10.pfb><d:/texlive/2026/texmf-dist/fonts/t
+ype1/urw/courier/ucrr8a.pfb><d:/texlive/2026/texmf-dist/fonts/type1/urw/times/u
+tmb8a.pfb><d:/texlive/2026/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
+Output written on main_new2.pdf (74 pages, 2586759 bytes).
 PDF statistics:
- 1964 PDF objects out of 2073 (max. 8388607)
- 1668 compressed objects within 17 object streams
- 540 named destinations out of 1000 (max. 500000)
- 1194 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1375 PDF objects out of 1440 (max. 8388607)
+ 1092 compressed objects within 11 object streams
+ 481 named destinations out of 1000 (max. 500000)
+ 298 words of extra memory for PDF output out of 10000 (max. 10000000)
 
