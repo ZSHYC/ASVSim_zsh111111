@@ -146,10 +146,12 @@
 
 % 目录格式设置
 \usepackage{tocloft}
-\renewcommand{\contentsname}{\centering Contents}  % 标题改为Contents并居中
-\setlength{\cftbeforesecskip}{0.2em}  % 减小目录章节间距
-\setlength{\cftbeforesubsecskip}{0.1em}  % 减小二级标题间距
-\setlength{\cftbeforesubsubsecskip}{0.05em}  % 减小三级标题间距
+\renewcommand{\contentsname}{Contents}
+\renewcommand{\cfttoctitlefont}{\hfill\bfseries}  % 标题加粗并居中
+\renewcommand{\cftaftertoctitle}{\hfill}
+\setlength{\cftbeforesecskip}{0.1em}  % 减小目录章节间距
+\setlength{\cftbeforesubsecskip}{0.05em}  % 减小二级标题间距
+\setlength{\cftbeforesubsubsecskip}{0.02em}  % 减小三级标题间距
 % 确保所有级别都有虚线连接到页码
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
 \renewcommand{\cftsubsecleader}{\cftdotfill{\cftdotsep}}
@@ -158,6 +160,8 @@
 \setlength{\cftsecindent}{0pt}  % 章节不缩进
 \setlength{\cftsubsecindent}{1em}  % 二级标题缩进
 \setlength{\cftsubsubsecindent}{2em}  % 三级标题缩进
+\setlength{\cftaftertoctitleskip}{1em}  % 标题后间距
+\setlength{\cftbeforetoctitleskip}{-0.5em}  % 标题前间距
 
 % ============================================================
 % 文档开始 - 严格按模板顺序
@@ -223,7 +227,13 @@
 \addcontentsline{toc}{section}{致\quad 谢}
 \input{acknowledgements}
 
-% ===== 16. 学术成果（有页眉）=====
+% ===== 16. Acknowledgements（有页眉）=====
+\cleardoublepage
+\section*{Acknowledgements}
+\addcontentsline{toc}{section}{Acknowledgements}
+\input{acknowledgements_en}
+
+% ===== 17. 学术成果（有页眉）=====
 \cleardoublepage
 \section*{Published papers and research achievements during the pursuit of bachelor's degree}
 \addcontentsline{toc}{section}{Published papers and research achievements during the pursuit of bachelor's degree}
@@ -233,7 +243,7 @@
 (No content)
 \end{center}
 
-% ===== 17. 附录（有页眉）=====
+% ===== 18. 附录（有页眉）=====
 \cleardoublepage
 \section*{Appendix}
 \addcontentsline{toc}{section}{Appendix}

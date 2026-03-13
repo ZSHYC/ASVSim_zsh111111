@@ -107,9 +107,10 @@
 \contentsline {subsection}{\numberline {6.6}Closing Remarks}{52}{subsection.6.6}%
 \contentsline {section}{Reference}{53}{subsection.6.6}%
 \contentsline {section}{致\hskip 1em\relax 谢}{57}{subsection.6.6}%
-\contentsline {section}{Published papers and research achievements during the pursuit of bachelor's degree}{59}{subsection.6.6}%
-\contentsline {section}{Appendix}{61}{subsection.6.6}%
-\contentsline {section}{\numberline {VII}DATA COLLECTION SOURCE CODE}{61}{section.7}%
-\contentsline {subsection}{\numberline {7.1}Main Collection Script (3-collect\_dataset\_v2.py)}{61}{subsection.7.1}%
-\contentsline {subsection}{\numberline {7.2}ASVSim Settings Configuration}{63}{subsection.7.2}%
-\contentsline {subsection}{\numberline {7.3}Dataset Validation Script}{65}{subsection.7.3}%
+\contentsline {section}{Acknowledgements}{59}{subsection.6.6}%
+\contentsline {section}{Published papers and research achievements during the pursuit of bachelor's degree}{61}{subsection.6.6}%
+\contentsline {section}{Appendix}{63}{subsection.6.6}%
+\contentsline {section}{\numberline {VII}DATA COLLECTION SOURCE CODE}{63}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Main Collection Script (3-collect\_dataset\_v2.py)}{63}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}ASVSim Settings Configuration}{65}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}Dataset Validation Script}{67}{subsection.7.3}%
