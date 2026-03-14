@@ -60,7 +60,26 @@
       "Bash(source /d/miniforge3/etc/profile.d/conda.sh && conda activate bishe && python batch_segment_sam3.py --dataset /c/Users/zsh/Desktop/ASVSim_zsh/dataset/2026_03_13_01_50_19 2>&1)",
       "Bash(source /d/miniforge3/etc/profile.d/conda.sh && conda activate bishe && python validate_sam3_masks.py 2>&1)",
       "Bash(ls /c/Users/zsh/Desktop/ASVSim_zsh/tools/*.py | wc -l && echo \"---\" && ls /c/Users/zsh/Desktop/ASVSim_zsh/tools/*.py)",
-      "Bash(ls -lh /c/Users/zsh/Desktop/ASVSim_zsh/tools/*.py)"
+      "Bash(ls -lh /c/Users/zsh/Desktop/ASVSim_zsh/tools/*.py)",
+      "Bash(npx:*)",
+      "Bash(where node:*)",
+      "Bash(nvm version:*)",
+      "Bash(curl:*)",
+      "Bash(msiexec:*)",
+      "Bash(powershell.exe -Command \"Start-Process msiexec -ArgumentList '/i', 'C:\\\\msys64\\\\tmp\\\\node-lts.msi', '/qn', '/norestart' -Wait -Verb RunAs\")",
+      "Read(//d/nodejs/**)",
+      "Bash(unzip -o /tmp/node.zip)",
+      "Bash(cp -r node-v20.19.0-win-x64/* .)",
+      "Bash(cp:*)",
+      "Bash(powershell.exe -Command \"Stop-Process -Name node -Force -ErrorAction SilentlyContinue; Copy-Item -Path 'D:\\\\nodejs\\\\node-v20.19.0-win-x64\\\\node.exe' -Destination 'D:\\\\nodejs\\\\node.exe' -Force; D:\\\\nodejs\\\\node.exe --version\")",
+      "Bash(npm cache:*)",
+      "Bash(D:\\\\nodejs\\\\npm.cmd --version 2>&1)",
+      "Bash(\"/d/nodejs/npm.cmd\" --version 2>&1)",
+      "Bash(\"/d/nodejs/npm.cmd\" install:*)",
+      "Bash(\"/d/nodejs/npm.cmd\" --version && \"/d/nodejs/npx.cmd\" --version)",
+      "Bash(\"/d/nodejs/npx.cmd\" chrome-devtools-mcp@latest --help 2>&1 | head -30)",
+      "mcp__plugin_chrome-devtools-mcp_chrome-devtools__navigate_page",
+      "Skill(gsd:progress)"
     ],
     "additionalDirectories": [
       "c:\\Users\\zsh\\Documents\\AirSim"
