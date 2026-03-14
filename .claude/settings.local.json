@@ -79,7 +79,10 @@
       "Bash(\"/d/nodejs/npm.cmd\" --version && \"/d/nodejs/npx.cmd\" --version)",
       "Bash(\"/d/nodejs/npx.cmd\" chrome-devtools-mcp@latest --help 2>&1 | head -30)",
       "mcp__plugin_chrome-devtools-mcp_chrome-devtools__navigate_page",
-      "Skill(gsd:progress)"
+      "Skill(gsd:progress)",
+      "WebFetch(domain:discuss.pytorch.org)",
+      "WebFetch(domain:blog.csdn.net)",
+      "Bash(python:*)"
     ],
     "additionalDirectories": [
       "c:\\Users\\zsh\\Documents\\AirSim"
