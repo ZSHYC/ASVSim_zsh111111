@@ -11,6 +11,7 @@
 **项目**: Polar Route Planning and 3D Reconstruction Using Unreal Engine and 3D Gaussian Splatting
 **完成时间**: 2026-03-14
 **归档时间**: 2026-03-14
+**版本**: v1.0 Thesis Writing
 
 ---
 
@@ -19,7 +20,7 @@
 | 交付物 | 位置 | 状态 |
 |--------|------|------|
 | 论文PDF | thesis/main.pdf | ✅ 完成 (82页) |
-| LaTeX源文件 | thesis/*.tex | ✅ 完整 |
+| LaTeX源文件 | thesis/*.tex | ✅ 完整 (2,325行) |
 | Phase 4图表 | thesis/figures/phase4/ | ✅ 8张图 |
 | 参考文献 | thesis/references.bib | ✅ 50篇 |
 
@@ -29,13 +30,13 @@
 
 ### ✅ All 5 Phases Completed
 
-| Phase | Content | Lines Added |
-|-------|---------|-------------|
-| 1 | Content Audit | AUDIT_REPORT.md |
-| 2 | Data Preparation | 8 figures + tables |
-| 3 | Core Content Update | +520 lines (Ch3-Ch6) |
-| 4 | Literature Update | references.bib updated |
-| 5 | Front Matter & Polish | covers, abstracts |
+| Phase | Content | Status |
+|-------|---------|--------|
+| 1 | Content Audit | ✅ AUDIT_REPORT.md |
+| 2 | Data Preparation | ✅ 8 figures + tables |
+| 3 | Core Content Update | ✅ +520 lines (Ch3-Ch6) |
+| 4 | Literature Update | ✅ references.bib updated |
+| 5 | Front Matter & Polish | ✅ covers, abstracts, declarations |
 
 ### Key Updates Integrated
 
@@ -49,18 +50,25 @@
 
 ## Project Archive
 
-**归档位置**: `.planning/phases/`
+**归档位置**: `.planning/milestones/`
 
 **保留文件**:
+- [v1.0-ROADMAP.md](milestones/v1.0-ROADMAP.md) - 详细阶段记录
+- [v1.0-REQUIREMENTS.md](milestones/v1.0-REQUIREMENTS.md) - 完整需求追踪
+- [MILESTONES.md](MILESTONES.md) - 里程碑汇总
 - PROJECT.md - 项目定义
-- REQUIREMENTS.md - 25项需求
-- ROADMAP.md - 5阶段路线图
 - STATE.md - 本文件（归档状态）
-- phases/01-05/ - 各阶段详细记录
 
 ---
 
-## Next Steps (For New Project)
+## Git Tag
+
+**Tag**: `v1.0`
+**Message**: Thesis Writing milestone - 82-page undergraduate thesis completed with Phase 4 perception layer integration, literature updates, and full HEU template formatting.
+
+---
+
+## Next Steps
 
 This project is now **ARCHIVED**.
 
@@ -69,7 +77,13 @@ To start a new GSD project:
 /gsd:new-project
 ```
 
+To start a new milestone for the same project:
+```
+/gsd:new-milestone
+```
+
 ---
 
 *Project archived: 2026-03-14*
 *Status: Complete*
+*Milestone: v1.0 Thesis Writing*
